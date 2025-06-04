@@ -1,3 +1,6 @@
+/Source
+*.DS_Store
+/db_data
 /vendor/
 node_modules/
 npm-debug.log
@@ -28,6 +31,7 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
-
-/Source
-.DS_Store
+/db_data/undo_002
+/db_data/undo_001
+/db_data/\#innodb_redo/\#ib_redo9
+/db_data/\#ib_16384_0.dblwr
