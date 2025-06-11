@@ -1,0 +1,23 @@
+.product-sorting{
+    display: flex;
+    align-items: center;
+    .sorting-title{
+        .title {
+            margin: 0;
+            margin-right: 30px;
+        }
+    }
+    .select-option  {
+        .nice-select {
+            border-radius: 3px;
+            border: solid 1px #AEAEAE;
+            padding-right: 50px;
+            &::after{
+                height: 10px;
+                margin-top: -7px;
+                width: 10px;
+            }
+        }
+    }
+
+}

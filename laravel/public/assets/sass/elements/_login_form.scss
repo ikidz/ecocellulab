@@ -1,0 +1,237 @@
+.login-modal {
+  background: #011a4266;
+  .modal-dialog {
+    margin: 6rem auto;
+}
+  .modal-custom {
+    max-width: 1170px;
+    .modal-content {
+      border-radius: 0px;
+      width: 80%;
+      margin: auto;
+      .close {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        z-index: 1;
+        color: var(--white);
+        font-weight: 300;
+        font-size: 12px;
+        opacity: 1;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 50%;
+        background-color: var(--hover-color);
+        &.style-2{
+          right: -30px;
+        }
+      }
+    }
+    .modal-body {
+      padding: 0;
+    }
+  }
+}
+// Login form
+.login-form {
+  padding: 60px;
+  text-align: center;
+  margin: auto;
+  .title {
+  }
+
+  &.forget-form {
+    padding: 190px 220px;
+    .form-group {
+      margin-bottom: 30px;
+      .form-control {
+        padding: 14px 10px;
+        font-size: 14px;
+        background-color: transparent;
+        color: var(--main-color-one);
+        border: 1px solid #15c0e8;
+        border-radius: 0 35px 0 0;
+      }
+      &:focus {
+        border-bottom: 1px solid #c8c8c8;
+      }
+    }
+    .forget-content {
+      .title {
+        line-height: 60px;
+        margin-bottom: 25px;
+      }
+      p {
+        font-size: 20px;
+        font-weight: 500;
+        color: #606060;
+        margin-bottom: 30px;
+      }
+      .para {
+        color: var(--hover-color);
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        position: relative;
+        &:after {
+          content: "";
+          background-color: var(--hover-color);
+          width: 32px;
+          height: 1px;
+          left: 0;
+          top: -15px;
+          position: absolute;
+        }
+      }
+    }
+    .return-btn {
+      color: var(--hover-color);
+      font-size: 14px;
+      span {
+        font-size: 22px;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+  }
+  .form-group {
+    margin-bottom: 30px;
+    label {
+      color: #263534;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    .form-control {
+      padding: 14px 10px;
+      font-size: 14px;
+     background-color: #fff;
+      color: var(--main-color-one);
+      border: 1px solid #15c0e8;
+      border-radius: 0 35px 0 0;
+      outline: none;
+    }
+  }
+}
+.social-icon {
+  &.light-bg {
+    background: #f4fbfd;
+    padding: 50px;
+  }
+  .social-share {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: block;
+      font-size: 20px;
+      height: 40px;
+      width: 300px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #edefee;
+      color: #263534;
+  
+      &.fb {
+        background: #3b5998;
+        border: 1px solid #3b5998;
+        color: #fff;
+      }
+      img {
+        // height: 30px;
+        // width: 30px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .new-user {
+    display: flex;
+    justify-content: center;
+    
+    a{
+      color: var(--main-color-one);
+      transition: all .6s;
+      margin-left: 10px;
+    }
+}
+}
+
+
+.login-section {
+  height: 100%;
+  &.grd-bg {
+    background: linear-gradient(182deg, rgba(21, 192, 232, 1) 0%, rgba(220, 248, 255, 1) 40%);
+  }
+  &.bg-grey {
+    background: #d0f0f4;
+  }
+}
+.reg-section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  .check-box {
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      color: #1d1d1d;
+      user-select: none;
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        border: 1px solid var(--hover-color);
+        background-color: var(--hover-color);
+      }
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 8px;
+      top: 3px;
+      width: 7px;
+      height: 14px;
+      border: solid var(--white);
+      border-width: 0 3px 3px 0;
+      transform: rotate(30deg);
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+  &.bg-grey {
+    background: #bee5ff;
+  }
+}
+.login-back {
+  padding: 60px;
+  text-align: center;
+  .login-content {
+  }
+}
+.forget-btn {
+  color: var(--main-color-one);
+  transition: all 0.6s;
+}

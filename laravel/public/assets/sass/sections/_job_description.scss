@@ -1,0 +1,42 @@
+.career-search-result-area {
+  background-image: url("../img/career/bg.svg");
+  background-repeat: no-repeat;
+  background-position: left top;
+
+  .career-item {
+    border: none;
+    padding: 0;
+    position: relative;
+    .description-part {
+      width: 70%;
+    }
+    .btn-wrapper {
+      width: 30%;
+      text-align: left;
+    }
+    .animated-item {
+      left: 65%;
+      bottom: 100%;
+      &.item-2 {
+        left: 60%;
+        bottom: 10%;
+      }
+      &.item-3 {
+        left: 80%;
+        bottom: 70%;
+      }
+    }
+  }
+
+  .sidebar_widget {
+    &.box-shadow {
+      box-shadow: 0 1px 5px #15c0e8b5;
+      padding: 30px;
+    }
+    &.widget_subscribe {
+      .subscribe-form {
+        max-width: 400px;
+      }
+    }
+  }
+}

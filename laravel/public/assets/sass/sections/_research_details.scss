@@ -1,0 +1,30 @@
+.research-details-area {
+  .research-details {
+    .animated-img-part {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      min-height: 300px;
+      .animated-img-box {
+        left: 25%;
+      }
+    }
+    .title{
+      max-width: 70%;
+    }
+    .highlight-text{
+      border-top: 2px dotted #C4C4C4;
+      border-bottom: 2px dotted #C4C4C4;
+      padding: 50px 0 45px;
+      p{
+        color: #15C0E8;
+      }
+    }
+    .img-wrap{
+      img{
+        box-shadow: 0 2px 5px #15c0e86e;
+      }
+    }
+  }
+}

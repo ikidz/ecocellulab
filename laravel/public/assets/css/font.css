@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?qn0wh1');
+  src:  url('../fonts/icomoon.eot?qn0wh1#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?qn0wh1') format('truetype'),
+    url('../fonts/icomoon.woff?qn0wh1') format('woff'),
+    url('../fonts/icomoon.svg?qn0wh1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-doctor-1:before {
+  content: "\e905";
+}
+.icon-Group-604:before {
+  content: "\e906";
+}
+.icon-investor-1:before {
+  content: "\e907";
+}
+.icon-progress-report:before {
+  content: "\e908";
+}
+.icon-dna-structure:before {
+  content: "\e900";
+}
+.icon-intellectual:before {
+  content: "\e901";
+}
+.icon-microscope-1:before {
+  content: "\e902";
+}
+.icon-ultrasound:before {
+  content: "\e903";
+}

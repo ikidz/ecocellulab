@@ -1,0 +1,102 @@
+.showcase4-area {
+  background: url("../img/home4-slider/bg.png");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  .showcase4-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(38, 53, 52, 0.4);
+  }
+
+  .showcase4-main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .content-part {
+      .showcase4-slider {
+        .showcase4-slider-item {
+          &.slick-active {
+            .slider-content-wrap {
+              .sub-title {
+                animation: fadeInLeft 2s;
+              }
+              .title {
+                animation: zoomIn 2s;
+              }
+              p {
+                animation: zoomIn 2s;
+              }
+              .btn-with-video {
+                animation: slideInUp 2s;
+              }
+            }
+          }
+        }
+      }
+    }
+    .img-part {
+      .img-wrap {
+        position: relative;
+        display: inline-block;
+        #hotspotImg {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          height: 100%;
+          width: 100%;
+          transform: translate(-50%, -50%);
+          .hot-spot {
+            position: absolute;
+            left: 2%;
+            top: 66%;
+            &.item-2 {
+              top: 18%;
+              left: 30%;
+            }
+            &.item-3 {
+              top: 58%;
+              left: 65%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .showcase-slider-dot-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    -moz-transform: rotate(-90deg) translateX(-50%);
+    -webkit-transform: rotate(-90deg) translateX(-50%);
+    -o-transform: rotate(-90deg) translateX(-50%);
+    -ms-transform: rotate(-90deg) translateX(-50%);
+    transform: rotate(-90deg) translateX(-50%);
+  }
+
+  .slick-dots li button:before {
+    opacity: 1;
+    font-size: 0;
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    border-radius: 50%;
+  }
+  .slick-dots li.slick-active button:before {
+    background: transparent;
+    border: 2px solid #fff;
+    height: 12px;
+    width: 12px;
+    top: 10px;
+    left: 8px;
+  }
+  .slick-dotted.slick-slider {
+    margin-bottom: 0px;
+  }
+}

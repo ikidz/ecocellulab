@@ -1,0 +1,44 @@
+.gallery-item {
+  text-align: center;
+  margin-bottom: 30px;
+  .img-warpper {
+    position: relative;
+    transition: all .6s;
+    overflow: hidden;
+    margin: 0 auto;
+    display: inline-block;
+    .overlay {
+      position: absolute;
+      background: rgba(38, 53, 52, 0.5);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all .6s;
+
+      .icon-wrap {
+        a {
+            height: 30px;
+            width: 30px;
+            background: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            line-height: 30px;
+            color: var(--main-color-one);
+        }
+      }
+    }
+    &:hover{
+        .overlay{
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+  }
+}

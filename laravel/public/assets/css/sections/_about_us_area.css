@@ -1,0 +1,73 @@
+/* ----------------------------------
+		:: => About Us Section
+---------------------------------- */
+.about-us-area {
+  background: url("../img/about/bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left; }
+  .about-us-area .img-wrap {
+    position: relative;
+    z-index: 0; }
+    .about-us-area .img-wrap .main-img img {
+      border-radius: 50%; }
+    .about-us-area .img-wrap .animated-img {
+      position: absolute;
+      z-index: -1;
+      top: -20px;
+      -webkit-animation: animatedBackground 1s linear infinite alternate;
+      animation: animatedBackground 1s linear infinite alternate; }
+  .about-us-area .content-wrapper {
+    position: relative; }
+    .about-us-area .content-wrapper p {
+      max-width: 80%; }
+    .about-us-area .content-wrapper .animated-item {
+      left: 90%;
+      bottom: 35%; }
+      .about-us-area .content-wrapper .animated-item.item-2 {
+        left: 85%;
+        bottom: 15%; }
+  .about-us-area.style-2 {
+    background: url("../img/about/bg2.svg");
+    background-position: right top;
+    background-repeat: no-repeat; }
+    .about-us-area.style-2 .img-wrap {
+      display: inline-block; }
+      .about-us-area.style-2 .img-wrap img {
+        border-radius: 50%; }
+      .about-us-area.style-2 .img-wrap::before {
+        content: "";
+        position: absolute;
+        height: 110%;
+        width: 110%;
+        left: -5%;
+        top: -5%;
+        background: #d4f3fb;
+        z-index: -1;
+        border-radius: 30%;
+        -webkit-animation: animatebg 10s linear infinite;
+        animation: animatebg 10s linear infinite; }
+  .about-us-area.style-3 {
+    background: url("../img/about/bg3.svg");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain; }
+    .about-us-area.style-3 .img-wrap {
+      background-image: url("../img/about/main4.png");
+      background-repeat: no-repeat;
+      display: inline-block; }
+      .about-us-area.style-3 .img-wrap .video-part {
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        -webkit-transform: translate(-60%, -40%);
+        -ms-transform: translate(-60%, -40%);
+        transform: translate(-40%, -50%); }
+  .about-us-area.no-bg-style {
+    background: unset; }
+    .about-us-area.no-bg-style .img-wrap img {
+      border-radius: 0 70px 0 0;
+      -webkit-box-shadow: 0px 2px 15px #15c0e878;
+      box-shadow: 0px 2px 15px #15c0e878; }
+  .about-us-area.no-bg {
+    background: none; }

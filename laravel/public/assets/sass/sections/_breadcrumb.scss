@@ -1,0 +1,188 @@
+/*---------------------
+    ## Breadcumb 
+----------------------*/
+.breadcrumb-area {
+  padding: 80px 0;
+  background-image: url("../img/breadcrumb/brd.png");
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+
+  .breadcrumb-inner {
+    background: rgba(21, 193, 232, 0.1);
+    display: inline-block;
+    padding: 40px 60px;
+    min-width: 350px;
+    .page-title {
+      font-size: 48px;
+      font-weight: 700;
+      text-transform: capitalize;
+      margin-bottom: 15px;
+      &.white-effect {
+        color: #fff;
+      }
+    }
+    &.dark-blue {
+      background: rgba(21, 193, 232, 0.4);
+    }
+    &.no-bg {
+      background: none;
+      .page-title {
+        color: #fff;
+      }
+      .page-list {
+        li {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .page-list {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      position: relative;
+      padding-left: 30px;
+      font-size: 20px;
+      color: #263534;
+      &:first-child {
+        padding-left: 0;
+        &:after {
+          display: none;
+        }
+      }
+      &:after {
+        position: absolute;
+        left: 5px;
+        top: 0;
+        content: "\f109";
+        font-family: "flaticon";
+        font-size: 14px;
+        font-weight: 900;
+      }
+      a {
+        transition: all 0.6s;
+        &:hover {
+          color: var(--black);
+        }
+      }
+    }
+    &.white-effect {
+      li {
+        color: #fff;
+      }
+    }
+  }
+
+  &.about-area-breadcrumb {
+    background-image: url("../img/breadcrumb/about/bg.png");
+    background-position: right;
+    position: relative;
+    background-size: auto;
+    &::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background-image: url("../img/breadcrumb/about/shape.svg");
+      top: 0;
+      left: 0;
+    }
+  }
+  &.faq-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.4)),
+      url("../img/breadcrumb/faq/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.investor-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.4)),
+      url("../img/breadcrumb/investor/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.pipeline-area-breadcrumb {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/pipeline/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.research-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/research-development/bg.png");
+    background-size: cover;
+    position: relative;
+    .breadcrumb-inner {
+      background: rgba(22, 195, 233, 0.2);
+    }
+  }
+  &.research-details-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.3)),
+      url("../img/breadcrumb/research-details/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.team-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/team/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.career-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/career/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.partner-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.4)),
+      url("../img/breadcrumb/partner/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.contact-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/contact/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.checkout-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/checkout/bg.png");
+    background-size: cover;
+    position: relative;
+  }
+  &.shop-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.5)),
+      url("../img/breadcrumb/shop/bg.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    .breadcrumb-inner {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+  &.news-area-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/news/bg2.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  &.news-area-1-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/news/bg.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  &.news-area-2-breadcrumb {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+      url("../img/breadcrumb/news/bg3.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+}

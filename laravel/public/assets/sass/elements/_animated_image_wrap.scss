@@ -1,0 +1,89 @@
+
+.animated-img-box {
+  display: inline-block;
+  text-align: center;
+  .img-wrap{
+    display: inline-block;
+    position: relative;
+    img {
+      border-radius: 50%;
+    }
+    &::before{
+      display: block;
+      content: "";
+      height: 105%;
+      width: 110%;
+      background: #5ED4F0;
+      position: absolute;
+      z-index: -1;
+      border-radius: 40%;
+      left: -5%;
+      top: -5%;
+      animation: animatebg 7s linear infinite;
+    }
+    &::after{
+      display: block;
+      content: "";
+      height: 120%;
+      width: 110%;
+      background: rgba(94, 211, 240, 0.527);
+      position: absolute;
+      z-index: -1;
+      border-radius: 45%;
+      left: -5%;
+      top: -10%;
+      transform: rotate(45deg);
+      animation: animatebg 10s linear infinite;
+    }
+
+  }
+  
+  p {
+    padding-top: 30px;
+  }
+  
+}
+
+.animated-img-area-2 {
+  .animated-img-box-2 {
+    position: relative;
+    max-width: 350px;
+    z-index: 1;
+    display: inline-block;
+    img {
+      border-radius: 50%;
+    }
+    &::before {
+      content: "";
+      display: block;
+      height: 120%;
+      width: 120%;
+      background-image: url('../img/investor/animate1.png');
+      z-index: -1;
+      position: absolute;
+      left: -10%;
+      top: 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: #1aabcf;
+      -webkit-animation: none;
+      animation: none;
+      animation: animatebg 10s linear infinite;
+    }
+    &::after {
+      content: "";
+      display: block;
+      height: 140%;
+      width: 140%;
+      background-image: url('../img/investor/animate2.png');
+      z-index: -2;
+      position: absolute;
+      left: -20%;
+      top: -16%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      -webkit-animation: none;
+      animation: animatebg 15s linear infinite;
+    }
+  }
+}

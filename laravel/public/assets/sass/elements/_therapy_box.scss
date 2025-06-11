@@ -1,0 +1,23 @@
+.therapy-box {
+  text-align: center;
+  margin-bottom: 30px;
+  .icon-wrap {
+    padding: 50px;
+    position: relative;
+    background-image: url("../img/therapy/icon-shape2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    i {
+      font-size: 40px;
+      color: var(--heading-color);
+    }
+  }
+  .content-wrap {
+    padding-top: 30px;
+    p {
+      max-width: 80%;
+      margin: auto;
+    }
+  }
+}

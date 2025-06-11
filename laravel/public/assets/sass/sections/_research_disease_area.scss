@@ -1,0 +1,52 @@
+.research-diasease-area {
+  .research-diasease {
+    .img-wrap {
+      img{
+        border-radius: 15% 0 0 0;
+        box-shadow: 0 2px 10px #15c0e873;
+      }
+    }
+    .content-wrap {
+      position: relative;
+      .title {
+      }
+      .sub-title {
+        padding: 10px 0;
+      }
+      p {
+      }
+      ul {
+        padding: 0;
+        li {
+          font-weight: 700;
+          list-style: none;
+          position: relative;
+          padding-left: 20px;
+          margin-bottom: 15px;
+          &:after {
+            height: 10px;
+            width: 10px;
+            background: #777777;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            border-radius: 50%;
+          }
+        }
+      }
+      .animated-item {
+        left: 80%;
+        bottom: 5%;
+        &.item-2 {
+          left: 65%;
+          bottom: 25%;
+        }
+        &.item-3 {
+          left: 75% ;
+          bottom: 82%;
+        }
+      }
+    }
+  }
+}

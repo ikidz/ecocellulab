@@ -1,0 +1,91 @@
+/* ----------------------------------
+		:: => About Us Section
+---------------------------------- */
+.Technologies-area {
+  .img-wrap {
+    img {
+      // border-radius: 0 50px 0 0;
+    }
+  }
+  .content-wrapper {
+    position: relative;
+    .text-wrapper {
+      .sub-title {
+        max-width: 80%;
+        margin-bottom: 30px;
+      }
+      p {
+        max-width: 80%;
+      }
+    }
+
+    .animated-item {
+      bottom: -10%;
+      &.item-2 {
+        left: 60%;
+        bottom: 5%;
+      }
+      &.item-3 {
+        left: 85%;
+        bottom: 80%;
+      }
+    }
+    
+  }
+  .animated-image-area {
+    .main-img {
+      img {
+      }
+    }
+
+    .animated-img-box {
+      position: absolute;
+      left: 5%;
+      top: 35%;
+      z-index: 1;
+      &.item-2 {
+        left: 45%;
+        top: 7%;
+      }
+      &.item-3 {
+        left: 38%;
+        top: 52%;
+      }
+    }
+  }
+  &.style-2 {
+    .img-wrap {
+      img {
+        border-radius: 0 70px 0 0;
+      }
+    }
+    .text-wrapper {
+      .sub-title {
+        max-width: 90%;
+      }
+      p {
+        max-width: 90%;
+      }
+    }
+  }
+  &.with-bg {
+    background-image: url("../img/technology/bg3.svg");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 40%;
+  }
+}
+// .Technologies-area-2 {
+//   background-image: url("../img/technology/bg3.svg");
+//   background-repeat: no-repeat;
+//   background-position: top right;
+//   background-size: contain;
+//   .animated-images {
+//     position: relative;
+//     z-index: 1;
+//     padding: 60px;
+
+//     .animated-img-box {
+//     }
+//   }
+// }

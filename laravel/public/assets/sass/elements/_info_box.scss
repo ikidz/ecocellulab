@@ -1,0 +1,16 @@
+.info-box{
+    text-align: center;
+    
+    .pulse-icon{
+        height: 35px;
+        width: 35px;
+        line-height: 35px;
+        background: var(--main-color-one);
+        color: var(--white);
+        display: inline-block;
+    }
+    p{
+        margin-top: 20px;
+    }
+
+}

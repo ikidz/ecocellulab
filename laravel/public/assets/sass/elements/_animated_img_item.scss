@@ -1,0 +1,61 @@
+.animated-item {
+  display: inline-block;
+  position: absolute;
+  left: 40%;
+  bottom: 0%;
+  z-index: 0;
+
+  .animate-img {
+    position: relative;
+    padding: 20px;
+    max-width: 120px;
+    text-align: center;
+    img {
+         animation: spin 10s linear infinite;
+    }
+    &::after {
+      content: "";
+      display: block;
+      background-image: url("../img/technology/animated-bg3.svg");
+      height: 100%;
+      background-repeat: no-repeat;
+      width: 100%;
+      background-position: center;
+      background-size: contain;
+      left: 0;
+      top: 0;
+      position: absolute;
+      animation: spin 5s linear infinite;
+      z-index: -1;
+    }
+    &.small-size{
+      max-width: 80px;
+    }
+    &.small-size-2{
+      max-width: 100px;
+    }
+  }
+
+  &.item-2 {
+    left: 60%;
+    bottom: 10%;
+  }
+  &.item-3 {
+    left: 80%;
+    bottom: 70%;
+  }
+
+  &.style-2 {
+    .animate-img {
+      img {
+      }
+      &::after {
+        height: 135%;
+        width: 135%;
+        left: -24%;
+        top: -12%;
+        background-image: url("../img/news/animate-bg.svg");
+      }
+    }
+  }
+}

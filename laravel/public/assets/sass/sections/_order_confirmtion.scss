@@ -1,0 +1,237 @@
+.billing-section {
+  background: #f5fdfe;
+}
+
+.billing-title {
+  .section-title {
+    .title {
+      color: white;
+    }
+  }
+}
+.billing-confirmation-area {
+}
+.card-img-details {
+  padding: 40px 30px;
+  .card-logo {
+    border: 1px solid grey;
+    padding: 15px 10px;
+    justify-content: space-around;
+    display: flex;
+    img {
+      width: auto;
+      height: 30px;
+    }
+  }
+  .payment-card-img {
+    padding: 80px 60px;
+    display: flex;
+    position: relative;
+    .card-raw {
+      z-index: 1;
+    }
+    .card-bg {
+      position: absolute;
+      z-index: 0;
+    }
+  }
+}
+.user-info {
+  .user-form {
+    padding: 40px 30px;
+  }
+  .form-group {
+    margin-bottom: 30px;
+    position: relative;
+
+    .form-control {
+      border-radius: 0;
+      width: 100%;
+      border: 1px solid #d6d6d6;
+      font-size: 14px;
+      height: 40px;
+      color: #000;
+    }
+    .materials {
+      position: relative;
+      height: 40px;
+      color: #bebebe;
+      background: transparent;
+      border-radius: 0;
+      > select {
+        width: 100%;
+        height: 37px;
+        background: transparent;
+        border: 0;
+        color: #858585;
+        appearance: none;
+        z-index: 1;
+        border: 1px solid #d6d6d6;
+        padding-left: 10px;
+        font-size: 16px;
+      }
+
+      .select-arrow {
+        position: absolute;
+        z-index: 0;
+        border: 8px solid transparent;
+        border-bottom: 0;
+        right: 11px;
+        &:nth-child(2) {
+          top: 12px;
+          border-top-color: #bebebe;
+        }
+        &:nth-child(3) {
+          top: 12px;
+          border-top-color: white;
+        }
+      }
+    }
+    .nice-select {
+      -webkit-tap-highlight-color: transparent;
+      background-color: #fff;
+      border-radius: 5px;
+      border: solid 1px #d6d6d6;
+      box-sizing: border-box;
+      clear: both;
+      cursor: pointer;
+      display: block;
+      float: left;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: normal;
+      height: 42px;
+      line-height: 40px;
+      outline: none;
+      padding-left: 18px;
+      padding-right: 30px;
+      position: relative;
+      text-align: left !important;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      white-space: nowrap;
+      width: 100%;
+      color: #555758;
+      &:focus {
+        border: 1px solid var(--hover-color);
+      }
+    }
+  }
+  .check-box {
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      color: #1d1d1d;
+      user-select: none;
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      .checkmark {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        height: 13px;
+        width: 13px;
+        border: 1px solid #a5a5a5;
+      }
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 0px;
+      top: 0px;
+      width: 11px;
+      height: 11px;
+      background: #cfcfcf;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+  .submit-btn {
+    font-weight: 500;
+    font-size: 17px;
+    span {
+      display: inline-flex;
+      .pay {
+        padding: 0 40px;
+      }
+    }
+  }
+}
+.notes-info {
+  .check-box {
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 25px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 25px;
+      line-height: 35px;
+      font-weight: 600;
+      color: var(--heading-color);
+      font-family: var(--heading-font);
+      margin-bottom: 32px;
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      .checkmark {
+        position: absolute;
+        top: 12px;
+        left: 0;
+        height: 13px;
+        width: 13px;
+        border: 1px solid #a5a5a5;
+      }
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 0px;
+      top: 0px;
+      width: 11px;
+      height: 11px;
+      background: #cfcfcf;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+}
+
+.note-form {
+  .form-group {
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: 10px;
+    }
+  }
+}

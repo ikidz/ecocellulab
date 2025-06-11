@@ -1,0 +1,154 @@
+.news-area {
+  position: relative;
+  .animated-item {
+    left: 13%;
+    bottom: 20%;
+    &.item-2 {
+      left: 80%;
+      bottom: 70%;
+    }
+  }
+
+  .slick-dots li button:before {
+    font-size: 15px;
+    opacity: 0.3;
+  }
+  .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: var(--main-color-one);
+  }
+  .slick-dots {
+    bottom: -30px;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
+  }
+  .slick-list {
+    padding: 0 0 10px;
+  }
+
+  .slick-prev,
+  .slick-next {
+    font-size: 40px;
+    color: #777777;
+    transition: all 0.6s;
+    &:hover {
+      color: #15c0e8;
+    }
+  }
+  .slick-prev {
+    left: -80px;
+    &::after {
+      content: "";
+      height: 32px;
+      width: 32px;
+      position: absolute;
+      border-radius: 50%;
+      top: -6px;
+      left: 55%;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all 0.6s;
+      -o-transition: all 0.6s;
+      transition: all 0.6s;
+      border: 3px solid #15c0e8;
+    }
+    &:hover {
+      &::after {
+        left: -40%;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  .slick-next {
+    right: -60px;
+    &::after {
+      content: "";
+      height: 32px;
+      width: 32px;
+      position: absolute;
+      border-radius: 50%;
+      top: -6px;
+      left: 0%;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all 0.6s;
+      -o-transition: all 0.6s;
+      transition: all 0.6s;
+      border: 3px solid #15c0e8;
+    }
+    &:hover {
+      &::after {
+        left: 85%;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+.tab-area {
+  .news-filter {
+    position: relative;
+    z-index: 0;
+    .animated-item {
+      left: 18%;
+      bottom: 97%;
+      &.item-2 {
+        left: 10%;
+        bottom: -100px;
+      }
+    }
+    &.home4-news-filter {
+      .animated-item {
+        left: 80%;
+        bottom: 96%;
+        &.item-2 {
+          left: -12%;
+          bottom: 10%;
+        }
+        &.item-3 {
+          left: inherit;
+          bottom: 70%;
+          right: -10%;
+        }
+      }
+    }
+  }
+
+  .element-item {
+    position: relative;
+    z-index: 1;
+  }
+
+  .button-group {
+    text-align: center;
+  }
+
+  .button {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: no-repeat;
+    font-size: 20px;
+    color: #777777;
+    margin: 0 15px;
+  }
+
+  .button:hover {
+    color: var(--main-color-one);
+  }
+
+  .button:active,
+  .button.is-checked {
+    color: var(--main-color-one);
+  }
+
+  &.team-area-2 {
+    background-image: none;
+  }
+  &.news-area-2 {
+    background-image: none;
+  }
+}

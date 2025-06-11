@@ -1,0 +1,107 @@
+/*-------------------------
+    Footer Area
+-------------------------*/
+
+
+.copyright-area {
+  background-color: #1e2a29;
+  
+}
+.copyright-area-inner{
+  .qry-copy {
+    color: #fff;
+    font-size: 0.8rem;
+    i {
+      color: var(--main-color-one);
+    }
+    a {
+      font-weight: 500;
+    }
+  }
+}
+
+.footer-area {
+  .footer-top {
+    background-image: url("../img/footer/bg1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    &.style-2 {
+      background-image: url("../img/footer/bg2.svg");
+
+      .footer-widget {
+        .widget-title {
+          color: var(--heading-color);
+        }
+      }
+      .widget.footer-widget p,
+      .footer-widget.widget_tag_cloud .tagcloud a,
+      .widget.footer-widget.widget_calendar caption,
+      .widget.footer-widget.widget_calendar th,
+      .widget.footer-widget.widget_calendar td {
+        color: var(--paragraph-color);
+      }
+
+      .widget.footer-widget ul li a,
+      .widget.footer-widget ul li {
+        color: var(--paragraph-color);
+      }
+      .widget.footer-widget ul li a:hover {
+        color: var(--hover-color);
+      }
+    }
+    &.style-3 {
+      background: #14262C;
+      .footer-widget-content-wrapper {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        .footer-logo {
+          width: 140px;
+          margin: auto;
+        }
+        .widget {
+          margin-bottom: 0;
+          .footer-link {
+            margin-bottom: 10px;
+            li {
+              display: inline-block;
+              border-right: 1px solid;
+              padding-right: 25px;
+              
+              + li {
+                margin-left: 25px;
+              }
+              a{
+                font-size: 20px;
+              }
+              &:last-child{
+                border: none;
+                padding: 0;
+              }
+            }
+          }
+        }
+        .copyright-area-inner{
+          .qry-copy{
+            color: rgba(239, 239, 239, 0.5);
+          }
+        }
+      }
+      &.style-4 {
+        background-image: url('../img/footer/bg3.svg');
+        background-color: unset;
+        .footer-icon {
+          a{
+            color: var(--main-color-one);
+            &:hover{
+              color: #fff;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+

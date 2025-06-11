@@ -1,0 +1,74 @@
+/* Hotspot */
+
+#hotspotImg {
+  margin: auto;
+  position: relative;
+  .hot-spot {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 0px;
+    left: -65px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: ripple-white 2s  infinite;
+    animation: ripple-white 2s  infinite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    .tooltip {
+      background-color: rgba(21, 193, 232, 0.8);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      color: #fff;
+      display: none;
+      opacity: 1;
+      left: -170px;
+      padding: 15px;
+      position: absolute;
+      bottom: 15px;
+      width: 280px;
+      z-index: 999;
+
+      .img-row {
+        padding: 10px;
+        text-align: center;
+      }
+      .text-row {
+        text-align: center;
+
+        p {
+          color: #fff;
+        }
+      }
+    }
+
+    &.item-2 {
+      left: -365px;
+      bottom: 0;
+      top: inherit;
+
+      .tooltip {
+        left: -210px;
+        bottom: -195px;
+        padding: 0;
+        width: 380px;
+      }
+      .text-with-img {
+        display: flex;
+        align-items: center;
+        img {
+          width: 50%;
+          height: auto;
+        }
+        p {
+          width: 50%;
+          color: #fff;
+          padding: 15px;
+        }
+      }
+    }
+  }
+}

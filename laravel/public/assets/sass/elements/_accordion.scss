@@ -1,0 +1,115 @@
+/*-----------------------------
+    Accordion title
+-----------------------------*/
+.accordian-title {
+  .title {
+    text-align: center;
+    text-transform: capitalize;
+  }
+}
+
+/*-----------------------------
+    Accordion title end
+-----------------------------*/
+
+/*-----------------------------
+    Accordion Item
+-----------------------------*/
+.accordion-wrapper {
+  .card {
+
+    + .card {
+    }
+    border: 1px solid var(--bg-3);
+    background-color: transparent;
+    margin-bottom: 30px;
+    .card-header {
+      padding: 0;
+      border: 1px solid #C0F1FC;
+      background: #fff;
+      a {
+        display: block;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 500;
+        color: #fff;
+        padding: 14px 75px 14px 15px;
+        cursor: pointer;
+        position: relative;
+        font-family: var(--primary-font);
+        border: none !important;
+        text-transform: capitalize;
+        background: #15C0E8;
+        &:after {
+          position: absolute;
+          right: 30px;
+          top: 18px;
+          content: "\f134";
+          font-family: "Flaticon";
+          font-size: 15px;
+          font-weight: 700;
+          border: 1px solid var(--light-black-10);
+          border-radius: 50%;
+          height: 20px;
+          width: 20px;
+          line-height: 20px;
+          text-align: center;
+          color: var(--light-black-10);
+        }
+        &[aria-expanded="false"] {
+          background: #fff;
+          color: var(--heading-color);
+          &:after {
+            content:  "\f108";
+          }
+        }
+      }
+    }
+    .card-body {
+      padding:30px;
+      border: 1px solid #C0F1FC;
+      border-top: none;
+      p{
+        margin: 0;
+      }
+    }
+  }
+  &.offcanvas-accordion-area {
+    padding: 30px 0;
+    .card {
+      + .card {
+        margin-top: 5px;
+      }
+      background-color: transparent;
+      border: none;
+      border-top: 1px solid var(--light-black-10);
+      border-radius: 0;
+      .card-header {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        a {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 400;
+          color: var(--paragraph-color);
+          padding: 5px 0;
+          border: none !important;
+          background-color: transparent;
+          &:after {
+            display: none;
+          }
+        }
+      }
+      .card-body {
+        background-color: transparent;
+        padding: 0px 0 10px;
+        .payment-way{
+            p{
+                padding: 5px 0;
+            }
+        }
+      }
+    }
+  }
+}

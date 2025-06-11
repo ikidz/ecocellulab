@@ -1,0 +1,52 @@
+.building-pipeline-area {
+  .content-part {
+    .highlight {
+      font-weight: 700;
+      strong {
+        color: #263534;
+      }
+    }
+  }
+  .img-part {
+    text-align: right;
+    position: relative;
+    img {
+    }
+    .circle {
+        height: 250px;
+        width: 250px;
+        display: inline-block;
+        position: absolute;
+        left: 20px;
+        bottom: -110px;
+        z-index: -1;
+      .circle-1 {
+        height: 250px;
+        width: 250px;
+        border: 1px solid #98ECFF;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .circle-2 {
+            height: 200px;
+              width: 200px;
+              border: 1px solid #98ECFF;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          .circle-3 {
+              height: 150px;
+              width: 150px;
+              border: 1px solid #98ECFF;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

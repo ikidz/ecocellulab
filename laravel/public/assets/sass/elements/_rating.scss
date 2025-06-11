@@ -1,0 +1,13 @@
+.star-ratings{
+    i{
+        color: #AEAEAE;
+        cursor: pointer;
+        
+    }
+    &.checked{
+        i{
+            color: #15C0E8;
+        }
+        
+    }
+}

@@ -1,0 +1,44 @@
+/*----------------------
+    Counterup Area
+-----------------------*/
+.counterup-area {
+  .single-counter-item {
+    text-align: center;
+    margin-bottom: 30px;
+
+    .count-icon {
+      font-size: 40px;
+      color: var(--white);
+      background: var(--main-color-one);
+      height: 90px;
+      width: 90px;
+      display: inline-block;
+      border-radius: 50%;
+      line-height: 90px;
+      box-shadow: 0 0 8px #38d9ffc7;
+    }
+    .count-num {
+      font-size: 40px;
+      line-height: 50px;
+      color: black;
+      font-weight: 600;
+      margin-top: 10px;
+      padding: 10px 0;
+      background-image: url("../img/about/counter-bg.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      &.plus {
+        &::after {
+          content: "+";
+          font-size: 40px;
+          color: black;
+          font-weight: 600;
+        }
+      }
+    }
+    .title {
+      color: #777777;
+      font-family: var(--body-font);
+    }
+  }
+}

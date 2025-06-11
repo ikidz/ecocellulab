@@ -1,0 +1,16 @@
+.flaticon-icon.style-01 {
+  background: #474747;
+  margin-right: 100px;
+  text-align: center;
+  padding: 35px 0;
+  color: var(--white); }
+  .flaticon-icon.style-01 .icon i,
+  .flaticon-icon.style-01 .icon span {
+    margin: 15px; }
+
+.flaticon-icon.style-02 {
+  color: #474747; }
+  .flaticon-icon.style-02 .icon {
+    margin-bottom: 40px; }
+    .flaticon-icon.style-02 .icon i {
+      padding: 0px 25px; }

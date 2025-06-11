@@ -1,0 +1,138 @@
+/* ------------------------------------
+Main CSS
+-------------------------------------*/
+.navbar-nav li {
+  font-size: 16px; }
+
+.slider-content-wrap .title {
+  line-height: 1.2; }
+
+.slider-content-wrap p {
+  font-size: 16px; }
+
+.team-item .title {
+  margin-top: 20px; }
+
+.news-item .content-wrap .published-date {
+  margin-bottom: 10px; }
+
+h3 {
+  line-height: 1.4; }
+
+.info-box p {
+  margin-top: 25px; }
+
+.news-item .btn-wrapper {
+  margin-top: 30px; }
+
+.meet-team-area .slick-dots {
+  bottom: 0; }
+
+.team-item {
+  margin-bottom: 50px; }
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0; }
+
+.slick-dots {
+  text-align: center;
+  line-height: 1;
+  position: inherit; }
+
+.slick-dots li {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: var(--paragraph-color);
+  margin: 0px 5px;
+  border-radius: 100%;
+  opacity: 0.3; }
+
+.slick-dots li.slick-active {
+  background-color: var(--main-color-one);
+  opacity: 1; }
+
+.slick-dots li button {
+  display: none; }
+
+.meet-team-area .slick-dots {
+  bottom: inherit; }
+
+.showcase-follow-icon {
+  left: 40%; }
+
+.showcase2-area {
+  height: 90vh; }
+
+.news-item.style-2 .content-wrap .news-info .date-part {
+  width: 15%;
+  height: 90px; }
+
+.news-item.style-2 .content-wrap .news-info .date-part .post-date {
+  font-size: 30px; }
+
+.news-item.style-3 .title {
+  font-size: 24px;
+  margin-bottom: 20px; }
+
+.pagination ul li .page-numbers {
+  padding: 3px 10px; }
+
+.research-details h2,
+.research-diasease h2 {
+  font-size: 30px; }
+
+.breadcrumb-area .breadcrumb-inner.dark-blue {
+  background: rgba(21, 193, 232, 0.8); }
+
+.contact-area-2 .content-wrapper .text-wrapper {
+  background: rgba(21, 193, 232, 0.8); }
+
+.breadcrumb-area .breadcrumb-inner {
+  background: rgba(21, 193, 232, 0.7); }
+
+.nice-select .option {
+  margin: 0; }
+
+.product-single-item .title {
+  font-size: 18px; }
+
+.date-part strong {
+  margin-right: 3px; }
+
+.news-item .title,
+.news-item .title a,
+.product-single-item .title,
+.product-single-item .title a {
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+
+.news-item .title a:hover,
+.product-single-item .title a:hover {
+  color: var(--main-color-one); }
+
+.breadcrumb-area .breadcrumb-inner .page-title {
+  color: #fff; }
+
+.breadcrumb-area .page-list li {
+  color: #fff; }
+
+.product-single-item .title a:hover {
+  color: var(--main-color-one); }
+
+.therapy-box .content-wrap p {
+  max-width: 100%; }
+
+.slick-dots li {
+  background-color: #ddd;
+  margin: 3px; }
+
+.pulse-icon.pulse {
+  -webkit-animation: none;
+  animation: none; }
+
+.research-diasease-area .research-diasease .img-wrap img {
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none; }

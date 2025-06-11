@@ -1,0 +1,42 @@
+.vision-area {
+  .img-part {
+    position: relative;
+    .animated-item {
+      left: 40%;
+      top: -20%;
+      &.item-2 {
+        left: 20%;
+        bottom: -20%;
+        top: inherit;
+      }
+    }
+  }
+  .content-part {
+    background: #fafeff;
+    height: 100%;
+    padding: 60px;
+    z-index: -1;
+    position: relative;
+    .animated-item {
+        left: 30%;
+        top: -20%;
+        
+        &.item-2 {
+          left: 60%;
+          top: -20%;
+        }
+      }
+  }
+}
+.vision-item {
+  + .vision-item {
+    margin-top: 30px;
+  }
+
+  .title {
+    margin-bottom: 15px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}

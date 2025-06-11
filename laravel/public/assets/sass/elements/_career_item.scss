@@ -1,0 +1,45 @@
+.career-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #a2edff;
+  padding: 30px;
+
+  + .career-item {
+    margin-top: 30px;
+  }
+  .description-part {
+    width: 40%;
+    h5.title {
+      margin-bottom: 20px;
+  }
+    
+  }
+  .date-part {
+    width: 40%;
+    padding: 0 20px;
+    i{
+      color: var(--main-color-one);
+      margin-right: 5px;
+    }
+  }
+  .btn-wrapper {
+    width: 20%;
+    text-align: center;
+    margin: 0;
+  }
+}
+.careet-meta {
+  ul {
+    padding: 0;
+    li {
+      list-style: none;
+      i{
+        color: var(--main-color-one);
+        font-size: 16px;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+    }
+  }
+}

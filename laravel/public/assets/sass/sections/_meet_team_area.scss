@@ -1,0 +1,90 @@
+.meet-team-area {
+  position: relative;
+  .rel-cls {
+    position: relative;
+  }
+  .meet-team-slider-controls {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    .slick-prev,
+    .slick-next {
+      font-size: 40px;
+      color: #777777;
+      transition: all 0.6s;
+      &:hover {
+        color: #15c0e8;
+      }
+    }
+    .slick-prev {
+      left: -45px;
+      &::after {
+        content: "";
+        height: 32px;
+        width: 32px;
+        position: absolute;
+        border-radius: 50%;
+        top: -6px;
+        left: 55%;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.6s;
+        -o-transition: all 0.6s;
+        transition: all 0.6s;
+        border: 3px solid #15c0e8;
+      }
+      &:hover {
+        &::after {
+          left: -40%;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    .slick-next {
+      right: -45px;
+      &::after {
+        content: "";
+        height: 32px;
+        width: 32px;
+        position: absolute;
+        border-radius: 50%;
+        top: -6px;
+        left: 0%;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.6s;
+        -o-transition: all 0.6s;
+        transition: all 0.6s;
+        border: 3px solid #15c0e8;
+      }
+      &:hover {
+        &::after {
+          left: 85%;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .slick-dots li button:before {
+    font-size: 15px;
+    opacity: 0.3;
+  }
+  .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: var(--main-color-one);
+  }
+  .slick-dots {
+    bottom: -30px;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    display: none;
+  }
+
+  &.style-2 {
+    background: none;
+  }
+}
