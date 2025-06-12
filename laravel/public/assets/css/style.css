@@ -6131,12 +6131,14 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   position: relative;
   min-height: 650px;
   overflow: hidden;
+  z-index: 0;
 }
 .showcase3-area .showcase3-overlay {
   position: absolute;
   height: 100%;
   width: 100%;
   background: rgba(38, 53, 52, 0.4);
+  z-index: 1;
 }
 .showcase3-area .showcase3-main {
   position: relative;
@@ -6144,6 +6146,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   width: 100%;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 .showcase3-area .showcase3-main .content-part .showcase3-slider {
   margin-bottom: 0;
@@ -6194,12 +6197,14 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   left: 6.7%;
   -webkit-transform: translateX(-93.3%);
   transform: translateX(-93.3%);
+  z-index: 2;
 }
 .showcase3-area .showcase-slider-dot-controls {
   position: absolute;
   top: 55%;
   right: 8%;
   transform: translateY(-55%);
+  z-index: 2;
 }
 .showcase3-area button.slick-prev,
 .showcase3-area .slick-arrow {
@@ -6272,6 +6277,18 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   border: 1px solid rgb(0, 0, 0);
   height: 12px;
   width: 12px;
+}
+.showcase3-area .video-background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.showcase3-area .video-background video {
+  width: auto;
+  height: 100vh;
 }
 .showcase4-area {
   background: url("/assets/img/home4-slider/bg.png");
@@ -7751,6 +7768,7 @@ h3 {
 }
 .showcase-follow-icon {
   left: 40%;
+  z-index: 2;
 }
 .showcase2-area {
   height: 90vh;

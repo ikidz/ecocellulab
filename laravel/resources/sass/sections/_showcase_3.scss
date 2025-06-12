@@ -6,11 +6,13 @@
   position: relative;
   min-height: 650px;
   overflow: hidden;
+  z-index:0;
   .showcase3-overlay {
     position: absolute;
     height: 100%;
     width: 100%;
     background: rgba(38, 53, 52, 0.4);
+    z-index:1;
   }
 
   .showcase3-main {
@@ -19,6 +21,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    z-index:2;
     .content-part {
       .showcase3-slider {
         margin-bottom: 0;
@@ -77,12 +80,14 @@
     left: 6.7%;
     -webkit-transform: translateX(-93.3%);
     transform: translateX(-93.3%);
+    z-index:2;
   }
   .showcase-slider-dot-controls {
     position: absolute;
     top: 55%;
     right: 8%;
     transform: translateY(-55%);
+    z-index:2;
   }
   button.slick-prev,
   .slick-arrow {
@@ -160,5 +165,19 @@
     border: 1px solid rgb(0, 0, 0);
     height: 12px;
     width: 12px;
+  }
+
+  .video-background{
+    width:100%;
+    height:100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    video{
+      width:auto;
+      height:100vh;
+    }
   }
 }
