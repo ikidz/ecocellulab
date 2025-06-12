@@ -3350,15 +3350,15 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   padding: 0;
   margin: 0;
 }
-.breadcrumb .page-list li .current {
+.breadcrumb .page-list li.current {
   font-weight: bold;
 }
-.breadcrumb .page-list li ::after {
+.breadcrumb .page-list li::after {
   content: ">";
   margin: 0 0.5rem;
   color: #999;
 }
-.breadcrumb .page-list li :last-child::after {
+.breadcrumb .page-list li:last-child::after {
   content: none;
 }
 /* .breadcrumb - End */
