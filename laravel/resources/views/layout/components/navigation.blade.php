@@ -1,10 +1,10 @@
 <div class="total-content">
     <div class="header-section">
 
-        
+        <?php /*
         <!-- Mobile Search -->
         <div class="click-mobile-search">
-            <form action="index.html" class="search-form">
+            <form action="{{ route('home.index') }}" class="search-form">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Type something to search">
                 </div>
@@ -15,7 +15,7 @@
         <!-- search Popup -->
         <div class="body-overlay" id="body-overlay"></div>
         <div class="search-popup" id="search-popup">
-            <form action="index.html" class="search-form">
+            <form action="{{ route('home.index') }}" class="search-form">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search.....">
                 </div>
@@ -23,6 +23,7 @@
             </form>
         </div>
         <!-- Popup Section -->
+        */ ?>
 
         <!--info-popup start-->
         <div class="info-popup"></div>
@@ -49,8 +50,8 @@
                                 <p class="info-popup-content__text-is">8.00 am - 9.00 pm</p>
                             </div>
                             <div class="info-popup-content__text-footer">
-                                <p class="info-popup-content__text-is">+89046723901</p>
-                                <p class="info-popup-content__text-is">Jozicular@gmail.com</p>
+                                <p class="info-popup-content__text-is">+(66) 81 659 9949</p>
+                                <p class="info-popup-content__text-is">pc.ceo@ecocellulab.com</p>
                             </div>
                         </div>
                     </div>
@@ -81,7 +82,7 @@
                             </div>
                             <div class="location-popup-content__text-body">
                                 <span class="location-popup-content__text-is">
-                                    Collins Street West 8007, <br> San Fransico, United States.
+                                    20 / 295 Country Park 2 Village Moo 2, Liang Nong Mon Road, Huaikapi, Mueang Chonburi, Chonburi 20000
                                 </span>
                             </div>
                             <div class="btn-wrapper">
@@ -116,7 +117,7 @@
                                 </h5>
                             </div>
                             <div class="message-popup-content__text-body">
-                                <form class="popup-form" action="index.html">
+                                <form class="popup-form" action="{{ route('home.index') }}">
                                     <div class="form-group">
                                         <input id="email-two-popup" type="text" class="form-control"
                                             placeholder="Email">
@@ -141,12 +142,12 @@
             <div class="container nav-container">
                 <div class="responsive-mobile-menu">
                     <div class="logo-wrapper d-none d-lg-block">
-                        <a href="index.html" class="logo">
+                        <a href="{{ route('home.index') }}" class="logo">
                             <img src="{{ asset('assets/img/logo/logo.png') }}" alt="logo">
                         </a>
                     </div>
                     <div class="logo-wrapper d-block d-lg-none">
-                        <a href="index.html" class="logo">
+                        <a href="{{ route('home.index') }}" class="logo">
                             <img src="{{ asset('assets/img/logo/logo2.png') }}" alt="logo">
                         </a>
                     </div>
@@ -167,9 +168,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="lifeomic_main_menu">
                     <ul class="navbar-nav">
-                        <li class="current-menu-item"><a href="{{ route('home.index') }}">Home</a></li>
-                        <li class=""><a href="{{ route('article.aboutus') }}">About us</a></li>
-                        <li class=""><a href="{{ route('article.research') }}">Research</a></li>
+                        <li class="{{ ( request()->routeIs('home.index') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('home.index') }}">Home</a></li>
+                        <li class="{{ ( request()->routeIs('article.aboutus') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('article.aboutus') }}">About us</a></li>
+                        <li class="{{ ( request()->routeIs('article.research') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('article.research') }}">Research</a></li>
                         <?php /*
                         <li class="menu-item-has-children"><a href="shop.html">Shop</a>
                             <ul class="sub-menu">
@@ -205,7 +206,7 @@
                             </ul>
                         </li>
                         */ ?>
-                        <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                        <li class="{{ ( request()->routeIs('contact.index') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('contact.index') }}">Contact</a></li>
                     </ul>
                 </div>
                 <?php /*
