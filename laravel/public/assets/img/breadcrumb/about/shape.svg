@@ -1,3 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="400" viewBox="0 0 1920 400">
-  <path id="Subtraction_2" data-name="Subtraction 2" d="M1015.376,400H0V0H1017.68L873.663,245.657,1015.378,400v0h0ZM1920,400h-.207l.207-86.459ZM1920,.033h0L1057.662,0H1920V.033Z" transform="translate(0 0)" fill="#145574"/>
+<svg width="1920" height="400" viewBox="0 0 1920 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3_2)">
+<path d="M1015.38 400H0V0H1017.68L873.663 245.657L1015.38 400H1015.38ZM1920 400H1919.79L1920 313.541V400ZM1920 0.033L1057.66 0H1920V0.033Z" fill="#066F51"/>
+</g>
+<defs>
+<clipPath id="clip0_3_2">
+<rect width="1920" height="400" fill="white"/>
+</clipPath>
+</defs>
 </svg>

@@ -56,7 +56,7 @@
 
 .contact-area-2 {
   .content-wrapper {
-    background: url("/assets/img/contact/bg2.png");
+    background: transparent;
     display: flex;
     height: 100%;
     background-repeat: no-repeat;
@@ -68,7 +68,7 @@
     }
     .text-wrapper {
       width: 50%;
-      background: rgba(21, 193, 232, 0.342);
+      background: rgba(33, 167, 135, 0.342);
       padding: 60px 60px 35px;
     }
     .contact-from {
