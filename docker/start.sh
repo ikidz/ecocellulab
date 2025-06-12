@@ -24,6 +24,14 @@ php artisan route:cache
 php artisan view:cache
 php artisan migrate || echo "Migration failed but continuing..."
 
+# Vite Dev Server (only in local environment)
+if [ "$APP_ENV" = "local" ]; then
+    echo "🚀 Starting Vite development server..."
+    cd /var/www/html
+    npm install --no-audit --silent || true
+    npm run dev &     # Run in background
+fi
+
 # Start services
 echo "Starting services..."
 php-fpm &    # PHP-FPM as background
