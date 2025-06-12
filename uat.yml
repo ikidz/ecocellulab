@@ -1,0 +1,51 @@
+services:
+  ecocellulab-ua-app:
+    container_name: ecocellulab-ua-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["/start.sh"]
+    volumes:
+      - ./laravel:/var/www/html
+    depends_on:
+      - ecocellulab-ua-db
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST=ecocellulab-ua-db
+      - DB_PORT=3306
+      - DB_DATABASE=ecocellulab_ua_db
+      - DB_USERNAME=ecocellulab_ua_user
+      - DB_PASSWORD=d&4FxqH2n#vZ8uT3
+    ports:
+      - "80"
+    networks:
+      - nginx_proxy
+      - ecocellulab_ua_internal
+
+  ecocellulab-ua-db:
+    container_name: ecocellulab-ua-db
+    image: mysql:8
+    restart: always
+    ports:
+      - "9906:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD:6Tz#pU1mKx!vL9qF
+      MYSQL_DATABASE: ecocellulab_ua_db
+      MYSQL_USER: ecocellulab_ua_user
+      MYSQL_PASSWORD: d&4FxqH2n#vZ8uT3
+    volumes:
+      - ./db_data:/var/lib/mysql
+    networks:
+      - ecocellulab_ua_internal
+
+volumes:
+  ecocellulab_ua_db_data:
+    external: true
+    name: ecocellulab_ua_db_data
+
+networks:
+  nginx_proxy:
+    external: true
+  ecocellulab_ua_internal:
+    name: ecocellulab_ua_internal
+    driver: bridge
