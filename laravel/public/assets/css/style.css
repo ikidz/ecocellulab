@@ -6280,15 +6280,14 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .showcase3-area .video-background {
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
 }
 .showcase3-area .video-background video {
-  width: auto;
-  height: 100vh;
+  width: 100%;
 }
 .showcase4-area {
   background: url("/assets/img/home4-slider/bg.png");
