@@ -7,7 +7,7 @@
     <div class="nav-container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="breadcrumb-inner">
+                <div class="breadcrumb-inner dark-blue">
                     <h2 class="page-title">Research & Development</h2>
                 </div>
             </div>
