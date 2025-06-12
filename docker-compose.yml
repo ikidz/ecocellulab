@@ -20,6 +20,7 @@ services:
       - DB_PASSWORD=ecocellulab_password
     ports:
       - "8080:80"
+      - "5173:5173"
 
   ecocellulab-dev-db:
     container_name: ecocellulab-dev-db
