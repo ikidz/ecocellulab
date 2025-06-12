@@ -5908,7 +5908,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-bottom: -10px;
 }
 .contact-area-2 .content-wrapper {
-  background: transparent;
+  background: #ccc;
   display: flex;
   height: 100%;
   background-repeat: no-repeat;
@@ -5946,7 +5946,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   font-weight: 700;
 }
 .contact-area-2 .content-wrapper .address-wrap .info-box.white-effect p {
-  color: #fff;
+  color: #006C4B;
 }
 .contact-area-2 .content-wrapper .circle-img {
   position: absolute;
