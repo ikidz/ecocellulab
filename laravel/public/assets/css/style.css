@@ -93,11 +93,11 @@ Version: 1.0.0
 # Normalize
 --------------------------------------------------------------*/
 :root {
-  --main-color-one: #15c0e8;
+  --main-color-one: #006C4B;
   --heading-color: #263534;
   --paragraph-color: #666;
   --bg-color: #1e2a29;
-  --hover-color: #039dc0;
+  --hover-color: #2DA78A;
   --white: #fff;
   --red: #f95759;
   --body-font: "Roboto Slab", serif;
@@ -1169,13 +1169,13 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 @keyframes ripple-blue {
   0% {
-    box-shadow: 0 0 0 0 rgba(21, 192, 232, 0.5);
+    box-shadow: 0 0 0 0 rgba(33, 167, 135, 0.5);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(21, 192, 232, 0.6);
+    box-shadow: 0 0 0 10px rgba(33, 167, 135, 0.6);
   }
   100% {
-    box-shadow: 0 0 0 20px rgba(21, 192, 232, 0.1);
+    box-shadow: 0 0 0 20px rgba(33, 167, 135, 0.1);
   }
 }
 .pulse-icon-2 {
@@ -2395,7 +2395,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .team-item .img-warpper .overlay {
   position: absolute;
-  background: rgba(21, 192, 232, 0.6);
+  background: rgba(33, 167, 135, 0.6);
   height: 100%;
   width: 100%;
   display: flex;
@@ -2815,7 +2815,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   content: "";
   height: 105%;
   width: 110%;
-  background: #5ED4F0;
+  background: #21A787;
   position: absolute;
   z-index: -1;
   border-radius: 40%;
@@ -3073,7 +3073,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   cursor: pointer;
 }
 .star-ratings.checked i {
-  color: #15C0E8;
+  color: var(--main-color-one);
 }
 .product-sorting {
   display: flex;
@@ -3201,7 +3201,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   color: #fff;
 }
 .breadcrumb-area .breadcrumb-inner.dark-blue {
-  background: rgba(21, 193, 232, 0.4);
+  background: rgba(0, 108, 75, 0.4);
 }
 .breadcrumb-area .breadcrumb-inner.no-bg {
   background: none;
@@ -4565,7 +4565,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-left: 30px;
 }
 .navbar-area .nav-container .navbar-collapse .navbar-nav li.current-menu-item a {
-  color: var(--main-color-one);
+  color: var(--hover-color);
 }
 .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children {
   position: relative;
@@ -5908,7 +5908,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-bottom: -10px;
 }
 .contact-area-2 .content-wrapper {
-  background: url("/assets/img/contact/bg2.png");
+  background: transparent;
   display: flex;
   height: 100%;
   background-repeat: no-repeat;
@@ -5921,7 +5921,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .contact-area-2 .content-wrapper .text-wrapper {
   width: 50%;
-  background: rgba(21, 193, 232, 0.342);
+  background: rgba(33, 167, 135, 0.342);
   padding: 60px 60px 35px;
 }
 .contact-area-2 .content-wrapper .contact-from {
@@ -6447,7 +6447,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   display: inline-block;
   border-radius: 50%;
   line-height: 90px;
-  box-shadow: 0 0 8px rgba(56, 217, 255, 0.7803921569);
+  box-shadow: 0 0 8px #21A787;
 }
 .counterup-area .single-counter-item .count-num {
   font-size: 40px;
@@ -7774,10 +7774,7 @@ h3 {
   font-size: 30px;
 }
 .breadcrumb-area .breadcrumb-inner.dark-blue {
-  background: rgba(21, 193, 232, 0.8);
-}
-.contact-area-2 .content-wrapper .text-wrapper {
-  background: rgba(21, 193, 232, 0.8);
+  background: rgba(0, 108, 75, 0.4);
 }
 .breadcrumb-area .breadcrumb-inner {
   background: rgba(21, 193, 232, 0.7);
