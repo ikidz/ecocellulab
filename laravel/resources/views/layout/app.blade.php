@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
     <!-- Main Stylesheet -->
     @if (app()->environment('local'))
-        <script type="module" src="http://localhost:5173/resources/js/app.js"></script>
+        <script type="module" src="http://localhost:5173/resources/sass/style.scss"></script>
     @else
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     @endif
