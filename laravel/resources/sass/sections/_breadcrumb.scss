@@ -3,7 +3,7 @@
 ----------------------*/
 .breadcrumb-area {
   padding: 80px 0;
-  background-image: url("../img/breadcrumb/brd.png");
+  background-image: url("/assets/img/breadcrumb/brd.png");
   background-size: cover;
   position: relative;
   overflow-x: hidden;
@@ -77,7 +77,7 @@
   }
 
   &.about-area-breadcrumb {
-    background-image: url("../img/breadcrumb/about/bg.png");
+    background-image: url("/assets/img/breadcrumb/about/bg.png");
     background-position: right;
     position: relative;
     background-size: auto;
@@ -86,32 +86,32 @@
       height: 100%;
       width: 100%;
       position: absolute;
-      background-image: url("../img/breadcrumb/about/shape.svg");
+      background-image: url("/assets/img/breadcrumb/about/shape.svg");
       top: 0;
       left: 0;
     }
   }
   &.faq-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.4)),
-      url("../img/breadcrumb/faq/bg.png");
+      url("/assets/img/breadcrumb/faq/bg.png");
     background-size: cover;
     position: relative;
   }
   &.investor-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.4)),
-      url("../img/breadcrumb/investor/bg.png");
+      url("/assets/img/breadcrumb/investor/bg.png");
     background-size: cover;
     position: relative;
   }
   &.pipeline-area-breadcrumb {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/pipeline/bg.png");
+      url("/assets/img/breadcrumb/pipeline/bg.png");
     background-size: cover;
     position: relative;
   }
   &.research-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/research-development/bg.png");
+      url("/assets/img/breadcrumb/research-development/bg.png");
     background-size: cover;
     position: relative;
     .breadcrumb-inner {
@@ -120,43 +120,43 @@
   }
   &.research-details-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.3)),
-      url("../img/breadcrumb/research-details/bg.png");
+      url("/assets/img/breadcrumb/research-details/bg.png");
     background-size: cover;
     position: relative;
   }
   &.team-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/team/bg.png");
+      url("/assets/img/breadcrumb/team/bg.png");
     background-size: cover;
     position: relative;
   }
   &.career-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/career/bg.png");
+      url("/assets/img/breadcrumb/career/bg.png");
     background-size: cover;
     position: relative;
   }
   &.partner-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.4)),
-      url("../img/breadcrumb/partner/bg.png");
+      url("/assets/img/breadcrumb/partner/bg.png");
     background-size: cover;
     position: relative;
   }
   &.contact-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/contact/bg.png");
+      url("/assets/img/breadcrumb/contact/bg.png");
     background-size: cover;
     position: relative;
   }
   &.checkout-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/checkout/bg.png");
+      url("/assets/img/breadcrumb/checkout/bg.png");
     background-size: cover;
     position: relative;
   }
   &.shop-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.5)),
-      url("../img/breadcrumb/shop/bg.png");
+      url("/assets/img/breadcrumb/shop/bg.png");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -166,23 +166,50 @@
   }
   &.news-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/news/bg2.png");
+      url("/assets/img/breadcrumb/news/bg2.png");
     background-size: cover;
     background-position: center;
     position: relative;
   }
   &.news-area-1-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/news/bg.png");
+      url("/assets/img/breadcrumb/news/bg.png");
     background-size: cover;
     background-position: center;
     position: relative;
   }
   &.news-area-2-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("../img/breadcrumb/news/bg3.png");
+      url("/assets/img/breadcrumb/news/bg3.png");
     background-size: cover;
     background-position: center;
     position: relative;
   }
 }
+
+
+/* .breadcrumb - Start */
+.breadcrumb{
+  .page-list {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+
+    li{
+      &.current{
+        font-weight:bold;
+      }
+      &::after{
+        content: ">";
+        margin: 0 0.5rem;
+        color: #999;
+      }
+      &:last-child::after{
+        content: none;
+      }
+    }
+  }
+}
+/* .breadcrumb - End */

@@ -1,0 +1,215 @@
+{
+  "public/assets/img/about/bg.svg": {
+    "file": "assets/css/style14.css",
+    "src": "public/assets/img/about/bg.svg"
+  },
+  "public/assets/img/about/bg2.svg": {
+    "file": "assets/css/style16.css",
+    "src": "public/assets/img/about/bg2.svg"
+  },
+  "public/assets/img/about/bg3.svg": {
+    "file": "assets/css/style15.css",
+    "src": "public/assets/img/about/bg3.svg"
+  },
+  "public/assets/img/about/counter-bg.png": {
+    "file": "assets/css/style30.css",
+    "src": "public/assets/img/about/counter-bg.png"
+  },
+  "public/assets/img/about/main4.png": {
+    "file": "assets/css/style17.css",
+    "src": "public/assets/img/about/main4.png"
+  },
+  "public/assets/img/approach/bg.svg": {
+    "file": "assets/css/style33.css",
+    "src": "public/assets/img/approach/bg.svg"
+  },
+  "public/assets/img/breadcrumb/about/bg.png": {
+    "file": "assets/css/style7.css",
+    "src": "public/assets/img/breadcrumb/about/bg.png"
+  },
+  "public/assets/img/breadcrumb/about/shape.svg": {
+    "file": "assets/css/style8.css",
+    "src": "public/assets/img/breadcrumb/about/shape.svg"
+  },
+  "public/assets/img/breadcrumb/brd.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/career/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/checkout/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/contact/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/faq/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/investor/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/news/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/news/bg2.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/news/bg3.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/partner/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/pipeline/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/research-details/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/research-development/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/shop/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/breadcrumb/team/bg.png": {
+    "file": "assets/css/style6.css",
+    "src": "public/assets/img/breadcrumb/brd.png"
+  },
+  "public/assets/img/career/bg.svg": {
+    "file": "assets/css/style34.css",
+    "src": "public/assets/img/career/bg.svg"
+  },
+  "public/assets/img/career/main-bg-4.png": {
+    "file": "assets/css/style22.css",
+    "src": "public/assets/img/career/main-bg-4.png"
+  },
+  "public/assets/img/career/main-bg-5.png": {
+    "file": "assets/css/style24.css",
+    "src": "public/assets/img/career/main-bg-5.png"
+  },
+  "public/assets/img/career/main-bg-6.png": {
+    "file": "assets/css/style28.css",
+    "src": "public/assets/img/career/main-bg-6.png"
+  },
+  "public/assets/img/career/main-bg-7.png": {
+    "file": "assets/css/style24.css",
+    "src": "public/assets/img/career/main-bg-5.png"
+  },
+  "public/assets/img/career/main-bg.png": {
+    "file": "assets/css/style25.css",
+    "src": "public/assets/img/career/main-bg.png"
+  },
+  "public/assets/img/career/main-bg2.png": {
+    "file": "assets/css/style23.css",
+    "src": "public/assets/img/career/main-bg2.png"
+  },
+  "public/assets/img/career/main-bg3.png": {
+    "file": "assets/css/style26.css",
+    "src": "public/assets/img/career/main-bg3.png"
+  },
+  "public/assets/img/contact/bg.svg": {
+    "file": "assets/css/style27.css",
+    "src": "public/assets/img/contact/bg.svg"
+  },
+  "public/assets/img/contact/bg2.png": {
+    "file": "assets/css/style31.css",
+    "src": "public/assets/img/contact/bg2.png"
+  },
+  "public/assets/img/error/error.png": {
+    "file": "assets/css/style13.css",
+    "src": "public/assets/img/video-home-slider/main-bg.jpg"
+  },
+  "public/assets/img/focus/bg.svg": {
+    "file": "assets/css/style32.css",
+    "src": "public/assets/img/focus/bg.svg"
+  },
+  "public/assets/img/footer/bg1.png": {
+    "file": "assets/css/style9.css",
+    "src": "public/assets/img/footer/bg1.png"
+  },
+  "public/assets/img/footer/bg2.svg": {
+    "file": "assets/css/style10.css",
+    "src": "public/assets/img/footer/bg2.svg"
+  },
+  "public/assets/img/footer/bg3.svg": {
+    "file": "assets/css/style11.css",
+    "src": "public/assets/img/footer/bg3.svg"
+  },
+  "public/assets/img/home2-slider/main.jpg": {
+    "file": "assets/css/style13.css",
+    "src": "public/assets/img/video-home-slider/main-bg.jpg"
+  },
+  "public/assets/img/home3-slider/bg.png": {
+    "file": "assets/css/style29.css",
+    "src": "public/assets/img/home4-slider/bg.png"
+  },
+  "public/assets/img/home4-slider/bg.png": {
+    "file": "assets/css/style29.css",
+    "src": "public/assets/img/home4-slider/bg.png"
+  },
+  "public/assets/img/investor/animate1.png": {
+    "file": "assets/css/style2.css",
+    "src": "public/assets/img/investor/animate1.png"
+  },
+  "public/assets/img/investor/animate2.png": {
+    "file": "assets/css/style4.css",
+    "src": "public/assets/img/investor/animate2.png"
+  },
+  "public/assets/img/news/animate-bg.svg": {
+    "file": "assets/css/style.css",
+    "src": "public/assets/img/news/animate-bg.svg"
+  },
+  "public/assets/img/pipeline/animated-bg.svg": {
+    "file": "assets/css/style18.css",
+    "src": "public/assets/img/pipeline/animated-bg.svg"
+  },
+  "public/assets/img/pipeline/bg3.svg": {
+    "file": "assets/css/style19.css",
+    "src": "public/assets/img/pipeline/bg3.svg"
+  },
+  "public/assets/img/technology/animated-bg-5.svg": {
+    "file": "assets/css/style20.css",
+    "src": "public/assets/img/technology/animated-bg-5.svg"
+  },
+  "public/assets/img/technology/animated-bg3.svg": {
+    "file": "assets/css/style3.css",
+    "src": "public/assets/img/technology/animated-bg3.svg"
+  },
+  "public/assets/img/technology/bg3.svg": {
+    "file": "assets/css/style21.css",
+    "src": "public/assets/img/technology/bg3.svg"
+  },
+  "public/assets/img/therapy/icon-shape2.svg": {
+    "file": "assets/css/style5.css",
+    "src": "public/assets/img/therapy/icon-shape2.svg"
+  },
+  "public/assets/img/video-home-slider/main-bg.jpg": {
+    "file": "assets/css/style13.css",
+    "src": "public/assets/img/video-home-slider/main-bg.jpg"
+  },
+  "public/assets/img/video-home-slider/overly-bg.png": {
+    "file": "assets/css/style12.css",
+    "src": "public/assets/img/video-home-slider/overly-bg.png"
+  },
+  "public/assets/sass/style.scss": {
+    "file": "assets/css/style35.css",
+    "src": "public/assets/sass/style.scss",
+    "isEntry": true
+  }
+}

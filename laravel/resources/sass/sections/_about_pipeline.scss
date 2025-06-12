@@ -45,7 +45,7 @@
         width: 120%;
         top: -10%;
         position: absolute;
-        background-image: url("../img/pipeline/animated-bg.svg");
+        background-image: url("/assets/img/pipeline/animated-bg.svg");
         left: 0;
         background-repeat: no-repeat;
         z-index: -1;
@@ -93,7 +93,7 @@
         top: -5%;
         left: 0;
         position: absolute;
-        background-image: url("../img/pipeline/bg3.svg");
+        background-image: url("/assets/img/pipeline/bg3.svg");
         background-repeat: no-repeat;
         z-index: -1;
         animation: animatedBackground 1s linear infinite alternate;
@@ -122,7 +122,7 @@
           &::after {
             content: "";
             display: block;
-            background-image: url("../img/technology/animated-bg-5.svg");
+            background-image: url("/assets/img/technology/animated-bg-5.svg");
             height: 100%;
             background-repeat: no-repeat;
             width: 100%;

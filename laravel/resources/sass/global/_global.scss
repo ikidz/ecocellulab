@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -1065,4 +1068,8 @@ ul {
 .footer-widget .table td,
 .footer-widget .table th {
   padding: 0.5rem !important;
+}
+
+.modal-backdrop{
+  z-index:1 !important;
 }

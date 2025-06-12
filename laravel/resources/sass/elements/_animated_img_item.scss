@@ -16,7 +16,7 @@
     &::after {
       content: "";
       display: block;
-      background-image: url("../img/technology/animated-bg3.svg");
+      background-image: url("/assets/img/technology/animated-bg3.svg");
       height: 100%;
       background-repeat: no-repeat;
       width: 100%;
@@ -54,7 +54,7 @@
         width: 135%;
         left: -24%;
         top: -12%;
-        background-image: url("../img/news/animate-bg.svg");
+        background-image: url("/assets/img/news/animate-bg.svg");
       }
     }
   }

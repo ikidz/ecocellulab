@@ -25,7 +25,11 @@
     <!-- iconmoon -->
     <link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @if (app()->environment('local'))
+        <script type="module" src="http://localhost:5173/resources/js/app.js"></script>
+    @else
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    @endif
     <!-- responsive Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 

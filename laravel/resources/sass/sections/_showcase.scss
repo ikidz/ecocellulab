@@ -1,5 +1,5 @@
 .showcase-area {
-  background: url("../img/video-home-slider/main-bg.jpg");
+  background: url("/assets/img/video-home-slider/main-bg.jpg");
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,7 +10,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url("../img/video-home-slider/overly-bg.png");
+    background-image: url("/assets/img/video-home-slider/overly-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
   }

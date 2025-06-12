@@ -1,0 +1,165 @@
+/*
+Theme Name: LifeOmic
+Theme URI: 
+Author: 
+Author URI: 
+Description: Bausins is a business website template
+Version: 1.0.0
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+# Typography
+# Normalize
+# Accessibility
+# Globals
+# Alignments
+# Clearings
+# Posts and pages
+# Captions
+# Galleries
+# Unit test
+# guterberg
+# Gutenberg	Default Style
+# Block Color Palette Colors
+# Sections
+    ## Breadcrumb
+    ## Comments
+    ## Widgets
+    ## Nav Bar
+    ## Info Bar
+    ## Header
+# Elements
+    ## Back Top
+    ## Preloader
+    ## Search Popup
+    ## Video Popup
+    ## Button
+    ## Section Title
+
+--------------------------------------------------------------*/
+
+//== Global Design
+@use "global/mixins" as *;
+@use "global/variables" as *;
+@use "global/global" as *;
+@use "global/gutenberg" as *;
+@use "global/keyframe" as *;
+
+//== Elements
+@import "elements/accordion";
+@import "elements/back_top";
+@import "elements/preloader";
+@import "elements/search_popup";
+@import "elements/floating_icon";
+@import "elements/login_form";
+@import "elements/button";
+@import "elements/section_title";
+@import "elements/pagination";
+@import "elements/slider-content_wrap";
+@import "elements/pulse_icon";
+@import "elements/team_item";
+@import "elements/news_item";
+@import "elements/gallery_item";
+@import "elements/contact_form";
+@import "elements/info_box";
+@import "elements/animated_img_item";
+@import "elements/animated_image_wrap";
+@import "elements/image_hotspot";
+@import "elements/therapy_box";
+@import "elements/event_item";
+@import "elements/career_item";
+@import "elements/rating";
+@import "elements/select_option";
+@import "elements/product_item";
+@import "elements/research_item";
+
+
+//== Pages
+//== Sections
+@import "sections/breadcrumb";
+@import "sections/comments";
+@import "sections/widgets";
+@import "sections/navbar";
+@import "sections/footer";
+
+// Home 1
+@import "sections/showcase";
+@import "sections/about_us_area";
+@import "sections/about_pipeline";
+@import "sections/meet_team_area";
+@import "sections/review_area";
+@import "sections/technologies_area";
+@import "sections/news_area";
+@import "sections/join_us_area";
+@import "sections/contact_area";
+
+
+// Home 2
+@import "sections/showcase_2";
+
+
+// Home 3
+@import "sections/showcase_3";
+
+
+// Home 4
+@import "sections/showcase_4";
+@import "sections/client_slider";
+
+
+
+// about
+@import "sections/counterup";
+@import "sections/vision_area";
+
+
+
+// scientific platform
+@import "sections/focus_area";
+@import "sections/approch_area";
+@import "sections/subscribe_area";
+
+
+
+// partner
+@import "sections/partner_logo";
+
+
+
+// blog details
+@import "sections/blog_details";
+
+// career
+@import "sections/careers";
+
+// Job description
+@import "sections/job_description";
+
+
+// Research 
+@import "sections/research_disease_area";
+@import "sections/research_area";
+@import "sections/research_details";
+@import "sections/financial_result";
+@import "sections/building_pipeline";
+
+
+// error
+@import "sections/error";
+
+
+//shop
+@import "sections/product_details";
+@import "sections/product_review";
+@import "sections/shop_cart";
+@import "sections/order_confirmtion";
+
+
+@import "sections/main";
+
+
+

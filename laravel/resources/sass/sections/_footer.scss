@@ -22,11 +22,11 @@
 
 .footer-area {
   .footer-top {
-    background-image: url("../img/footer/bg1.png");
+    background-image: url("/assets/img/footer/bg1.png");
     background-size: cover;
     background-repeat: no-repeat;
     &.style-2 {
-      background-image: url("../img/footer/bg2.svg");
+      background-image: url("/assets/img/footer/bg2.svg");
 
       .footer-widget {
         .widget-title {
@@ -88,7 +88,7 @@
         }
       }
       &.style-4 {
-        background-image: url('../img/footer/bg3.svg');
+        background-image: url('/assets/img/footer/bg3.svg');
         background-color: unset;
         .footer-icon {
           a{

@@ -2,7 +2,7 @@
 		:: => About Us Section
 ---------------------------------- */
 .about-us-area {
-  background: url("../img/about/bg.svg");
+  background: url("/assets/img/about/bg.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left;
@@ -38,7 +38,7 @@
   }
 
   &.style-2 {
-    background: url("../img/about/bg2.svg");
+    background: url("/assets/img/about/bg2.svg");
     background-position: right top;
     background-repeat: no-repeat;
     .img-wrap {
@@ -61,12 +61,12 @@
     }
   }
   &.style-3 {
-    background: url("../img/about/bg3.svg");
+    background: url("/assets/img/about/bg3.svg");
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
     .img-wrap {
-      background-image: url("../img/about/main4.png");
+      background-image: url("/assets/img/about/main4.png");
       background-repeat: no-repeat;
       display: inline-block;
 
