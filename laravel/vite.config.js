@@ -17,25 +17,25 @@ export default defineConfig({
             'resources/sass/**/*.scss',
         ]),
     ],
-    // build: {
-    //     minify: false,
-    //     outDir: 'public/assets/css',
-    //     emptyOutDir: false,
-    //     rollupOptions: {
-    //         input: path.resolve(__dirname, 'resources/sass/style.scss'),
-    //         output: {
-    //             assetFileNames: 'style.css',
-    //         },
-    //     },
-    // },
     build: {
         minify: false,
-        outDir: 'public/assets', // will generate css inside here too
+        outDir: 'public/assets/css',
         emptyOutDir: false,
         rollupOptions: {
-            input: path.resolve(__dirname, 'resources/js/app.js'),
+            input: path.resolve(__dirname, 'resources/sass/style.scss'),
+            output: {
+                assetFileNames: 'style.css',
+            },
         },
     },
+    // build: {
+    //     minify: false,
+    //     outDir: 'public/assets', // will generate css inside here too
+    //     emptyOutDir: false,
+    //     rollupOptions: {
+    //         input: path.resolve(__dirname, 'resources/js/app.js'),
+    //     },
+    // },
     css: {
         preprocessorOptions: {
             scss: {
