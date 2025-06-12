@@ -31,7 +31,7 @@ services:
     ports:
       - "3313:3306"
     environment:
-      MYSQL_ROOT_PASSWORD:6Tz#pU1mKx!vL9qF
+      MYSQL_ROOT_PASSWORD: 6Tz#pU1mKx!vL9qF
       MYSQL_DATABASE: ecocellulab_ua_db
       MYSQL_USER: ecocellulab_ua_user
       MYSQL_PASSWORD: d&4FxqH2n#vZ8uT3
