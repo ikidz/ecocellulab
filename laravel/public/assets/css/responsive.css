@@ -103,8 +103,20 @@
 }
 /* small mobile: 320px. */
 @media (max-width: 767px) {
+  body{
+    overflow-x:hidden;
+  }
   .nav-container {
     max-width: 100%;
+  }
+
+  .showcase3-area .video-background{
+    overflow:hidden;
+  }
+  
+  .showcase3-area .video-background video{
+    width:auto;
+    height:100vh;
   }
 
 }
