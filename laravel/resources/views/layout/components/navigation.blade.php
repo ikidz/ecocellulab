@@ -138,25 +138,25 @@
         </div>
 
         <!-- navbar -->
-        <nav class="navbar navbar-area navbar-expand-lg nav-style-01 nav-absolute transparent-bg">
+        <nav class="navbar navbar-area navbar-expand-lg nav-style-01">
             <div class="container nav-container">
                 <div class="responsive-mobile-menu">
-                    <div class="logo-wrapper d-none d-lg-block">
+                    <div class="logo-wrapper">
                         <a href="{{ route('home.index') }}" class="logo">
                             <img src="{{ asset('assets/img/logo/logo.png') }}" alt="logo">
                         </a>
                     </div>
+                    <?php /*
                     <div class="logo-wrapper d-block d-lg-none">
                         <a href="{{ route('home.index') }}" class="logo">
                             <img src="{{ asset('assets/img/logo/logo2.png') }}" alt="logo">
                         </a>
                     </div>
 
-
                     <div class="mobile-toggler">
-                        <a data-toggle="modal" data-target="#login-modal" href=""><i
-                                class="flaticon-user-1"></i></a>
+                        <a data-toggle="modal" data-target="#login-modal" href=""><i class="flaticon-user-1"></i></a>
                     </div>
+                    */ ?>
                     <button class="navbar-toggler cross-menu" type="button" data-toggle="collapse"
                         data-target="#lifeomic_main_menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="cross-menu-wrapper">

@@ -23,7 +23,7 @@
     z-index: 1;
   }
   &.transparent-bg {
-    background: rgba(0,0,0,0.5);
+    background: rgba(38,54,52,0.5);
   }
   &.nav-style-01 {
     height: 100px;
@@ -44,7 +44,7 @@
         .bar3 {
           width: 25px;
           height: 4px;
-          background-color: #000;
+          background-color: #fff;
           margin: 4px 0;
           -webkit-transition: 0.4s;
           -o-transition: 0.4s;
@@ -351,7 +351,7 @@
 
 @media only screen and (max-width: 991px) {
   .navbar-area {
-    background: #fff;
+    // background: #fff;
     box-shadow: 1px 0 1px #0000001c;
     &.nav-absolute {
       background: #fff;
