@@ -76,7 +76,8 @@
     }
   }
 
-  &.about-area-breadcrumb {
+  &.about-area-breadcrumb,
+  &.research-area-breadcrumb {
     background-image: url("/assets/img/breadcrumb/about/bg.png");
     background-position: right;
     position: relative;
@@ -88,7 +89,22 @@
       position: absolute;
       background-image: url("/assets/img/breadcrumb/about/shape.svg");
       top: 0;
-      left: 0;
+      left: -15%;
+    }
+
+    @media only screen and (max-width: 991px) {
+      &::before {
+        left: 0;
+        background-image:none;
+        background-color:rgba(7, 111, 81, 0.5);
+      }
+    }
+  }
+  @media only screen and (max-width: 991px ){
+    &.about-area-breadcrumb,
+    &.research-area-breadcrumb {
+      background-position:center;
+      background-size:cover;
     }
   }
   &.faq-area-breadcrumb {
@@ -109,21 +125,21 @@
     background-size: cover;
     position: relative;
   }
-  &.research-area-breadcrumb {
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
-      url("/assets/img/breadcrumb/research-development/bg.png");
-    background-size: cover;
-    position: relative;
-    .breadcrumb-inner {
-      background: rgba(22, 195, 233, 0.2);
-    }
-  }
-  &.research-details-area-breadcrumb {
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.3)),
-      url("/assets/img/breadcrumb/research-details/bg.png");
-    background-size: cover;
-    position: relative;
-  }
+  // &.research-area-breadcrumb {
+  //   background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
+  //     url("/assets/img/breadcrumb/research-development/bg.png");
+  //   background-size: cover;
+  //   position: relative;
+  //   .breadcrumb-inner {
+  //     background: rgba(22, 195, 233, 0.2);
+  //   }
+  // }
+  // &.research-details-area-breadcrumb {
+  //   background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.3)),
+  //     url("/assets/img/breadcrumb/research-details/bg.png");
+  //   background-size: cover;
+  //   position: relative;
+  // }
   &.team-area-breadcrumb {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)),
       url("/assets/img/breadcrumb/team/bg.png");
@@ -213,3 +229,19 @@
   }
 }
 /* .breadcrumb - End */
+
+@media only screen and (max-width: 991px) {
+  .breadcrumb-area{
+    padding:40px 0 !important;
+
+    .breadcrumb-inner{
+      padding:20px 30px !important;
+
+      .page-title{
+        font-size:24px;
+        margin-bottom:0;
+      }
+    }
+
+  }
+}

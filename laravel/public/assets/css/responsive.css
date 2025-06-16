@@ -107,7 +107,7 @@
     overflow-x:hidden;
   }
   .nav-container {
-    max-width: 100%;
+    max-width: 100% !important;
   }
 
   .showcase3-area .video-background{
@@ -115,7 +115,7 @@
   }
   
   .showcase3-area .video-background video{
-    width:auto;
+    width:auto !important;
     height:100vh;
   }
 
@@ -260,7 +260,7 @@
 @media only screen and (max-width: 1100px) {
   /* menu */
   .navbar-area .nav-container .navbar-collapse .navbar-nav li + li {
-    margin-left: 25px;
+    margin-left: 25px !important;
   }
   .navbar-area .nav-container .nav-right-content ul li {
     margin-left: 15px;
@@ -537,16 +537,16 @@
     display: none;
   }
   .pipeline-area.style-2 .content-wrapper p {
-    max-width: 100%;
+    max-width: 100% !important;
   }
   .about-us-area .content-wrapper p {
-    max-width: 100%;
+    max-width: 100% !important;
   }
   .Technologies-area .content-wrapper .text-wrapper .sub-title {
-    max-width: 100%;
+    max-width: 100% !important;
   }
   .Technologies-area .content-wrapper .text-wrapper p {
-    max-width: 100%;
+    max-width: 100% !important;
   }
   .about-us-area.style-2 .img-wrap::before {
     display: none;
@@ -638,7 +638,7 @@
     text-align: center;
   }
   .vision-area .content-part {
-    padding: 60px 15px;
+    padding: 60px 15px !important;
   }
   /* faq */
   .faq-area .title {
@@ -704,12 +704,12 @@
     width: 100%;
   }
   .join-us-area.black-effect .join-us-content .subscribe-part {
-    width: 100%;
+    width: 100% !important;
     padding-top: 30px;
     padding-bottom: 10px;
   }
   .join-us-area.style-2 .join-us-content .left-bg-2 {
-    width: 100%;
+    width: 100% !important;
   }
   .join-us-area .join-us-content.team-area-join-us .left-bg-2 {
     width: 100%;
@@ -720,7 +720,7 @@
 
   /* menu */
   .navbar-area-fixed {
-    background: #fff !important;
+    /* background: #fff !important; */
     box-shadow: 1px 0 2px #00000038;
   }
 
@@ -825,7 +825,7 @@
     display: none;
   }
   .Technologies-area .animated-image-area .animated-img-box {
-    position: relative;
+    position: relative !important;
     left: initial !important;
     top: initial !important;
     padding: 20px 0;
@@ -1606,10 +1606,11 @@
     min-height: 600px;
   }
   .slider-content-wrap .title {
-    font-size: 24px;
-    line-height: 35px;
+    font-size: 24px !important;
+    line-height: 35px !important;
   }
   .slider-content-wrap p {
+    max-width:100% !important;
     font-size: 14px;
   }
 
@@ -1728,7 +1729,7 @@
 }
 .research-item .content-part {
   padding: 30px 15px 30px 15px;
-  width: 100%;
+  width: 100% !important;
 }
 .join-us-area.black-effect .join-us-content .subscribe-part .subscribe-form .from-group .from-control {
   padding: 0 10px 0 10px;

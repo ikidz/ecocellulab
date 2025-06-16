@@ -3247,20 +3247,33 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .breadcrumb-area .page-list.white-effect li {
   color: #fff;
 }
-.breadcrumb-area.about-area-breadcrumb {
+.breadcrumb-area.about-area-breadcrumb, .breadcrumb-area.research-area-breadcrumb {
   background-image: url("/assets/img/breadcrumb/about/bg.png");
   background-position: right;
   position: relative;
   background-size: auto;
 }
-.breadcrumb-area.about-area-breadcrumb::before {
+.breadcrumb-area.about-area-breadcrumb::before, .breadcrumb-area.research-area-breadcrumb::before {
   content: "";
   height: 100%;
   width: 100%;
   position: absolute;
   background-image: url("/assets/img/breadcrumb/about/shape.svg");
   top: 0;
-  left: 0;
+  left: -15%;
+}
+@media only screen and (max-width: 991px) {
+  .breadcrumb-area.about-area-breadcrumb::before, .breadcrumb-area.research-area-breadcrumb::before {
+    left: 0;
+    background-image: none;
+    background-color: rgba(7, 111, 81, 0.5);
+  }
+}
+@media only screen and (max-width: 991px) {
+  .breadcrumb-area.about-area-breadcrumb, .breadcrumb-area.research-area-breadcrumb {
+    background-position: center;
+    background-size: cover;
+  }
 }
 .breadcrumb-area.faq-area-breadcrumb {
   background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.4)), url("/assets/img/breadcrumb/faq/bg.png");
@@ -3274,19 +3287,6 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .breadcrumb-area.pipeline-area-breadcrumb {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(0, 167, 244, 0.2)), url("/assets/img/breadcrumb/pipeline/bg.png");
-  background-size: cover;
-  position: relative;
-}
-.breadcrumb-area.research-area-breadcrumb {
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.2)), url("/assets/img/breadcrumb/research-development/bg.png");
-  background-size: cover;
-  position: relative;
-}
-.breadcrumb-area.research-area-breadcrumb .breadcrumb-inner {
-  background: rgba(22, 195, 233, 0.2);
-}
-.breadcrumb-area.research-details-area-breadcrumb {
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.322), rgba(0, 167, 244, 0.3)), url("/assets/img/breadcrumb/research-details/bg.png");
   background-size: cover;
   position: relative;
 }
@@ -3362,6 +3362,18 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   content: none;
 }
 /* .breadcrumb - End */
+@media only screen and (max-width: 991px) {
+  .breadcrumb-area {
+    padding: 40px 0 !important;
+  }
+  .breadcrumb-area .breadcrumb-inner {
+    padding: 20px 30px !important;
+  }
+  .breadcrumb-area .breadcrumb-inner .page-title {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+}
 /*--------------------------------------------------------------
 	## Comments
 --------------------------------------------------------------*/
@@ -4392,7 +4404,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   z-index: 1;
 }
 .navbar-area.transparent-bg {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(38, 54, 52, 0.5);
 }
 .navbar-area.nav-style-01 {
   height: 100px;
@@ -4416,7 +4428,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .navbar-area.nav-style-01 .responsive-mobile-menu .cross-menu .bar3 {
   width: 25px;
   height: 4px;
-  background-color: #000;
+  background-color: #fff;
   margin: 4px 0;
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
@@ -4695,7 +4707,6 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 @media only screen and (max-width: 991px) {
   .navbar-area {
-    background: #fff;
     box-shadow: 1px 0 1px rgba(0, 0, 0, 0.1098039216);
   }
   .navbar-area.nav-absolute {
@@ -5848,6 +5859,11 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   height: 45px;
   padding: 0 165px 0 15px;
 }
+@media only screen and (max-width: 991px) {
+  .join-us-area.black-effect .join-us-content .subscribe-part .subscribe-form {
+    margin: 0 15px !important;
+  }
+}
 .join-us-area.black-effect .join-us-content .subscribe-part .btn-wrapper {
   margin: 0;
   position: absolute;
@@ -6125,7 +6141,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .showcase3-area {
   background: url("/assets/img/home3-slider/bg.png");
-  height: 100vh;
+  height: calc(100vh - 100px);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -6287,8 +6303,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   z-index: 0;
 }
 .showcase3-area .video-background video {
-  min-width: 100%;
-  height: 100vh;
+  width: 100%;
 }
 .showcase4-area {
   background: url("/assets/img/home4-slider/bg.png");
