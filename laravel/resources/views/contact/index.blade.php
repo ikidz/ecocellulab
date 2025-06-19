@@ -1,12 +1,12 @@
 @extends('layout.app')
 
 @section('banners')
-<div class="breadcrumb-area contact-area-breadcrumb" style="background-image: url('{{ asset('assets/images/contact_banner.jpg') }}');">
-    <div class="container">
+<div class="breadcrumb-area about-area-breadcrumb" style="background-image: url('{{ asset('assets/images/contact_banner.jpg') }}');">
+    <div class="nav-container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="breadcrumb-inner dark-blue">
-                    <h2 class="page-title white-effect">Contact Us</h2>
+                <div class="breadcrumb-inner no-bg">
+                    <h2 class="page-title">Contact Us</h2>
                 </div>
             </div>
         </div>

@@ -170,6 +170,7 @@
                     <ul class="navbar-nav">
                         <li class="{{ ( request()->routeIs('home.index') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('home.index') }}">Home</a></li>
                         <li class="{{ ( request()->routeIs('article.aboutus') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('article.aboutus') }}">About us</a></li>
+                        <li class="{{ ( request()->routeIs('product.detail') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('product.detail') }}">Product</a></li>
                         <li class="{{ ( request()->routeIs('article.research') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('article.research') }}">Research</a></li>
                         <?php /*
                         <li class="menu-item-has-children"><a href="shop.html">Shop</a>
