@@ -139,11 +139,11 @@
 
         <!-- navbar -->
         <nav class="navbar navbar-area navbar-expand-lg nav-style-01">
-            <div class="container nav-container">
-                <div class="responsive-mobile-menu">
+            <div class="container nav-container d-flex flex-wrap justify-content-around align-items-center my-0 px-0 h-100">
+                <div class="responsive-mobile-menu col-12 col-md-3 col-lg-2 h-100 align-items-center">
                     <div class="logo-wrapper">
                         <a href="{{ route('home.index') }}" class="logo">
-                            <img src="{{ asset('assets/img/logo/logo.png') }}" alt="logo">
+                            <img src="{{ asset('assets/images/logo_h.svg') }}" alt="logo">
                         </a>
                     </div>
                     <?php /*

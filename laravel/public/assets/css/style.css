@@ -94,10 +94,12 @@ Version: 1.0.0
 --------------------------------------------------------------*/
 :root {
   --main-color-one: #006C4B;
+  --main-color-two: #1B4F67;
   --heading-color: #263534;
   --paragraph-color: #666;
   --bg-color: #1e2a29;
   --hover-color: #2DA78A;
+  --navigation-bg-color:#CAE7E0;
   --white: #fff;
   --red: #f95759;
   --body-font: "Roboto Slab", serif;
@@ -3260,7 +3262,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   position: absolute;
   background-image: url("/assets/img/breadcrumb/about/shape.svg");
   top: 0;
-  left: -15%;
+  left: -10%;
 }
 @media only screen and (max-width: 991px) {
   .breadcrumb-area.about-area-breadcrumb::before, .breadcrumb-area.research-area-breadcrumb::before {
@@ -4393,7 +4395,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .navbar-area {
   padding: 0;
-  background: var(--heading-color);
+  background-color: var(--navigation-bg-color);
+  border-bottom: 5px solid var(--main-color-one);
 }
 .navbar-area.nav-absolute {
   position: absolute;
@@ -4428,7 +4431,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .navbar-area.nav-style-01 .responsive-mobile-menu .cross-menu .bar3 {
   width: 25px;
   height: 4px;
-  background-color: #fff;
+  background-color: var(--main-color-one);
   margin: 4px 0;
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
@@ -4490,11 +4493,11 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  color: var(--white);
+  color: var(--main-color-one);
   display: inline-block;
 }
 .navbar-area.nav-style-01 .nav-container .navbar-collapse .navbar-nav li:hover a {
-  color: var(--main-color-one);
+  color: var(--main-color-two);
 }
 .navbar-area .nav-container {
   box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.2);
@@ -4577,7 +4580,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   margin-left: 30px;
 }
 .navbar-area .nav-container .navbar-collapse .navbar-nav li.current-menu-item a {
-  color: var(--hover-color);
+  color: var(--main-color-two);
+  font-weight: bold;
 }
 .navbar-area .nav-container .navbar-collapse .navbar-nav li.menu-item-has-children {
   position: relative;
@@ -4702,7 +4706,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   width: 100%;
   max-height: 100px;
   z-index: 99;
-  background: var(--heading-color);
+  background-color: var(--navigation-bg-color);
   transition: all 0.6s;
 }
 @media only screen and (max-width: 991px) {
@@ -7109,7 +7113,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .product-description-with-review .nav-tabs .nav-item.show .nav-link,
 .product-description-with-review .nav-tabs .nav-link.active {
-  background-color: #15C0E8;
+  background-color: var(--main-color-one);
   color: #fff;
   border-radius: 0;
 }
