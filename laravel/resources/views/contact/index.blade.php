@@ -52,7 +52,7 @@
                 <div class="row padding-top-45">
                     <div class="col-lg-4 col-sm-4">
                         <div class="img-wrap text-center text-sm-left">
-                            <img src="{{ asset('assets/img/contact/bf.png') }}" alt="">
+                            <img src="{{ asset('assets/images/logo_v.svg') }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-8 col-sm-8 mt-5 mt-sm-0">
