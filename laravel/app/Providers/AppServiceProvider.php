@@ -4,6 +4,12 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\View;
+
+use App\Models\WebSettings;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,6 +25,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (Request::server('HTTP_X_FORWARDED_PROTO') == 'https') {
+            URL::forceScheme('https');
+        }
+
+        View::composer('*', function ($view) {
+            $webSettings = WebSetting::class;
+            $view->with('webSettings', $webSettings);
+        });
     }
 }
