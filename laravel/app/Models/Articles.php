@@ -28,8 +28,8 @@ class Articles extends Model
     ];
     protected $casts = [
         'post_date' => 'date',
-        'start_at' => 'date',
-        'end_at' => 'date',
+        'start' => 'date',
+        'end' => 'date',
         'is_highlight' => 'boolean',
         'is_publish' => 'boolean'
     ];

@@ -21,6 +21,7 @@ class BannerHotspots extends Model implements Sortable
         'is_publish'
     ];
     protected $casts = [
+        'banner_id' => 'integer',
         'order' => 'integer',
         'is_publish' => 'boolean'
     ];
@@ -37,6 +38,6 @@ class BannerHotspots extends Model implements Sortable
     }
 
     public function banner(){
-        return $this->belongsTo(\App\Models\Banners::class, 'banner_id');
+        return $this->belongsTo('App\Models\Banners', 'banner_id', 'id');
     }
 }

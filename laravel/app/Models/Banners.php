@@ -54,13 +54,11 @@ class Banners extends Model implements Sortable
 	}
 
 	public function hotspots(){
-		return $this->hasMany(\App\Models\BannerHotspots::class, 'banner_id');
+		return $this->hasMany('App\Models\BannerHotspots', 'banner_id', 'id');
 	}
 
-	public function setYoutubeIdAttribute($value){
-		if( $this->attributes['type'] == 'youtube' ){
-        	$this->attributes['youtube_id'] = self::extractYoutubeId($value);
-		}
+	public function setHotspotYoutubeIdAttribute($value){
+		$this->attributes['hotspot_youtube_id'] = self::extractYoutubeId($value);
     }
 
 	public static function extractYoutubeId($url){

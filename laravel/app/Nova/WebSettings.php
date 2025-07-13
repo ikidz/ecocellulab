@@ -14,7 +14,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 use Alexwenzel\DependencyContainer\HasDependencies;
 use Alexwenzel\DependencyContainer\DependencyContainer;
-use Marshmallow\Tiptap\Tiptap;
+use Webard\NovaSunEditor\SunEditor;
 
 class WebSettings extends Resource
 {
@@ -95,90 +95,9 @@ class WebSettings extends Resource
                 //     ->rules(['required'])
             ])->dependsOn('type', 'text'),
             DependencyContainer::make([
-                Tiptap::make('Value', 'value_th')
-                ->buttons([
-                    'heading',
-                    '|',
-                    'italic',
-                    'bold',
-                    '|',
-                    'link',
-                    'code',
-                    'strike',
-                    'underline',
-                    'highlight',
-                    '|',
-                    'bulletList',
-                    'orderedList',
-                    'br',
-                    'codeBlock',
-                    'blockquote',
-                    '|',
-                    'horizontalRule',
-                    'hardBreak',
-                    '|',
-                    'table',
-                    '|',
-                    'image',
-                    '|',
-                    'textAlign',
-                    '|',
-                    'rtl',
-                    '|',
-                    'history',
-                    '|',
-                    'editHtml',
-                ])
-                ->fileSettings([
-                    'disk' => 'public',
-                    'path' => 'uploads/articles/editor',
-                ])
-                ->rules('required'),
-            // Tiptap::make(__('Value (En)'), 'value_en')
-            //     ->buttons([
-            //         'heading',
-            //         '|',
-            //         'italic',
-            //         'bold',
-            //         '|',
-            //         'link',
-            //         'code',
-            //         'strike',
-            //         'underline',
-            //         'highlight',
-            //         '|',
-            //         'bulletList',
-            //         'orderedList',
-            //         'br',
-            //         'codeBlock',
-            //         'blockquote',
-            //         '|',
-            //         'horizontalRule',
-            //         'hardBreak',
-            //         '|',
-            //         'table',
-            //         '|',
-            //         'image',
-            //         '|',
-            //         'textAlign',
-            //         '|',
-            //         'rtl',
-            //         '|',
-            //         'history',
-            //         '|',
-            //         'editHtml',
-            //     ])
-            //     ->fileSettings([
-            //         'disk' => 'public',
-            //         'path' => 'uploads/articles/editor',
-            //     ])
-            //     ->rules('required'),
-	            // Textarea::make(__('Value'), 'value_th')
-	            //     ->hideFromIndex()
-	            //     ->help('Optional'),
-	            // Textarea::make(__('Value (En)'), 'value_en')
-	            //     ->hideFromIndex()
-	            //     ->help('Optional'),
+                SunEditor::make('Content', 'value_th')
+                    ->rules(['required'])
+                    ->hideFromIndex(),
             ])->dependsOn('type','longText'),
             DependencyContainer::make([
                 Image::make('Image', 'img')

@@ -105,24 +105,28 @@ class Researches extends Resource
     {
         return [
             Slug::make('Slug')
-                ->readonly()
                 ->rules(['required', 'max:255'])
                 ->creationRules('unique:researches,slug')
                 ->updateRules('unique:researches,slug,{{resourceId}}')
                 ->from('Title')
                 ->separator('_')
-                ->help('The slug is automatically generated from the title.'),
+                ->help('The slug is automatically generated from the title.')
+                ->hideFromIndex(),
             Text::make('Meta Title', 'meta_title')
-                ->rules(['nullable', 'max:255']),
+                ->rules(['nullable', 'max:255'])
+                ->hideFromIndex(),
             Textarea::make('Meta Description', 'meta_description')
-                ->rules(['nullable', 'max:500']),
+                ->rules(['nullable', 'max:500'])
+                ->hideFromIndex(),
             Text::make('Meta Keywords', 'meta_keywords')
-                ->rules(['nullable', 'max:255']),
+                ->rules(['nullable', 'max:255'])
+                ->hideFromIndex(),
             Image::make('Meta Image', 'meta_image')
                 ->disk('public')
                 ->path('researches/meta')
                 ->rules(['image', 'max:2048'])
                 ->help("Support *.png,*.jpg. File size should not exceed 2MB.")
+                ->hideFromIndex()
         ];
     }
 

@@ -10,8 +10,11 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
+use Outl1ne\NovaSortable\Traits\HasSortableRows;
+
 class Teams extends Resource
 {
+    use HasSortableRows;
     /**
      * The model the resource corresponds to.
      *
@@ -45,15 +48,21 @@ class Teams extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
             Image::make('Avatar', 'avatar')
                 ->disk('public')
                 ->path('teams/avatars')
-                ->rules('nullable', 'image', 'max:2048'),
+                ->rules('nullable', 'image', 'max:2048')
+                ->indexWidth(200),
             Text::make('Name')
                 ->rules('required', 'max:255'),
             Text::make('Position')
                 ->rules('nullable', 'max:255'),
+            Text::make('Socials', function(){
+                if( $this->socials->count() > 0 ){
+                    return $this->socials->pluck('display_platform_name')->implode(', ');
+                }
+                return 'None';
+            }),
             Boolean::make('Is Published', 'is_publish')
                 ->default(1),
             HasMany::make('Socials', 'socials', 'App\Nova\TeamSocials'),

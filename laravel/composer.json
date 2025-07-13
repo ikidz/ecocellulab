@@ -16,6 +16,7 @@
         "laravel/nova": "^4.0",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "marshmallow/nova-tiptap": "^5.5",
         "mostafaznv/nova-video": "^6.4",
         "nova-fields/rating": "^1.0",
         "outl1ne/nova-sortable": "^3.4",

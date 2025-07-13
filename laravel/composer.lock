@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b346051e6afabbbdfd199086783b9c5",
+    "content-hash": "a4112fc505c60751673b0cd9eac85423",
     "packages": [
         {
             "name": "alexwenzel/nova-dependency-container",
@@ -3142,6 +3142,55 @@
                 }
             ],
             "time": "2025-01-27T12:07:53+00:00"
+        },
+        {
+            "name": "marshmallow/nova-tiptap",
+            "version": "5.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marshmallow-packages/nova-tiptap.git",
+                "reference": "bbe493af835a4ea8db658a7805ec166e212b2db9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marshmallow-packages/nova-tiptap/zipball/bbe493af835a4ea8db658a7805ec166e212b2db9",
+                "reference": "bbe493af835a4ea8db658a7805ec166e212b2db9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "^4.0|^5.0",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Marshmallow\\Tiptap\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Marshmallow\\Tiptap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tiptap editor field.",
+            "keywords": [
+                "editor",
+                "laravel",
+                "nova",
+                "tiptap",
+                "vue"
+            ],
+            "support": {
+                "issues": "https://github.com/marshmallow-packages/nova-tiptap/issues",
+                "source": "https://github.com/marshmallow-packages/nova-tiptap/tree/5.5.0"
+            },
+            "time": "2025-06-25T11:19:06+00:00"
         },
         {
             "name": "monolog/monolog",

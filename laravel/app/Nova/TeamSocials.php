@@ -10,8 +10,11 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
+use Outl1ne\NovaSortable\Traits\HasSortableRows;
+
 class TeamSocials extends Resource
 {
+    use HasSortableRows;
     /**
      * The model the resource corresponds to.
      *
@@ -47,7 +50,7 @@ class TeamSocials extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            // ID::make()->sortable(),
             BelongsTo::make('Team', 'team', 'App\Nova\Teams'),
             Select::make('Platform', 'platform')
                 ->options([
@@ -57,7 +60,8 @@ class TeamSocials extends Resource
                     'linkedin' => 'LinkedIn',
                     'youtube' => 'YouTube',
                 ])
-                ->rules('required'),
+                ->rules('required')
+                ->displayUsingLabels(),
             Text::make('URL')
                 ->rules('required', 'url', 'max:2048'),
             Boolean::make('Is Published', 'is_publish')
