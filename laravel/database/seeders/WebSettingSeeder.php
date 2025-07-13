@@ -153,7 +153,32 @@ class WebSettingSeeder extends Seeder
                 'key' => 'COMPANY_CONTACT_EMAIL',
                 'img' => null,
                 'value_th' => 'pc.ceo@ecocellulab.com'
+            ],[
+                'type' => 'image',
+                'title' => 'About Us Default Banner',
+                'key' => 'ABOUTUS_DEFAULT_BANNER',
+                'img' => null,
+                'value_th' => null
+            ],[
+                'type' => 'image',
+                'title' => 'Product Default Banner',
+                'key' => 'PRODUCT_DEFAULT_BANNER',
+                'img' => null,
+                'value_th' => null
+            ],[
+                'type' => 'image',
+                'title' => 'Research Default Banner',
+                'key' => 'RESEARCH_DEFAULT_BANNER',
+                'img' => null,
+                'value_th' => null
+            ],[
+                'type' => 'image',
+                'title' => 'Contact Default Banner',
+                'key' => 'CONTACT_DEFAULT_BANNER',
+                'img' => null,
+                'value_th' => null
             ]
+
         ];
 
         foreach( $datas as $item ){
