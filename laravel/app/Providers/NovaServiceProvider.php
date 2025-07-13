@@ -12,7 +12,7 @@ use Laravel\Nova\Menu\MenuGroup;
 use Laravel\Nova\Menu\MenuItem;
 use Laravel\Nova\Menu\MenuSection;
 
-use App\Nova\Banner;
+use App\Nova\Banners;
 use App\Nova\Teams;
 use App\Nova\WebSettings;
 use App\Nova\User;
@@ -40,7 +40,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::mainMenu(function (Request $request, Menu $menu) {
             return [
                 MenuSection::make('Website Settings', [
-                    MenuItem::resource(Banner::class),
+                    MenuItem::resource(Banners::class),
                     MenuItem::resource(Teams::class),
                     MenuItem::resource(WebSettings::class),
                     MenuItem::resource(User::class),

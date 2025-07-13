@@ -57,6 +57,7 @@ class Reviews extends Resource
             Text::make('Name', 'name')
                 ->rules('required', 'max:255'),
             Text::make('Position', 'position')
+                ->hideFromIndex()
                 ->rules('nullable', 'max:255'),
             Select::make('Rating', 'rating')
                 ->options([
@@ -68,16 +69,13 @@ class Reviews extends Resource
                 ])
                 ->rules('required', 'integer', 'min:1', 'max:5')
                 ->displayUsingLabels(),
-            SunEditor::make('Content', 'description')
+            SunEditor::make('Content', 'content')
                 ->rules(['required'])
-                ->hideFromIndex(),
-            Date::make('Post Date', 'post_date')
-                ->rules('required', 'date')
                 ->hideFromIndex(),
             Date::make('Post Date', 'post_date')
                 ->rules(['required'])
                 ->hideFromIndex()
-                ->default( now() ),
+                ->withMeta(['value' => $this->start_date ?? now()]),
             Text::make('Period', function(){
                 return $this->display_period;
             }),

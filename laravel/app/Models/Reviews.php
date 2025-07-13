@@ -48,7 +48,7 @@ class Reviews extends Model implements Sortable
             })
             ->orderBy('order', 'asc');
     }
-    public function getPeriodAttribute()
+    public function getDisplayPeriodAttribute()
     {
         return $this->start->format('d M Y') . ' - ' . ($this->end == '' || $this->end == null ? 'indefinite' : $this->end->format('d M Y'));
     }

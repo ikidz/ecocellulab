@@ -15,7 +15,6 @@ use Outl1ne\NovaSortable\Traits\HasSortableRows;
 class BannerHotspots extends Resource
 {
     use HasSortableRows;
-    public static $displayInNavigation = false;
     /**
      * The model the resource corresponds to.
      *
@@ -28,7 +27,9 @@ class BannerHotspots extends Resource
      *
      * @var string
      */
-    public static $title = 'text';
+    function title(){
+        return mb_substr( $this->text, 0, 70, 'UTF-8') . '...';
+    }
 
     /**
      * The columns that should be searched.
@@ -49,16 +50,21 @@ class BannerHotspots extends Resource
     {
         return [
             ID::make()->sortable(),
-            BelongsTo::make('Banner', 'banner', 'App\Nova\Banner')
+            BelongsTo::make('Banner', 'banner', 'App\Nova\Banners')
                 ->rules('required')
-                ->searchable(),
+                ->default(function ($request) {
+                    return $request->viaResource === 'banners' ? $request->viaResourceId : null;
+                }),
             Image::make('Image','img')
                 ->disk(config("filesystems.default"))
                 ->path('banner_hotspots')
                 ->rules(['max:2048','image'])
-                ->help("Support *.png,*.jpg")
-                ->onlyOnForms(),
+                ->help("Support *.png,*.jpg"),
+            Text::make('Text', function(){
+                return mb_substr( $this->text, 0, 70, 'UTF-8') . '...';
+            })->onlyOnIndex(),
             Text::make('Text', 'text')
+                ->hideFromIndex()
                 ->rules('required'),
             Boolean::make('Publish?', 'is_publish')
                 ->default(1)

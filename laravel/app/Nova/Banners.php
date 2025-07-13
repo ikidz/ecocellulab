@@ -17,7 +17,7 @@ use Alexwenzel\DependencyContainer\HasDependencies;
 use Alexwenzel\DependencyContainer\DependencyContainer;
 use Mostafaznv\NovaVideo\Video;
 
-class Banner extends Resource
+class Banners extends Resource
 {
     use HasSortableRows, HasDependencies;
     public static $group = 'BANNERS';
@@ -80,6 +80,18 @@ class Banner extends Resource
                 ->hideFromIndex(),
             Text::make(__('Name'), 'name')
                 ->rules('required'),
+            Text::make('Title', 'title')
+                ->hideFromIndex()
+                ->rules('required'),
+            Text::make('Subtitle', 'subtitle')
+                ->hideFromIndex(),
+            Text::make('Hotspot YouTube ID', function(){
+                if( $this->hotspot_youtube_id != '' || $this->hotspot_youtube_id != null ){
+                    return '<iframe width="560" height="315" src="https://www.youtube.com/embed/'.$this->hotspot_youtube_id.'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+                }
+                return 'N/A';
+            })->hideFromIndex()
+            ->asHtml(),
             Text::make(__('Period'), function(){
                 return $this->period;
             })->exceptOnForms(),
@@ -96,7 +108,7 @@ class Banner extends Resource
                 ->options([
                     'image' => 'Image',
                     'video' => 'Video (File)',
-                    'youtube' => 'Video (YouTube)'
+                    // 'youtube' => 'Video (YouTube)'
                 ])
                 ->default('image'),
             DependencyContainer::make([
@@ -124,10 +136,10 @@ class Banner extends Resource
                 ->hideFromIndex(),
             Text::make('Name', 'name')
                 ->rules('required'),
-            Text::make('title', 'title')
-                ->rules('requiured'),
-            Text::make('subtitle', 'subtitle')
-                ->rules('requiured'),
+            Text::make('Title', 'title')
+                ->rules('required'),
+            Text::make('Subtitle', 'subtitle')
+                ->rules('required'),
             Text::make('Hotspot YouTube ID', 'hotspot_youtube_id')
                 ->rules('nullable')
                 ->help('This is used for hotspot video on the banner.'),
@@ -148,7 +160,7 @@ class Banner extends Resource
                 ->options([
                     'image' => 'Image',
                     'video' => 'Video (File)',
-                    'youtube' => 'Video (YouTube)'
+                    // 'youtube' => 'Video (YouTube)'
                 ])
                 ->default('image'),
             DependencyContainer::make([
@@ -176,6 +188,13 @@ class Banner extends Resource
                 ->hideFromIndex(),
             Text::make('Name', 'name')
                 ->rules('required'),
+            Text::make('Title', 'title')
+                ->rules('required'),
+            Text::make('Subtitle', 'subtitle')
+                ->rules('required'),
+            Text::make('Hotspot YouTube ID', 'hotspot_youtube_id')
+                ->rules('nullable')
+                ->help('This is used for hotspot video on the banner.'),
             Date::make('Start at', 'start')
                 ->withMeta(['value' => $this->start_date ?? now()])
                 ->rules('required')

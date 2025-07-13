@@ -77,7 +77,7 @@ class Articles extends Resource
             Date::make('Post Date', 'post_date')
                 ->rules(['required'])
                 ->hideFromIndex()
-                ->default( now() ),
+                ->withMeta(['value' => $this->start_date ?? now()]),
             Text::make('Period', function(){
                 return $this->display_period;
             }),
@@ -96,25 +96,29 @@ class Articles extends Resource
     public function seoFields()
     {
         return [
-            Slug::make('Slug')
-                ->readonly()
+            Slug::make('Slug', 'slug')
                 ->rules(['required', 'max:255'])
                 ->creationRules('unique:articles,slug')
                 ->updateRules('unique:articles,slug,{{resourceId}}')
                 ->from('Title')
                 ->separator('_')
-                ->help('The slug is automatically generated from the title.'),
+                ->help('The slug is automatically generated from the title.')
+                ->hideFromIndex(),
             Text::make('Meta Title', 'meta_title')
-                ->rules(['nullable', 'max:255']),
+                ->rules(['nullable', 'max:255'])
+                ->hideFromIndex(),
             Textarea::make('Meta Description', 'meta_description')
-                ->rules(['nullable', 'max:500']),
+                ->rules(['nullable', 'max:500'])
+                ->hideFromIndex(),
             Text::make('Meta Keywords', 'meta_keywords')
-                ->rules(['nullable', 'max:255']),
+                ->rules(['nullable', 'max:255'])
+                ->hideFromIndex(),
             Image::make('Meta Image', 'meta_image')
                 ->disk('public')
                 ->path('articles/meta')
                 ->rules(['image', 'max:2048'])
                 ->help("Support *.png,*.jpg. File size should not exceed 2MB.")
+                ->hideFromIndex()
         ];
     }
 

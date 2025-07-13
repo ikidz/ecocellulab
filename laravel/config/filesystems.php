@@ -44,6 +44,14 @@ return [
             'throw' => false,
         ],
 
+        'public_vdo_media' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/vdo_media'),
+            'url' => env('APP_URL').'/storage/vdo_media',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'public_research_galleries' => [
             'driver' => 'local',
             'root' => storage_path('app/public/researches/galleries'),
