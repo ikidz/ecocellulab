@@ -6169,6 +6169,8 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   z-index: 2;
 }
 .showcase3-area .showcase3-main .content-part .showcase3-slider {
+  position: relative;
+  z-index: 1;
   margin-bottom: 0;
 }
 .showcase3-area .showcase3-main .content-part .showcase3-slider .showcase3-slider-item.slick-active .slider-content-wrap .sub-title {
@@ -6183,33 +6185,61 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .showcase3-area .showcase3-main .content-part .showcase3-slider .showcase3-slider-item.slick-active .slider-content-wrap .btn-with-video {
   animation: slideInUp 2s;
 }
-.showcase3-area .showcase3-main .hotspot-part {
+.showcase3-area .showcase3-main .showcase3-nav {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.showcase3-area .showcase3-main .showcase3-nav .showcase3-nav-item {
+  width: 100%;
+  min-height: calc(100vh - 100px);
   position: relative;
 }
-.showcase3-area .showcase3-main .hotspot-part .video-part {
+.showcase3-area .showcase3-main .showcase3-nav .hotspot-part {
+  width: 50%;
+  top: 20%;
+  right: 0;
+  position: absolute;
+  min-height: 300px;
+  z-index: 3;
+}
+.showcase3-area .showcase3-main .showcase3-nav .hotspot-part .video-part {
   position: absolute;
   left: 10%;
   top: 10%;
   z-index: 1;
 }
-.showcase3-area .showcase3-main .hotspot-part #hotspotImg {
+.showcase3-area .showcase3-main .showcase3-nav .hotspot-part #hotspotImg {
   position: relative;
   height: 400px;
 }
-.showcase3-area .showcase3-main .hotspot-part #hotspotImg .hot-spot {
+.showcase3-area .showcase3-main .showcase3-nav .hotspot-part #hotspotImg .hot-spot {
   position: absolute;
   right: 25%;
   bottom: 5%;
   left: inherit;
   top: inherit;
 }
-.showcase3-area .showcase3-main .hotspot-part #hotspotImg .hot-spot.item-2 {
+.showcase3-area .showcase3-main .showcase3-nav .hotspot-part #hotspotImg .hot-spot.item-2 {
   bottom: 20%;
   left: 30%;
 }
-.showcase3-area .showcase3-main .hotspot-part #hotspotImg .hot-spot.item-3 {
+.showcase3-area .showcase3-main .showcase3-nav .hotspot-part #hotspotImg .hot-spot.item-3 {
   bottom: 70%;
   left: 55%;
+}
+.showcase3-area .showcase3-main .showcase3-nav .nav-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
 }
 .showcase3-area .showcase-slider-controls {
   position: absolute;
