@@ -257,6 +257,16 @@ $(document).ready(function () {
             nextArrow: '<button type="button" class="slick-next"><i class="flaticon-right-arrow"></i></button>',
             appendArrows: $('.showcase-slider-controls'),
             appendDots: $('.showcase-slider-dot-controls'),
+            asNavFor: '.showcase3-nav'
+        });
+        $('.showcase3-nav').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            infinite: true,
+            dots: false,
+            fade: true,
+            asNavFor: '.showcase3-slider'
         });
     }
 
