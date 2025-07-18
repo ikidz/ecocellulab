@@ -14,6 +14,7 @@ use Laravel\Nova\Menu\MenuSection;
 
 use App\Nova\Banners;
 use App\Nova\Teams;
+use App\Nova\Benefits;
 use App\Nova\WebSettings;
 use App\Nova\User;
 use App\Nova\Articles;
@@ -42,6 +43,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::make('Website Settings', [
                     MenuItem::resource(Banners::class),
                     MenuItem::resource(Teams::class),
+                    MenuItem::resource(Benefits::class),
                     MenuItem::resource(WebSettings::class),
                     MenuItem::resource(User::class),
                 ])->icon('cog'),
