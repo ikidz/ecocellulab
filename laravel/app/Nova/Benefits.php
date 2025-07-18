@@ -50,7 +50,7 @@ class Benefits extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            ID::make()->sortable(),
+            // ID::make()->sortable(),
             Select::make('Display Type', 'display_type')
                 ->options([
                     'icon' => 'Icon',
@@ -59,6 +59,15 @@ class Benefits extends Resource
                 ->default('icon')
                 ->displayUsingLabels()
                 ->rules(['required']),
+            Text::make('Icon/Image', function(){
+                if ($this->display_type === 'image' && $this->img) {
+                    return "<img src='" . $this->display_img . "' style='max-width: 100px; max-height: 100px;'>";
+                }else if ($this->display_type === 'icon' && $this->icon) {
+                    return $this->icon ? "<i class='icon-{$this->icon}' style='font-size:24px;'></i>" : '';
+                }
+                return '';
+            })->asHtml()
+            ->exceptOnForms(),
             DependencyContainer::make([
                 Image::make('Image', 'img')
                     ->disk(config("filesystems.default"))
@@ -80,8 +89,14 @@ class Benefits extends Resource
                         'ultrasound' => 'Ultrasound'
                         // Add more icons as needed
                     ])
-                    ->rules(['required']),
+                    ->rules(['required'])
+                    ->searchable()
+                    ->displayUsingLabels(),
             ])->dependsOn('display_type', 'icon'),
+            Text::make('Title', 'title')
+                ->rules(['required', 'max:255']),
+            Text::make('Subtitle', 'subtitle')
+                ->hideFromIndex(),
             Boolean::make('Publish?', 'is_publish')
                 ->default(1)
         ];
