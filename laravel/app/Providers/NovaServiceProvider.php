@@ -22,6 +22,10 @@ use App\Nova\Researches;
 use App\Nova\Reviews;
 use App\Nova\Subscribers;
 use App\Nova\Contacts;
+use App\Nova\AboutusContents;
+use App\Nova\ProductCategories;
+use App\Nova\Products;
+use App\Nova\ProductReviews;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -44,6 +48,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(Banners::class),
                     MenuItem::resource(Teams::class),
                     MenuItem::resource(Benefits::class),
+                    MenuItem::resource(AboutusContents::class),
                     MenuItem::resource(WebSettings::class),
                     MenuItem::resource(User::class),
                 ])->icon('cog'),
@@ -54,6 +59,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::make('Reviews', [
                     MenuItem::resource(Reviews::class)
                 ])->icon('star'),
+                MenuSection::make('Products', [
+                    MenuItem::resource(ProductCategories::class),
+                    MenuItem::resource(Products::class),
+                    MenuItem::resource(ProductReviews::class)
+                ])->icon('cube'),
                 MenuSection::make('Contact', [
                     MenuItem::resource(Subscribers::class),
                     MenuItem::resource(Contacts::class)

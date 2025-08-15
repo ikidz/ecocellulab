@@ -11,6 +11,7 @@
         "php": "^8.1",
         "alexwenzel/nova-dependency-container": "^1.13",
         "ardenthq/nova-image-gallery-field": "^2.3",
+        "doctrine/dbal": "^3.10",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/nova": "^4.0",
@@ -21,6 +22,8 @@
         "nova-fields/rating": "^1.0",
         "outl1ne/nova-sortable": "^3.4",
         "spatie/laravel-medialibrary": "^11.13",
+        "spatie/laravel-tags": "^4.10",
+        "spatie/nova-tags-field": "^4.1",
         "webard/nova-suneditor": "^2.0"
     },
     "require-dev": {

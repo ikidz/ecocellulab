@@ -46,4 +46,6 @@ return [
             ],
         ],
     ],
+    'upload_endpoint' => '/nova-api/suneditor-upload/%s/%s',
+    'upload_disk' => 'public',
 ];

@@ -22,6 +22,7 @@ class Researches extends Model implements HasMedia
         'post_date',
         'start',
         'end',
+        'is_highlight',
         'is_publish',
         'slug',
         'meta_title',
@@ -37,7 +38,7 @@ class Researches extends Model implements HasMedia
     ];
 
     public function registerMediaCollections(): void{
-        $this->addMediaCollection('research_galleres')->useDisk('public_research_galleries');
+        $this->addMediaCollection('research_galleries')->useDisk('public_research_galleries');
     }
 
     public function scopePublished($query)
@@ -49,6 +50,18 @@ class Researches extends Model implements HasMedia
 							->orWhere("end",null);
 				})
 									->orderBy('post_date','desc');
+    }
+
+    public function scopeHighlight( $query ){
+        return $query->where('is_highlight', 1)
+                ->where('start','<=',now()->format('Y-m-d'))
+                ->where('is_publish', 1)
+                ->where( function( $query ){
+                    $query->where("end",">=",now()->format("Y-m-d"))
+                            ->orWhere("end",null);
+                })
+                ->limit(1)
+                ->orderBy('post_date','desc');
     }
 
     public function getPeriodAttribute()
@@ -90,5 +103,10 @@ class Researches extends Model implements HasMedia
             $image = \Storage::disk('public')->url( $this->meta_image );
         }
         return $image;
+    }
+
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = \Str::slug(strtolower($value), '-');
     }
 }
