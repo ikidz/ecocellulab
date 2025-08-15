@@ -16,6 +16,7 @@ use Outl1ne\NovaSortable\Traits\HasSortableRows;
 use Alexwenzel\DependencyContainer\HasDependencies;
 use Alexwenzel\DependencyContainer\DependencyContainer;
 use Mostafaznv\NovaVideo\Video;
+use Webard\NovaSunEditor\SunEditor;
 
 class Banners extends Resource
 {
@@ -80,10 +81,11 @@ class Banners extends Resource
                 ->hideFromIndex(),
             Text::make(__('Name'), 'name')
                 ->rules('required'),
-            Text::make('Title', 'title')
-                ->hideFromIndex()
-                ->rules('required'),
-            Text::make('Subtitle', 'subtitle')
+            Text::make(__('Title'), 'title')
+                ->rules('required')
+                ->hideFromIndex(),
+            SunEditor::make('Subtitle', 'subtitle')
+                ->rules(['required'])
                 ->hideFromIndex(),
             Text::make('Hotspot YouTube ID', function(){
                 if( $this->hotspot_youtube_id != '' || $this->hotspot_youtube_id != null ){
@@ -138,8 +140,21 @@ class Banners extends Resource
                 ->rules('required'),
             Text::make('Title', 'title')
                 ->rules('required'),
-            Text::make('Subtitle', 'subtitle')
-                ->rules('required'),
+            SunEditor::make('Subtitle', 'subtitle')
+                ->withFiles('public','banners/attachments')
+                ->settings([
+                    'imageUploadUrl'   => route('custom-suneditor.upload', [
+                        'resource' => static::uriKey(), // "banners"
+                        'field'    => 'subtitle',
+                    ]),
+                    'imageUploadParam' => 'file', // 👈 force the key name
+                    'imageUploadHeader' => [
+                        'X-Requested-With' => 'XMLHttpRequest',
+                        'X-CSRF-TOKEN'     => csrf_token(),
+                    ],
+                ])
+                ->rules(['required'])
+                ->hideFromIndex(),
             Text::make('Hotspot YouTube ID', 'hotspot_youtube_id')
                 ->rules('nullable')
                 ->help('This is used for hotspot video on the banner.'),
@@ -190,8 +205,21 @@ class Banners extends Resource
                 ->rules('required'),
             Text::make('Title', 'title')
                 ->rules('required'),
-            Text::make('Subtitle', 'subtitle')
-                ->rules('required'),
+            SunEditor::make('Subtitle', 'subtitle')
+                ->withFiles('public','banners/attachments')
+                ->settings([
+                    'imageUploadUrl'   => route('custom-suneditor.upload', [
+                        'resource' => static::uriKey(), // "banners"
+                        'field'    => 'subtitle',
+                    ]),
+                    'imageUploadParam' => 'file', // 👈 force the key name
+                    'imageUploadHeader' => [
+                        'X-Requested-With' => 'XMLHttpRequest',
+                        'X-CSRF-TOKEN'     => csrf_token(),
+                    ],
+                ])
+                ->rules(['required'])
+                ->hideFromIndex(),
             Text::make('Hotspot YouTube ID', 'hotspot_youtube_id')
                 ->rules('nullable')
                 ->help('This is used for hotspot video on the banner.'),

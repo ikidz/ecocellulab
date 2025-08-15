@@ -94,6 +94,8 @@ class Researches extends Resource
             Date::make('End', 'end')
                 ->rules(['nullable', 'date'])
                 ->onlyOnForms(),
+            Boolean::make('Is Highlight', 'is_highlight')
+                ->default(0),
             Boolean::make('Is Published', 'is_publish')
                 ->default(1),
             new Panel('SEO', $this->seoFields()),
