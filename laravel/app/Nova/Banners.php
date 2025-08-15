@@ -9,8 +9,10 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Illuminate\Validation\Rule;
 
 use Outl1ne\NovaSortable\Traits\HasSortableRows;
 use Alexwenzel\DependencyContainer\HasDependencies;
@@ -134,8 +136,30 @@ class Banners extends Resource
                     ->updateRules('nullable')
                     ->placeholder('https://www.youtube.com/watch?v=VIDEO_ID'),
             ])->dependsOn('type', 'youtube'),
-            Text::make('URL', 'url')
-                ->hideFromIndex(),
+            Select::make('Link to', 'link_type')
+                ->options([
+                    'none' => 'None',
+                    'research' => 'Research page',
+                    'external' => 'External',
+                ])
+                ->default('none')
+                ->rules(['required']),
+            DependencyContainer::make([
+                Text::make('URL', 'url')
+                    ->hideFromIndex(),
+            ])->dependsOn('link_type', 'external'),
+            DependencyContainer::make([
+                BelongsTo::make('Research', 'research', 'App\Nova\Researches')
+                    ->searchable()
+                    ->hideFromIndex()
+                    ->rules(function () {
+                        return [
+                            Rule::requiredIf(function () {
+                                return request()->input('link_type') === 'research';
+                            }),
+                        ];
+                    }),
+            ])->dependsOn('link_type', 'research'),
             Text::make('Name', 'name')
                 ->rules('required'),
             Text::make('Title', 'title')
@@ -199,8 +223,30 @@ class Banners extends Resource
                     ->updateRules('nullable')
                     ->placeholder('https://www.youtube.com/watch?v=VIDEO_ID'),
             ])->dependsOn('type', 'youtube'),
-            Text::make('URL', 'url')
-                ->hideFromIndex(),
+            Select::make('Link to', 'link_type')
+                ->options([
+                    'none' => 'None',
+                    'research' => 'Research page',
+                    'external' => 'External',
+                ])
+                ->default('none')
+                ->rules(['required']),
+            DependencyContainer::make([
+                Text::make('URL', 'url')
+                    ->hideFromIndex(),
+            ])->dependsOn('link_type', 'external'),
+            DependencyContainer::make([
+                BelongsTo::make('Research', 'research', 'App\Nova\Researches')
+                    ->searchable()
+                    ->hideFromIndex()
+                    ->rules(function () {
+                        return [
+                            Rule::requiredIf(function () {
+                                return request()->input('link_type') === 'research';
+                            }),
+                        ];
+                    }),
+            ])->dependsOn('link_type', 'research'),
             Text::make('Name', 'name')
                 ->rules('required'),
             Text::make('Title', 'title')
