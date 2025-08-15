@@ -63,6 +63,7 @@
     <?php /* .about-us-area - End */ ?>
 
     <?php /* .therapy-box-area - Start */ ?>
+    <?php /*
     <section class="therapy-box-area padding-top-110 md-pd-top-65">
         <div class="nav-container">
             <div class="row">
@@ -124,6 +125,7 @@
         </div>
 
     </section>
+    */ ?>
     <?php /* .therapy-box-area - End */ ?>
 
     <?php /* .Technologies-area - Start */ ?>
@@ -426,6 +428,7 @@
     <?php /* .news-area - End */ ?>
 
     <?php /* .meet-team-area - Start */ ?>
+    <?php /*
     <section class="meet-team-area style-2 padding-top-110 md-pd-top-65 margin-bottom-55">
         <div class="nav-container rel-cls">
             <div class="row">
@@ -559,6 +562,7 @@
             <div class="meet-team-slider-controls"></div>
         </div>
     </section>
+    */ ?>
     <?php /* .meet-team-area - End */ ?>
 
     <?php /* .contact-area-2 - Start */ ?>
@@ -572,12 +576,9 @@
                 </div>
             </div>
             <div class="row">
+                <?php /*
                 <div class="col-lg-12">
                     <div class="content-wrapper">
-                        <?php /*
-                        <div class="img-wrap">
-                        </div>
-                        */ ?>
                         <div class="text-wrapper col-12 col-md-8">
                             <form class="contact-from mx-auto">
                                 <div class="form-group">
@@ -624,14 +625,9 @@
                             </div>
 
                         </div>
-
-                        <?php /*
-                        <div class="circle-img">
-                            <img src="{{ asset('assets/img/contact/circle.png') }}" alt="">
-                        </div>
-                        */ ?>
                     </div>
                 </div>
+                */ ?>
 
                 <div class="col-12 mt-3">
                     <div class="embed-responsive embed-responsive-16by9">

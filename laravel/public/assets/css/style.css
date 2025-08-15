@@ -104,6 +104,7 @@ Version: 1.0.0
   --red: #f95759;
   --body-font: "Roboto Slab", serif;
   --heading-font: "Poppins", sans-serif;
+  --footer-bg-color:#00311A;
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -4913,7 +4914,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   color: var(--hover-color);
 }
 .footer-area .footer-top.style-3 {
-  background: #14262C;
+  background: var(--footer-bg-color);
 }
 .footer-area .footer-top.style-3 .footer-widget-content-wrapper {
   display: flex;

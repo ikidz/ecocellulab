@@ -1,12 +1,12 @@
 <?php /* .footer-area - Start */ ?>
 <footer class="footer-area">
-    <div class="footer-top style-3  padding-top-80 padding-bottom-80">
+    <div class="footer-top style-3  padding-top-20 padding-bottom-20">
         <div class="nav-container">
             <div class="footer-widget-content-wrapper">
                 <div class="footer-widget-content">
                     <div class="footer-widget widget">
                         <div class="about_us_widget padding-bottom-10">
-                            <a href="index.html" class="footer-logo"> <img src="{{ asset('assets/img/logo/logo.png') }}"
+                            <a href="index.html" class="footer-logo"> <img src="{{ asset('assets/images/logo_v.svg') }}"
                                     alt="footer logo"></a>
                         </div>
                         <div class="footer-widget widget widget_nav_menu ">
@@ -26,7 +26,7 @@
                                 <a href="#" target="_blank"><i
                                         class="flaticon-facebook-logo"></i></a>
                                 <a href="#" target="_blank"><i
-                                        class="flaticon-twitter"></i></a>
+                                        class="iconify streamline-logos--x-twitter-logo-solid"></i></a>
                                 <a href="#" target="_blank"><i
                                         class="flaticon-linked-in-logo-of-two-letters"></i></a>
                                 <a href="#" target="_blank"><i
