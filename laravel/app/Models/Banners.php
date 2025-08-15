@@ -18,7 +18,9 @@ class Banners extends Model implements Sortable
 		'img',
 		'video',
 		'youtube_id',
+		'link_type',
 		'url',
+		'content_id',
 		'name',
 		'title',
 		'subtitle',
@@ -55,6 +57,10 @@ class Banners extends Model implements Sortable
 
 	public function hotspots(){
 		return $this->hasMany('App\Models\BannerHotspots', 'banner_id', 'id');
+	}
+
+	public function research(){
+		return $this->belongsTo('App\Models\Researches', 'content_id', 'id');
 	}
 
 	public function setHotspotYoutubeIdAttribute($value){
