@@ -62,7 +62,7 @@
                                 <a href="#" target="_blank"><i
                                         class="flaticon-facebook-logo"></i></a>
                                 <a href="#" target="_blank"><i
-                                        class="flaticon-twitter"></i></a>
+                                        class="iconify streamline-logos--x-twitter-logo-solid"></i></a>
                                 <a href="#" target="_blank"><i
                                         class="flaticon-linked-in-logo-of-two-letters"></i></a>
                                 <a href="#" target="_blank"><i
