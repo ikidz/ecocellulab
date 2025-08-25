@@ -41,6 +41,10 @@ class Researches extends Model implements HasMedia
         $this->addMediaCollection('research_galleries')->useDisk('public_research_galleries');
     }
 
+    public function getResearchGalleryUrlsAttribute(): array{
+        return $this->getMedia('research_galleries')->map->getFullUrl()->all();
+    }
+
     public function scopePublished($query)
     {
         return $query->where('start','<=',now()->format('Y-m-d'))
@@ -52,7 +56,7 @@ class Researches extends Model implements HasMedia
 									->orderBy('post_date','desc');
     }
 
-    public function scopeHighlight( $query ){
+    public function scopeHighlighted( $query ){
         return $query->where('is_highlight', 1)
                 ->where('start','<=',now()->format('Y-m-d'))
                 ->where('is_publish', 1)
