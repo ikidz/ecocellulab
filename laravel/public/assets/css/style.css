@@ -1663,7 +1663,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   height: 100%;
 }
 .info-popup-content__img--one {
-  background: #dcf8ff;
+  background: var(--white);
   text-align: center;
   display: flex;
   align-items: center;

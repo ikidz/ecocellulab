@@ -1,3 +1,4 @@
+@if( $banners->isNotEmpty() )
 <section class="showcase3-area" style="background-image: url('{{ asset('assets/images/herobanner.jpg') }}');">
     <div class="showcase3-overlay"></div>
     <div class="showcase3-main">
@@ -6,131 +7,106 @@
                 <div class="col-12 col-lg-6 mx-0 mx-lg-3 px-0 text-center text-lg-left">
                     <div class="content-part">
                         <div class="showcase3-slider">
-                            <div class="showcase3-slider-item">
-                                <div class="slider-content-wrap px-3">
-                                    <h2 class="title">Jozicular- controlling inflammation</h2>
-                                    <p>Jozicular is pioneering a new class of immunotherapy to give hope to patients
-                                        and
-                                        their family Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        
-                                    </p>
-                                    <div class="btn-wrapper">
-                                        <a href="#" class="boxed-btn">Read More</a>
+
+                            @foreach( $banners as $banner )
+                                <?php /* .showcase3-slider-item - Start */ ?>
+                                <div class="showcase3-slider-item">
+                                    <div class="slider-content-wrap px-3">
+                                        @if( $banner->display_title_img != null && $banner->display_title_img != '' )
+                                            <div class="img-wrapper text-center text-md-left">
+                                                <img src="{{ $banner->display_title_img }}" alt="{{ $banner->title }}">
+                                            </div>
+                                        @endif
+                                        <h2 class="title">{{ $banner->title }}</h2>
+                                        {!! $banner->subtitle !!}
+                                        @if( $banner->link_type == 'researches' )
+                                            <div class="btn-wrapper">
+                                                <a href="{{ route('researches.detail', ['id' => $banner->content_id]) }}" class="boxed-btn">Read More</a>
+                                            </div>
+                                        @elseif( $banner->link_type == 'external' && ( $banner->url != null || $banner->url != '' ) )
+                                            <div class="btn-wrapper">
+                                                <a href="{{ $banner->url }}" target="_blank" class="boxed-btn">Find out More</a>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
-                            </div>
-                            <div class="showcase3-slider-item">
-                                <div class="slider-content-wrap px-3">
-                                    <h2 class="title">we are reimagining medicine</h2>
-                                    <p>Jozicular is pioneering a new class of immunotherapy to give hope to patients
-                                        and
-                                        their family Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    
-                                    </p>
-                                    <div class="btn-wrapper">
-                                        <a href="#" class="boxed-btn">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php /* .showcase3-slider-item - End */ ?>
+                            @endforeach
+                            
                         </div>
                     </div>
                 </div>
                 <div class="showcase3-nav px-0 text-center md-pd-top-100 cus-pd">
-                    <?php /* <div class="showcase3-nav"> */ ?>
 
+                    @foreach( $banners as $banner )
+                        <?php /* .showcase3-nav-item - Start */ ?>
                         <div class="showcase3-nav-item">
                             <div class="hotspot-part mobile-none tab-none">
-                                <div class="video-part">
-                                    <div class="pulse-icon">
-                                        <a href="https://www.youtube.com/watch?v=zdow47FQRfQ" class="video-popup mfp-iframe"
-                                            tabindex="0">
-                                            <i class="flaticon-play-arrow"></i></a>
-                                    </div>
-                                </div>
-                                <div id="hotspotImg" class="responsive-hotspot-wrap row">
-                                    <div class="hot-spot">
-                                        <div class="tooltip">
-                                            <div class="text-row">
-                                                <p>Our corporate headquarters & includes our immunotherapy platform research
-                                                    lab and development team.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="hot-spot item-2">
-                                        <div class="tooltip">
-                                            <div class="text-with-img">
-                                                <img src="{{ asset('assets/images/bullet_img_1.jpg') }}" alt="">
-                                                <p>Jozicular is found primarily in the peak Districk of the United Kingdom
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="hot-spot item-3">
-                                        <div class="tooltip">
-                                            <div class="text-row">
-                                                <p>Jozicular is a course-grained sandstone made up of the minerals quartz,
-                                                    mica, feldspar, calcite, and clay.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="nav-img">
-                                <?php /* HTML 5 Video Background - Start */ ?>
-                                <div class="video-background">
-                                    <video autoplay muted loop>
-                                        <source src="{{ asset('assets/videos/herobanner_vidbg.mp4') }}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                                <?php /* HTML 5 Video Background - End */ ?>
-                            </div>
-                        </div>
 
-                        <div class="showcase3-nav-item">
-                            <div class="hotspot-part mobile-none tab-none">
-                                <div class="video-part">
-                                    <div class="pulse-icon">
-                                        <a href="https://www.youtube.com/watch?v=zdow47FQRfQ" class="video-popup mfp-iframe"
-                                            tabindex="0">
-                                            <i class="flaticon-play-arrow"></i></a>
-                                    </div>
-                                </div>
-                                <div id="hotspotImg" class="responsive-hotspot-wrap row">
-                                    <div class="hot-spot">
-                                        <div class="tooltip">
-                                            <div class="text-row">
-                                                <p>Our corporate headquarters & includes our immunotherapy platform research
-                                                    lab and development team.</p>
-                                            </div>
+                                @if( $banner->hotspot_youtube_id != null && $banner->hotspot_youtube_id != '' )
+                                    <?php /* .video-part - Start */ ?>
+                                    <div class="video-part">
+                                        <div class="pulse-icon">
+                                            <a href="https://www.youtube.com/watch?v={{ $banner->hotspot_youtube_id }}" class="video-popup mfp-iframe"
+                                                tabindex="0">
+                                                <i class="flaticon-play-arrow"></i></a>
                                         </div>
                                     </div>
-                                    <div class="hot-spot item-2">
-                                        <div class="tooltip">
-                                            <div class="text-with-img">
-                                                <img src="{{ asset('assets/images/bullet_img_1.jpg') }}" alt="">
-                                                <p>Jozicular is found primarily in the peak Districk of the United Kingdom
-                                                </p>
+                                    <?php /* .video-part - End */ ?>
+                                @endif
+
+                                @if( $banner->hotspots->isNotEmpty() )
+                                    <?php /* #hotspotImg - Start */ ?>
+                                    <div id="hotspotImg" class="responsive-hotspot-wrap row">
+                                        @foreach( $banner->hotspots as $key => $hotspot )
+                                            <?php /* .hot-spot - Start */ ?>
+                                            <div class="hot-spot {{ ( $key > 0 ? 'item-'.$key+1 : '' ) }}">
+                                                <div class="tooltip">
+                                                    @if( $hotspot->display_img != null )
+                                                        <div class="text-with-img">
+                                                            <img src="{{ $hotspot->display_img }}" alt="">
+                                                            <p>{{ $hotspot->text }}</p>
+                                                        </div>
+                                                    @else
+                                                        <div class="text-row">
+                                                            <p>{{ $hotspot->text }}</p>
+                                                        </div>
+                                                    @endif
+                                                </div>
                                             </div>
-                                        </div>
+                                            <?php /* .hot-spot - End */ ?>
+                                        @endforeach
+
                                     </div>
-                                    <div class="hot-spot item-3">
-                                        <div class="tooltip">
-                                            <div class="text-row">
-                                                <p>Jozicular is a course-grained sandstone made up of the minerals quartz,
-                                                    mica, feldspar, calcite, and clay.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <?php /* #hotspotImg - End */ ?>
+                                @endif
+
                             </div>
-                            <div class="nav-img" style="background-image: url('{{ asset('assets/images/herobanner.jpg') }}');">
-                                &nbsp;
-                            </div>
+
+                            @if( $banner->type == 'video' && $banner->display_media != null )
+                                <div class="nav-img">
+                                    <?php /* HTML 5 Video Background - Start */ ?>
+                                    <div class="video-background">
+                                        <video autoplay muted loop>
+                                            <source src="{{ $banner->display_media }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <?php /* HTML 5 Video Background - End */ ?>
+                                </div>
+                            @elseif( $banner->type == 'image' && $banner->display_media != null )
+                                <div class="nav-img" style="background-image: url('{{ $banner->display_media }}');">
+                                    &nbsp;
+                                </div>
+                            @else
+                                <div class="nav-img" style="background-image: url('{{ asset('assets/images/herobanner.jpg') }}');">
+                                    &nbsp;
+                                </div>
+                            @endif
                         </div>
+                        <?php /* .showcase3-nav-item - End */ ?>
+                    @endforeach
                         
-                        
-                    <?php /* </div> */ ?>
                 </div>
             </div>
         </div>
@@ -145,7 +121,7 @@
     </div>
 
     <div class="showcase-follow-icon right-align">
-        <a href="#" target="_blank"><i class="flaticon-twitter"></i></a>
+        <a href="#" target="_blank"><i class="iconify streamline-logos--x-twitter-logo-solid"></i></a>
         <a href="#" target="_blank"><i class="flaticon-instagram"></i></a>
         <a href="#" target="_blank"><i
                 class="flaticon-linked-in-logo-of-two-letters"></i></a>
@@ -153,3 +129,4 @@
     </div>
 
 </section>
+@endif

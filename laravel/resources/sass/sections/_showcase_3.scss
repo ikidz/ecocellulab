@@ -29,8 +29,15 @@
         z-index:1;
         margin-bottom: 0;
         .showcase3-slider-item {
+          .se-component {
+            display:flex;
+            align-items: center;
+          }
           &.slick-active {
             .slider-content-wrap {
+              .img-wrapper{
+                animation: fadeInDown 2s;
+              }
               .sub-title {
                 animation: fadeInLeft 2s;
               }

@@ -259,9 +259,9 @@
 
 @media only screen and (max-width: 1100px) {
   /* menu */
-  .navbar-area .nav-container .navbar-collapse .navbar-nav li + li {
+  /* .navbar-area .nav-container .navbar-collapse .navbar-nav li + li {
     margin-left: 25px !important;
-  }
+  } */
   .navbar-area .nav-container .nav-right-content ul li {
     margin-left: 15px;
   }
@@ -1626,7 +1626,7 @@
     font-size: 10px;
   }
   .responsive-mobile-menu .logo-wrapper a img {
-    max-width: 120px;
+    max-width: 180px;
   }
   .about-us-area .img-wrap .main-img img {
     max-width: 50%;

@@ -7,60 +7,46 @@
 @endsection
 
 @section('content')
-
-    <?php /* .about-us-area - Start */ ?>
-    <div class="about-us-area no-bg-style  padding-top-110 md-pd-top-80">
-        <div class="floating-icon" id="service_info_item">
-            <div class="floating-icon__is floating-icon-info">
-                <!-- <i class="fa fa-phone"></i> -->
-                <i class="flaticon-telephone-handle-silhouette"></i>
-            </div>
-            <!--floating-icon-is-->
-            <div class="floating-icon__is floating-icon-location">
-                <i class="flaticon-placeholder"></i>
-            </div>
-            <!--floating-icon-is-->
-            <div class="floating-icon__is floating-icon-message">
-                <i class="flaticon-envelope"></i>
-            </div>
-            <!--floating-icon-is-->
-        </div>
-        <!--floating-icon-->
-        <div class="nav-container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="img-wrap text-center">
-                        <img src="{{ asset('assets/images/aboutus.jpg') }}" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 md-pd-top-45 text-center text-lg-left">
-                    <div class="content-wrapper">
-                        <div class="text-wrapper">
-                            <div class="section-title text-center text-lg-left margin-bottom-40 md-mr-bottom-20">
-                                <h2 class="title">Vision &amp; Mission</h2>
+<div class="position-relative">
+    
+    @includeIf('layout.components.floating-icon')
+    
+    @if( $aboutusContent )
+        <?php /* .about-us-area - Start */ ?>
+        <div class="about-us-area no-bg-style  padding-top-110 md-pd-top-80">
+            <div class="nav-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        @if( $aboutusContent->display_home_section_img )
+                            <div class="img-wrap">
+                                <img src="{{ $aboutusContent->display_home_section_img }}" alt="">
                             </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis tellus eleifend libero commodo sodales.
-                                Proin eget eleifend quam. Duis hendrerit odio nec rutrum mattis. Morbi fermentum ultrices lacus ac suscipit. 
-                                Aenean non urna et tortor dictum euismod sed et lorem. Sed eu tellus augue. Pellentesque congue blandit scelerisque. 
-                                Aenean sit amet semper felis, ut rhoncus ipsum. Cras tempor fringilla faucibus. 
-                            </p>
-                            <p>
-                                Mauris eu lacinia quam. In in nunc quis magna tempor pellentesque. Donec molestie metus vitae ante tempus, sit amet auctor libero molestie. 
-                                Mauris vitae quam eget ante facilisis luctus ut quis eros. Donec ultrices purus ipsum, id lobortis tellus vulputate ut.
-                            </p>
+                        @else
+                            <div class="img-wrap text-center">
+                                <img src="{{ asset('assets/images/aboutus.jpg') }}" alt="">
+                            </div>
+                        @endif
+                    </div>
+                    <div class="col-lg-6 md-pd-top-45 text-center text-lg-left">
+                        <div class="content-wrapper">
+                            <div class="text-wrapper">
+                                <div class="section-title text-center text-lg-left margin-bottom-40 md-mr-bottom-20">
+                                    <h2 class="title">{{ $aboutusContent->home_section_title }}</h2>
+                                </div>
+                                {!! $aboutusContent->home_section_content !!}
+                            </div>
+                            <?php /*
+                            <div class="btn-wrapper">
+                                <a href="#" class="boxed-btn">Read More</a>
+                            </div>
+                            */ ?>
                         </div>
-                        <?php /*
-                        <div class="btn-wrapper">
-                            <a href="#" class="boxed-btn">Read More</a>
-                        </div>
-                        */ ?>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <?php /* .about-us-area - End */ ?>
+        <?php /* .about-us-area - End */ ?>
+    @endif
 
     <?php /* .therapy-box-area - Start */ ?>
     <?php /*
@@ -128,55 +114,45 @@
     */ ?>
     <?php /* .therapy-box-area - End */ ?>
 
-    <?php /* .Technologies-area - Start */ ?>
-    <section class="Technologies-area with-bg padding-top-75 md-pd-top-35">
-        <div class="nav-container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-left">
-                    <div class="content-wrapper">
-                        <div class="text-wrapper">
-                            <div class="section-title text-center text-lg-left margin-bottom-55 md-mr-bottom-30">
-                                <h2 class="title">Bio technology System</h2>
+    @if( $highlightResearch )
+        <?php /* .Technologies-area - Start */ ?>
+        <section class="Technologies-area with-bg padding-top-75 md-pd-top-35">
+            <div class="nav-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-left">
+                        <div class="content-wrapper">
+                            <div class="text-wrapper">
+                                <div class="section-title text-center text-lg-left margin-bottom-55 md-mr-bottom-30">
+                                    <h2 class="title">{{ $highlightResearch->title }}</h2>
+                                </div>
+                                {!! \Str::limit(strip_tags($highlightResearch->content), 1200) !!}
                             </div>
-                            <h5 class="sub-title">BCNF - BASED NANOTECHNOLOGY SYSTEM</h5>
-                            <p>Bacterial cellulose nanofibers (BCNF), derived from microbial fermentation, offer a promising natural platform for nanodelivery applications due to their unique three-dimensional network structure, high surface area, excellent biocompatibility, and controlled release capabilities. In this work, BCNF was developed as a nanocarrier for xanthone, a potent antioxidant and anti-inflammatory compound extracted from mangosteen peel. Despite xanthone’s strong bioactivity, its low water solubility and instability under environmental stress limit its efficacy in topical formulations.</p>
-                            <p>To overcome these challenges, xanthone was incorporated into the BCNF matrix through physical adsorption and diffusion-assisted loading. The resulting BCNF–xanthone composite exhibited improved dispersibility, sustained release behavior, and enhanced antioxidant activity compared to free xanthone.</p>
-                            <p>This BCNF-based system not only increases the stability and functional efficacy of xanthone but also exemplifies the potential of fermentation-derived biomaterials as next-generation delivery vehicles for natural bioactives. The platform is suitable for use in cosmeceuticals, wound healing gels, or targeted skincare formulations, offering a sustainable and value-added solution derived from agro-industrial and microbial biotechnology.</p>
-                        </div>
-                        <div class="btn-wrapper">
-                            <a href="#" class="boxed-btn">Read More</a>
+                            <div class="btn-wrapper">
+                                <a href="{{ route('article.research.detail', ['slug' => $highlightResearch->slug]) }}" class="boxed-btn">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 md-pd-top-15">
-                    <div class="animated-image-area text-center text-lg-left">
-                        <div class="main-img">
-                            <img src="{{ asset('assets/img/technology/main-bg.png') }}" alt="">
-                        </div>
-                        <div class="animated-img-box">
-                            <div class="img-wrap">
-                                <img src="{{ asset('assets/images/biotech_1.jpg') }}" alt="">
+                    <div class="col-lg-6 md-pd-top-15">
+                        <div class="animated-image-area text-center text-lg-left">
+                            <div class="main-img">
+                                <img src="{{ asset('assets/img/technology/main-bg.png') }}" alt="">
                             </div>
-                            <p> <strong>BCNF-based</strong> </p>
-                        </div>
-                        <div class="animated-img-box item-2">
-                            <div class="img-wrap">
-                                <img src="{{ asset('assets/images/biotech_2.jpg') }}" alt="">
-                            </div>
-                            <p> <strong>BCNF-based</strong> </p>
-                        </div>
-                        <div class="animated-img-box item-3">
-                            <div class="img-wrap">
-                                <img src="{{ asset('assets/images/biotech_3.jpg') }}" alt="">
-                            </div>
-                            <p> <strong>BCNF-based</strong> </p>
+                            @if( $highlightResearch->research_gallery_urls )
+                                @foreach( $highlightResearch->research_gallery_urls as $key => $galleryUrl )
+                                    <div class="animated-img-box {{ ( $key > 0 ? 'item-'.$key+1 : '' ) }}">
+                                        <div class="img-wrap">
+                                            <img src="{{ $galleryUrl }}" alt="">
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <?php /* .Technologies-area - End */ ?>
+        </section>
+        <?php /* .Technologies-area - End */ ?>
+    @endif
 
     <?php /* .pipeline-area - Start */ ?>
     <?php /*
@@ -639,5 +615,5 @@
     </section>
     <?php /* .contact-area-2 - End */ ?>
 
-
+</div>
 @endsection
