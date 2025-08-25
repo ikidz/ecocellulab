@@ -39,6 +39,13 @@ class AboutusContents extends Model
                 ->orderBy('created_at', 'desc');
     }
 
+    public function getDisplayHomeSectionImgAttribute(){
+        if( $this->home_section_img ){
+            return \Storage::disk('public')->url( $this->home_section_img );
+        }
+        return null;
+    }
+
     public function getDisplayBannerImgAttribute(){
         if( $this->banner_img ){
             return \Storage::disk('public')->url( $this->banner_img );
