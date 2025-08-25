@@ -74,6 +74,18 @@ class Researches extends Resource
             Textarea::make('Description', 'description')
                 ->rules(['required', 'max:500']),
             SunEditor::make('Content', 'content')
+                ->withFiles('public','researches/attachments')
+                ->settings([
+                    'imageUploadUrl'   => route('custom-suneditor.upload', [
+                        'resource' => static::uriKey(), // "banners"
+                        'field'    => 'subtitle',
+                    ]),
+                    'imageUploadParam' => 'file', // 👈 force the key name
+                    'imageUploadHeader' => [
+                        'X-Requested-With' => 'XMLHttpRequest',
+                        'X-CSRF-TOKEN'     => csrf_token(),
+                    ],
+                ])
                 ->rules(['required'])
                 ->hideFromIndex(),
             Text::make('Post Date', function(){
