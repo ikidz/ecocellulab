@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         View::composer('*', function ($view) {
-            $webSettings = WebSetting::class;
+            $webSettings = WebSettings::all();
             $view->with('webSettings', $webSettings);
         });
     }
