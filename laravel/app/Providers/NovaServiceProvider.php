@@ -26,6 +26,7 @@ use App\Nova\AboutusContents;
 use App\Nova\ProductCategories;
 use App\Nova\Products;
 use App\Nova\ProductReviews;
+use App\Nova\CoreProductContents;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -49,6 +50,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::resource(Teams::class),
                     MenuItem::resource(Benefits::class),
                     MenuItem::resource(AboutusContents::class),
+                    MenuItem::resource(CoreProductContents::class),
                     MenuItem::resource(WebSettings::class),
                     MenuItem::resource(User::class),
                 ])->icon('cog'),
