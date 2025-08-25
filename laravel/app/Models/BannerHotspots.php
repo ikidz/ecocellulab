@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 
+use Illuminate\Support\Facades\Storage;
+
 class BannerHotspots extends Model implements Sortable
 {
     use HasFactory, SortableTrait, SoftDeletes;
@@ -39,5 +41,12 @@ class BannerHotspots extends Model implements Sortable
 
     public function banner(){
         return $this->belongsTo('App\Models\Banners', 'banner_id', 'id');
+    }
+
+    public function getDisplayImgAttribute(){
+        if( $this->img ){
+            return Storage::disk('public')->url($this->img);
+        }
+        return null;
     }
 }
