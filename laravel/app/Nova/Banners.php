@@ -107,6 +107,8 @@ class Banners extends Resource
     }
 
     public function fieldsForCreate( NovaRequest $request ){
+        $researches = \App\Models\Researches::published()->get()->pluck('title','id')->toArray();
+        $products = \App\Models\Products::published()->get()->pluck('name','id')->toArray();
         return [
             Select::make('Type', 'type')
                 ->options([
@@ -140,6 +142,7 @@ class Banners extends Resource
                 ->options([
                     'none' => 'None',
                     'research' => 'Research page',
+                    'product' => 'Product page',
                     'external' => 'External',
                 ])
                 ->default('none')
@@ -149,19 +152,41 @@ class Banners extends Resource
                     ->hideFromIndex(),
             ])->dependsOn('link_type', 'external'),
             DependencyContainer::make([
-                BelongsTo::make('Research', 'research', 'App\Nova\Researches')
+                Select::make('Research', 'content_id')
+                    ->options($researches)
                     ->searchable()
+                    ->displayUsingLabels()
                     ->hideFromIndex()
                     ->rules(function () {
                         return [
                             Rule::requiredIf(function () {
-                                return request()->input('link_type') === 'research';
+                                return request()->input('link_to') === 'research';
                             }),
                         ];
                     }),
             ])->dependsOn('link_type', 'research'),
+            DependencyContainer::make([
+                Select::make('Product', 'content_id')
+                    ->options($products)
+                    ->searchable()
+                    ->displayUsingLabels()
+                    ->hideFromIndex()
+                    ->rules(function () {
+                        return [
+                            Rule::requiredIf(function () {
+                                return request()->input('link_to') === 'product';
+                            }),
+                        ];
+                    }),
+            ])->dependsOn('link_type', 'product'),
             Text::make('Name', 'name')
                 ->rules('required'),
+            Image::make('Image above title','title_img')
+                ->disk(config("filesystems.default"))
+                ->path('banners')
+                ->rules(['max:2048', 'dimensions:max_width=500,max_height=500','image'])
+                ->help("Support *.png,*.jpg, max 500x500px")
+                ->onlyOnForms(),
             Text::make('Title', 'title')
                 ->rules('required'),
             SunEditor::make('Subtitle', 'subtitle')
@@ -227,6 +252,7 @@ class Banners extends Resource
                 ->options([
                     'none' => 'None',
                     'research' => 'Research page',
+                    'product' => 'Product page',
                     'external' => 'External',
                 ])
                 ->default('none')
@@ -236,19 +262,41 @@ class Banners extends Resource
                     ->hideFromIndex(),
             ])->dependsOn('link_type', 'external'),
             DependencyContainer::make([
-                BelongsTo::make('Research', 'research', 'App\Nova\Researches')
+                Select::make('Research', 'content_id')
+                    ->options($researches)
                     ->searchable()
+                    ->displayUsingLabels()
                     ->hideFromIndex()
                     ->rules(function () {
                         return [
                             Rule::requiredIf(function () {
-                                return request()->input('link_type') === 'research';
+                                return request()->input('link_to') === 'research';
                             }),
                         ];
                     }),
             ])->dependsOn('link_type', 'research'),
+            DependencyContainer::make([
+                Select::make('Product', 'content_id')
+                    ->options($products)
+                    ->searchable()
+                    ->displayUsingLabels()
+                    ->hideFromIndex()
+                    ->rules(function () {
+                        return [
+                            Rule::requiredIf(function () {
+                                return request()->input('link_to') === 'product';
+                            }),
+                        ];
+                    }),
+            ])->dependsOn('link_type', 'product'),
             Text::make('Name', 'name')
                 ->rules('required'),
+            Image::make('Image above title','title_img')
+                ->disk(config("filesystems.default"))
+                ->path('banners')
+                ->rules(['max:2048', 'dimensions:max_width=500,max_height=500','image'])
+                ->help("Support *.png,*.jpg, max 500x500px")
+                ->onlyOnForms(),
             Text::make('Title', 'title')
                 ->rules('required'),
             SunEditor::make('Subtitle', 'subtitle')

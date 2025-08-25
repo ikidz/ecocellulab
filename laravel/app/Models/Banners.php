@@ -22,6 +22,7 @@ class Banners extends Model implements Sortable
 		'url',
 		'content_id',
 		'name',
+		'title_img',
 		'title',
 		'subtitle',
 		'hotspot_youtube_id',
@@ -59,10 +60,6 @@ class Banners extends Model implements Sortable
 		return $this->hasMany('App\Models\BannerHotspots', 'banner_id', 'id');
 	}
 
-	public function research(){
-		return $this->belongsTo('App\Models\Researches', 'content_id', 'id');
-	}
-
 	public function setHotspotYoutubeIdAttribute($value){
 		$this->attributes['hotspot_youtube_id'] = self::extractYoutubeId($value);
     }
@@ -71,6 +68,14 @@ class Banners extends Model implements Sortable
         preg_match('/(?:v=|\/)([0-9A-Za-z_-]{11})(?:[&?\/]|$)/', $url, $matches);
         return $matches[1] ?? $url; // fallback: return original if not matched
     }
+
+	public function getDisplayTitleImgAttribute(){
+		$response = null;
+		if( $this->title_img ){
+			$response = \Storage::disk('public')->url( $this->title_img );
+		}
+		return $response;
+	}
 
 	public function getDisplayMediaAttribute(){
 		$response = null;
