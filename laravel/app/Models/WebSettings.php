@@ -20,18 +20,30 @@ class WebSettings extends Model
     ];
     
     public function getValueAttribute(){
+        $type = strtolower($this->type ?? '');
+        $locale = substr(app()->getLocale(), 0, 2); // "en", "th"
+        
         switch( $this->type ){
             case 'text' :
             case 'longText' :
-                $pattern = array('/{/', '/}/');
-                $replace = array('<span class="theme_color">', '</span>');
-                return preg_replace($pattern, $replace, $this->attributes['value_'.app()->getLocale()]);
+                // Safely fetch localized value, fallback to TH, then empty string
+                $raw = $this->getAttribute('value_' . $locale)
+                    ?? $this->getAttribute('value_th')
+                    ?? '';
+
+                // Replace {highlight}...{ } markers with themed span
+                return preg_replace(
+                    ['~\{~', '~\}~'],
+                    ['<span class="theme_color">', '</span>'],
+                    $raw
+                );
             break;
             case 'image' :
                 $storage = \Storage::disk('public');
                 if( $this->attributes['img'] && $storage->get( $this->attributes['img'] ) ){
                     return $storage->url( $this->attributes['img'] );
                 }
+                return null;
             break;
             default : 
                 return $this->attributes['value_th'];
