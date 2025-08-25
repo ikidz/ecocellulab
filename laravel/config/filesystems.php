@@ -52,6 +52,14 @@ return [
             'throw' => false,
         ],
 
+        'public_core_product_galleries' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/core_products/galleries'),
+            'url' => env('APP_URL').'/storage/core_products/galleries',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'public_research_galleries' => [
             'driver' => 'local',
             'root' => storage_path('app/public/researches/galleries'),
