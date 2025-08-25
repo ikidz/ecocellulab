@@ -13,7 +13,7 @@
   -webkit-box-direction: normal;
   flex-direction: column;
   border-radius: 0 20px;
-  margin-top: -80px;
+  margin-top: 3rem;
   top: 130px;
   i {
     background: var(--white);
@@ -76,7 +76,7 @@
       width: 100%;
       height: 100%;
       &--one {
-        background: #dcf8ff;
+        background: var(--white);
         text-align: center;
         display: flex;
         align-items: center;
@@ -256,7 +256,7 @@
       width: 100%;
       height: 100%;
       &--one {
-        background: #dcf8ff;
+        background: var(--white);
         text-align: center;
         display: flex;
         align-items: center;
