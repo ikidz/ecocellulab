@@ -71,6 +71,8 @@ class ProductReviews extends Resource
             Textarea::make('Review', 'review')
                 ->readonly(),
             Boolean::make('Is Approved', 'is_approved')
+                ->default(0),
+            Boolean::make('Is Highlight', 'is_highlight')
                 ->default(0)
         ];
     }

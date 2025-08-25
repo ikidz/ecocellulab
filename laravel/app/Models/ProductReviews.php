@@ -17,6 +17,7 @@ class ProductReviews extends Model
         'rating',
         'review',
         'is_approved',
+        'is_highlight',
     ];
     protected $casts = [
         'rating' => 'integer',
@@ -26,6 +27,11 @@ class ProductReviews extends Model
     public function scopeDisplayed($query){
         return $query->where('is_approved', 1)
                      ->orderBy('created_at', 'desc');
+    }
+    public function scopeHighlighted( $query ){
+        return $query->where('is_highlight', 1)
+                        ->where('is_approved', 1)
+                        ->orderBy('created_at', 'desc');
     }
     public function product(){
         return $this->belongsTo('App\Models\Products', 'product_id', 'id');
