@@ -17,6 +17,7 @@ class CoreProductContents extends Model implements HasMedia
         'title',
         'description',
         'link_to',
+        'url',
         'content_id',
         'start',
         'end',
@@ -29,11 +30,11 @@ class CoreProductContents extends Model implements HasMedia
     ];
 
     public function registerMediaCollections(): void{
-        $this->addMediaCollection('core_products')->useDisk('public_core_product_galleries');
+        $this->addMediaCollection('core_product_galleries')->useDisk('public_core_product_galleries');
     }
 
     public function getCoreProductGalleryUrlsAttribute(): array{
-        return $this->getMedia('core_products')->map->getFullUrl()->all();
+        return $this->getMedia('core_product_galleries')->map->getFullUrl()->all();
     }
 
     public function scopePublished($query)
@@ -51,5 +52,28 @@ class CoreProductContents extends Model implements HasMedia
     public function getPeriodAttribute(){
 		return $this->start->format('d M Y').' - '.( $this->end == '' || $this->end == null ? 'indefinite' : $this->end->format('d M Y') );
 	}
+
+    public function getLinkUrlAttribute(){
+        if( $this->link_to == 'research' ){
+            $research = \App\Models\Researches::Published()->where('id', $this->content_id)->first();
+            if( $research ){
+                return route('research.detail', ['slug' => $research->slug]);
+            }
+            return null;
+        }elseif( $this->link_to == 'product' ){
+            $product = \App\Models\Products::Published()->where('id', $this->content_id)->first();
+            if( $product ){
+                return route('product.detail', ['slug' => $this->product->slug]);
+            }
+            return null;
+        }elseif( $this->link_to == 'external' ){
+            if( $this->url == '' || $this->url == null ){
+                return null;
+            }
+            return $this->url;
+        }else{
+            return null;
+        }
+    }
 
 }
