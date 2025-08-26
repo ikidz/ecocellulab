@@ -5,40 +5,30 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class ProductReviews extends Resource
+class Tag extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\ProductReviews>
+     * @var class-string<\App\Models\Tag>
      */
-    public static $model = \App\Models\ProductReviews::class;
+    public static $model = \Spatie\Tags\Tag::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
      *
      * @var array
      */
-    public static $search = [
-        'products.title',
-        'products.category.title',
-        'name',
-        'email',
-        'review'
-    ];
+    public static $search = ['name', 'type', 'slug'];
 
     /**
      * Get the fields displayed by the resource.
@@ -50,29 +40,9 @@ class ProductReviews extends Resource
     {
         return [
             ID::make()->sortable(),
-            BelongsTo::make('Product', 'product', 'App\Nova\Products')
-                ->rules(['required', 'exists:products,id'])
-                ->searchable(),
-            Text::make('Name', 'name')
-                ->rules(['required', 'string', 'max:255']),
-            Text::make('Email', 'email')
-                ->rules(['required', 'email', 'max:255']),
-            Select::make('Rating', 'rating')
-                ->options([
-                    0 => 'Not Rated',
-                    1 => '1 Star',
-                    2 => '2 Stars',
-                    3 => '3 Stars',
-                    4 => '4 Stars',
-                    5 => '5 Stars',
-                ])
-                ->displayUsingLabels()
-                ->rules(['required', 'integer', 'between:0,5']),
-            Textarea::make('Review', 'review'),
-            Boolean::make('Is Approved', 'is_approved')
-                ->default(0),
-            Boolean::make('Is Highlight', 'is_highlight')
-                ->default(0)
+            Text::make('Name', 'name')->exceptOnForms(),
+            Text::make('Type', 'type')->exceptOnForms(),
+            Text::make('Slug', 'slug')->exceptOnForms(),
         ];
     }
 

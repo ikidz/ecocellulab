@@ -34,7 +34,7 @@ class Products extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -50,8 +50,7 @@ class Products extends Resource
         'meta_description',
         'meta_keywords',
         'short_description',
-        'description',
-        'tags'
+        'description'
     ];
 
     /**
@@ -69,7 +68,8 @@ class Products extends Resource
             Image::make('Image', 'img')
                 ->disk('public')
                 ->path('products')
-                ->rules('required', 'image', 'max:2048'),
+                ->creationRules('required', 'image', 'max:2048')
+                ->updateRules('nullable', 'image', 'max:2048'),
             Text::make('Title', 'title')
                 ->rules('required', 'max:255'),
             Text::make('SKU', 'sku')
@@ -94,12 +94,30 @@ class Products extends Resource
             Textarea::make('Short Description', 'short_description'),
             SunEditor::make('Description', 'description')
                 ->rules('required'),
-            Tags::make('Tags'),
+            Tags::make('Tags', 'tags')
+                ->withLinkToTagResource('App\Nova\Tag')
+                ->placeholder('Add tags and hit enter')
+                ->fillUsing(function ($request, $model, $attribute, $requestAttribute) {
+                    $raw = $request->input($requestAttribute, []);
+
+                    $items = is_array($raw) ? $raw : [$raw];
+
+                    $tags = collect($items)
+                        ->flatMap(fn ($v) => preg_split('/\s*,\s*/', (string) $v, -1, PREG_SPLIT_NO_EMPTY))
+                        ->map(fn ($t) => trim($t))
+                        ->filter()
+                        ->unique()
+                        ->values()
+                        ->all();
+
+                    // Hand off to Spatie's HasTags mutator: ['tag1','tag2',...]
+                    $model->{$attribute} = $tags;
+                }),
             Boolean::make('Is Published', 'is_publish')
                 ->default(1),
             new Panel('Galleries', $this->mediaFields()),
             new Panel('SEO', $this->seoFields()),
-            HasMany::make('Product Reviews', 'product_reviews', 'App\Nova\ProductReviews'),
+            HasMany::make('Product Reviews', 'reviews', 'App\Nova\ProductReviews'),
         ];
     }
 
@@ -126,17 +144,22 @@ class Products extends Resource
         return [
             Slug::make('Slug', 'slug')
                 ->from('title')
-                ->rules('required', 'max:255'),
+                ->rules('required', 'max:255')
+                ->hideFromIndex(),
             Text::make('Meta Title', 'meta_title')
-                ->rules('max:255'),
+                ->rules('max:255')
+                ->hideFromIndex(),
             Textarea::make('Meta Description', 'meta_description')
-                ->rules('max:500'),
+                ->rules('max:500')
+                ->hideFromIndex(),
             Text::make('Meta Keywords', 'meta_keywords')
-                ->rules('max:255'),
+                ->rules('max:255')
+                ->hideFromIndex(),
             Image::make('Meta Image', 'meta_image')
                 ->disk('public')
                 ->path('products/meta')
-                ->rules('nullable', 'image', 'max:2048'),
+                ->rules('nullable', 'image', 'max:2048')
+                ->hideFromIndex(),
         ];
     }
 
