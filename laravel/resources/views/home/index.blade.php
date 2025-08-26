@@ -114,7 +114,7 @@
     */ ?>
     <?php /* .therapy-box-area - End */ ?>
 
-    @if( $highlightResearch )
+    @if( $coreProductContent )
         <?php /* .Technologies-area - Start */ ?>
         <section class="Technologies-area with-bg padding-top-75 md-pd-top-35">
             <div class="nav-container">
@@ -123,13 +123,15 @@
                         <div class="content-wrapper">
                             <div class="text-wrapper">
                                 <div class="section-title text-center text-lg-left margin-bottom-55 md-mr-bottom-30">
-                                    <h2 class="title">{{ $highlightResearch->title }}</h2>
+                                    <h2 class="title">{{ $coreProductContent->title }}</h2>
                                 </div>
-                                {!! \Str::limit(strip_tags($highlightResearch->content), 1200) !!}
+                                {!! $coreProductContent->description !!}
                             </div>
-                            <div class="btn-wrapper">
-                                <a href="{{ route('article.research.detail', ['slug' => $highlightResearch->slug]) }}" class="boxed-btn">Read More</a>
-                            </div>
+                            @if( $coreProductContent->link_url != null )
+                                <div class="btn-wrapper">
+                                    <a href="{{ $coreProductContent->link_url }}" class="boxed-btn">Read More</a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <div class="col-lg-6 md-pd-top-15">
@@ -137,8 +139,8 @@
                             <div class="main-img">
                                 <img src="{{ asset('assets/img/technology/main-bg.png') }}" alt="">
                             </div>
-                            @if( $highlightResearch->research_gallery_urls )
-                                @foreach( $highlightResearch->research_gallery_urls as $key => $galleryUrl )
+                            @if( $coreProductContent->core_product_gallery_urls )
+                                @foreach( $coreProductContent->core_product_gallery_urls as $key => $galleryUrl )
                                     <div class="animated-img-box {{ ( $key > 0 ? 'item-'.$key+1 : '' ) }}">
                                         <div class="img-wrap">
                                             <img src="{{ $galleryUrl }}" alt="">
