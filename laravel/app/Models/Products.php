@@ -42,10 +42,6 @@ class Products extends Model implements HasMedia
         $this->addMediaCollection('product_galleries')->useDisk('public_product_galleries');
     }
 
-    public function tags(){
-        return $this->morphToMany(\Spatie\Tags\Tag::class, 'taggable');
-    }
-
     public function scopePublished($query){
         return $query->where('is_publish', 1)
                      ->orderBy('created_at', 'desc');
