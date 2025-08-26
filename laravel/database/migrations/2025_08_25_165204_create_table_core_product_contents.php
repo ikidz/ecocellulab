@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->string('link_to')->nullable();
+            $table->string('url')->nullable();
             $table->bigInteger('content_id')->default(0)->index();
             $table->date('start')->nullable();
             $table->date('end')->nullable();
