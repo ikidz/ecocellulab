@@ -63,12 +63,16 @@
     i {
       color: #aeaeae;
       font-size: 14px;
-    }
-    &.checked {
-      i {
+
+      &.checked {
         color: var(--main-color-one);
       }
     }
+    // &.checked {
+    //   i {
+    //     color: var(--main-color-one);
+    //   }
+    // }
   }
   .price-box {
       padding-top: 10px;

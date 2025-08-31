@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Boolean;
@@ -48,15 +49,34 @@ class ProductReviews extends Resource
      */
     public function fields(NovaRequest $request)
     {
+        $readOnlyWhenClient = function ($request) {
+            return optional($this->resource)->review_source === 'client';
+        };
         return [
             ID::make()->sortable(),
             BelongsTo::make('Product', 'product', 'App\Nova\Products')
                 ->rules(['required', 'exists:products,id'])
-                ->searchable(),
+                ->searchable()
+                ->readonly($readOnlyWhenClient),
+            Select::make('Review Source', 'review_source')
+                ->options([
+                    'admin'         => 'Administrator',
+                    'client'        => 'Client (Public Form)'
+                ])
+                ->displayUsingLabels()
+                ->default('admin')
+                ->readonly(),
+            Image::make('Image', 'img')
+                ->disk('public')
+                ->path('reviews')
+                ->rules('nullable', 'image', 'max:2048')
+                ->readonly($readOnlyWhenClient),
             Text::make('Name', 'name')
-                ->rules(['required', 'string', 'max:255']),
+                ->rules(['required', 'string', 'max:255'])
+                ->readonly($readOnlyWhenClient),
             Text::make('Email', 'email')
-                ->rules(['required', 'email', 'max:255']),
+                ->rules(['required', 'email', 'max:255'])
+                ->readonly($readOnlyWhenClient),
             Select::make('Rating', 'rating')
                 ->options([
                     0 => 'Not Rated',
@@ -67,8 +87,10 @@ class ProductReviews extends Resource
                     5 => '5 Stars',
                 ])
                 ->displayUsingLabels()
-                ->rules(['required', 'integer', 'between:0,5']),
-            Textarea::make('Review', 'review'),
+                ->rules(['required', 'integer', 'between:0,5'])
+                ->readonly($readOnlyWhenClient),
+            Textarea::make('Review', 'review')
+                ->readonly($readOnlyWhenClient),
             Boolean::make('Is Approved', 'is_approved')
                 ->default(0),
             Boolean::make('Is Highlight', 'is_highlight')

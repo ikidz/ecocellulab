@@ -12,25 +12,37 @@
                         <div class="footer-widget widget widget_nav_menu ">
                             <ul class="footer-link">
                                 <li><a href="{{ route('article.aboutus') }}">About</a></li>
+                                <li><a href="{{ route('product.detail') }}">Product</a></li>
                                 <li><a href="{{ route('article.research') }}">Research</a></li>
                                 <li><a href="{{ route('contact.index') }}">Contact</a></li>
                             </ul>
                         </div>
+                        @php
+                            $companyName = $webSettings->where('key', 'COMPANY_NAME')->first();
+                            $companyFacebook = $webSettings->where('key', 'COMPANY_FACEBOOK')->first();
+                            $companyTwitter = $webSettings->where('key', 'COMPANY_TWITTER')->first();
+                            $companyLinkedin = $webSettings->where('key', 'COMPANY_LINKEDIN')->first();
+                            $companyInstagram = $webSettings->where('key', 'COMPANY_INSTAGRAM')->first();
+                        @endphp
                         <div class="copyright-area-inner">
                             <div class="qry-copy">
-                                © ECOCELLULAB <span class="current-year"></span> All right reserved.
+                                © {{ $companyName->value }} <span class="current-year"></span> All right reserved.
                             </div>
                         </div>
                         <div class="footer-widget widget white-effect">
                             <div class="footer-icon margin-top-25">
-                                <a href="#" target="_blank"><i
-                                        class="flaticon-facebook-logo"></i></a>
-                                <a href="#" target="_blank"><i
-                                        class="iconify streamline-logos--x-twitter-logo-solid"></i></a>
-                                <a href="#" target="_blank"><i
-                                        class="flaticon-linked-in-logo-of-two-letters"></i></a>
-                                <a href="#" target="_blank"><i
-                                        class="flaticon-instagram"></i></a>
+                                @if( $companyFacebook )
+                                    <a href="{{ $companyFacebook->value }}" target="_blank"><i class="flaticon-facebook-logo"></i></a>
+                                @endif
+                                @if( $companyTwitter )
+                                    <a href="{{ $companyTwitter->value }}" target="_blank"><i class="iconify streamline-logos--x-twitter-logo-solid"></i></a>
+                                @endif
+                                @if( $companyLinkedin )
+                                    <a href="{{ $companyLinkedin->value }}" target="_blank"><i class="flaticon-linked-in-logo-of-two-letters"></i></a>
+                                @endif
+                                @if( $companyInstagram )
+                                    <a href="{{ $companyInstagram->value }}" target="_blank"><i class="flaticon-instagram"></i></a>
+                                @endif
                             </div>
                         </div>
                     </div>

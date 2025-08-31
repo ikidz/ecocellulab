@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
     <!-- iconmoon -->
     <link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/lib/sweetalert2/sweetalert2.min.css') }}" />
     <!-- Main Stylesheet -->
     @if (app()->environment('local'))
         <script type="module" src="http://localhost:5173/resources/sass/style.scss"></script>
@@ -32,6 +34,8 @@
     @endif
     <!-- responsive Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css?v=1') }}">
+
+    @yield('css')
 
 </head>
 
@@ -87,6 +91,22 @@
     <!-- main js -->
     <script src="{{ asset('assets/js/slider.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/lib/sweetalert2/sweetalert2.min.js') }}"></script>
+
+    <?php /* Alert message - Start */ ?>
+	@if( session('message-warning') )
+		<script type="text/javascript">swalMessage('message-warning', '{{ session("message-warning") }}');</script>
+	@endif
+	@if( session('message-success') )
+		<script type="text/javascript">swalMessage('message-success', '{{ session("message-success") }}');</script>
+	@endif
+	@if( session('message-error') )
+		<script type="text/javascript">swalMessage('message-error', '{{ session("message-error") }}');</script>
+	@endif
+	@if( session('message-info') )
+		<script type="text/javascript">swalMessage('message-info', '{{ session("message-info") }}');</script>
+	@endif
+	<?php /* Alert message - End */ ?>
 
     @yield('scripts')
 

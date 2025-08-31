@@ -62,6 +62,7 @@
                         <li class="{{ ( request()->routeIs('article.aboutus') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('article.aboutus') }}">About us</a></li>
                         <li class="{{ ( request()->routeIs('product.detail') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('product.detail') }}">Product</a></li>
                         <li class="{{ ( request()->routeIs('article.research') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('article.research') }}">Research</a></li>
+                        <li class="{{ ( request()->routeIs('article.detail') === true ? 'current-menu-item' : '' ) }}"><a href="{{ route('article.detail') }}">Articles</a></li>
                         <?php /*
                         <li class="menu-item-has-children"><a href="shop.html">Shop</a>
                             <ul class="sub-menu">

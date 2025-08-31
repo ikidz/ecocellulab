@@ -225,9 +225,9 @@
          nice-select
        -----------------------*/
 
-        if ($('select').length > 0) {
-            $('select').niceSelect();
-        }
+        // if ($('select').length > 0) {
+        //     $('select').niceSelect();
+        // }
 
 
         /*------------------
@@ -351,3 +351,24 @@
 
 
 })(jQuery); 
+
+
+/* Sweet Alert - Start */
+function swalMessage(status, title, message) {
+	console.log(status + ' | ' + title + ' | ' + message);
+	var theIcon = 'error';
+	if (status == 'message-success') {
+		theIcon = 'success';
+	} else if (status == 'message-warning') {
+		theIcon = 'warning';
+	} else if (status == 'message-info') {
+		theIcon = 'info';
+	}
+
+	Swal.fire({
+		title: title,
+		text: message,
+		icon: theIcon
+	})
+}
+/* Sweet Alert - End */

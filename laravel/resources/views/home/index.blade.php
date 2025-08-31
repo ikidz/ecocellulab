@@ -217,39 +217,37 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="review-slider reviews">
+                        @if( $productReviews->count() > 0 )
+                            @foreach( $productReviews as $review )
+                                <div class="comment-text col-12">
 
-                        @for($index = 0; $index < 6; $index++)
-                            <div class="comment-text col-12">
-
-                                <div class="review-content row">
-                                    <div class="img-part-2 col-4 pl-0">
-                                        <img src="assets/img/team/team1.png" alt="" class="rounded-circle">
-                                    </div>
-                                    <div class="info-part col-8 px-0">
-                                        <div class="star-ratings checked">
-                                            <i class="flaticon-star "></i>
-                                            <i class="flaticon-star "></i>
-                                            <i class="flaticon-star "></i>
-                                            <i class="flaticon-star "></i>
-                                            <i class="flaticon-star "></i>
+                                    <div class="review-content row">
+                                        <div class="img-part col-4 pl-0">
+                                            <img src="{{ $review->display_img }}" alt="{{ $review->masked_name }}" class="rounded-circle">
                                         </div>
-                                        <h5>Karin Jooss, Ph.D.</h5>
-                                        <span>Executive Vice President and Chief Business Officer</span>
+                                        <div class="info-part col-8 px-0 text-wrap">
+                                            <div class="star-ratings checked">
+                                                @for( $i=1; $i <= $review->rating; $i++ )
+                                                    <i class="flaticon-star checked"></i>
+                                                @endfor
+                                                @for( $i=1; $i <= (5-$review->rating); $i++ )
+                                                    <i class="flaticon-star "></i>
+                                                @endfor
+                                            </div>
+                                            <h5 class="text-wrap">{{ \Str::limit( $review->masked_name, 14 , '' ) }}</h5>
+                                            <span class="text-wrap">{{ \Str::limit( $review->masked_email, 24, '' ) }}</span>
+                                        </div>
+                                        <div class="review-date">
+                                            <span class="date">{{ $review->created_at->format('M d, Y') }}</span>
+                                        </div>
+                                        <div class="review-description">
+                                            <p>{{ \Str::limit( $review->review, '140', '...' ) }}</p>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div class="review-date">
-                                    <span class="date">Sep 22, 2019</span>
-                                </div>
-                                <div class="review-description">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the
-                                        majority have suffered alteration in some form, by injected humour, or
-                                        randomised words which don't look even slightly believable. There are many
-                                        variations of passages of Lorem Ipsum available, but the majority have
-                                        suffered alteration.</p>
-                                </div>
-
-                            </div>
-                        @endfor
+                            @endforeach
+                        @endif
                         
                     </div>
                 </div>
@@ -270,124 +268,43 @@
                 </div>
             </div>
             <div class="news-slider-2 row">
-                <div class="col-4">
-                    <div class="news-item style-3">
-                        <div class="img-warpper ">
-                            <img src="{{ asset('assets/img/news-and-media/7.png') }}" alt="">
-                            <div class="overlay">
-                                <div class="icon-wrap">
-                                    <a href="{{ asset('assets/img/news-and-media/7.png') }}" class="image-popup"> <i
-                                            class="flaticon-full-screen"></i></a>
+
+                @if( $articles->count() > 0 )
+                    @foreach( $articles as $article )
+                        <div class="col-4">
+                            <div class="news-item style-3">
+                                @if( $article->display_thumb )
+                                    <div class="img-warpper ">
+                                        <img src="{{ $article->display_thumb }}" alt="">
+                                        <div class="overlay">
+                                            <div class="icon-wrap">
+                                                <a href="{{ $article->display_thumb }}" class="image-popup">
+                                                    <i class="flaticon-full-screen"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                <div class="content-wrap">
+                                    <div class="date-with-writter">
+                                        <p class="published-date"><strong>Published : </strong> {{ $article->display_post_date }}</p>
+                                    </div>
+
+                                    <h5 class="title">{{ $article->title }}</h5>
+                                    <p>{{ \Str::limit( strip_tags( $article->caption ), 150, '...' ) }}</p>
+                                    <div class="btn-wrapper">
+                                        <a href="{{ route('article.detail', ['slug' => $article->slug]) }}" class="boxed-btn">Read More</a>
+                                    </div>
+
                                 </div>
+
                             </div>
                         </div>
-                        <div class="content-wrap">
-                            <div class="date-with-writter">
-                                <p class="published-date"><strong>Published : </strong> 5 September 2019
-                                </p>
-                                <p><strong>By </strong> kalapian moi</p>
-                            </div>
-
-                            <ul class="post-meta">
-                                <li><a href="#"><i class="flaticon-black-bubble-speech"></i> Comment</a>
-                                </li>
-                                <li><a href="#"><i class="flaticon-eye"></i> 230 View</a></li>
-                            </ul>
-                            <h5 class="title">
-                                Jozicular Oncology to Present at Needham Healthcare Conference
-                            </h5>
-                            <p>Jozicular Oncology (Nasdaq: GRTS), a clinical-stage biotechnology company,
-                                is developing the next generation of cancer immunotherapies to fight
-                                multiple cancer types. Gritstone develops its products by leveraging two
-                                key pillars—first, a proprietary machine learning-based platform,....
-                            </p>
-                            <div class="btn-wrapper">
-                                <a href="#" class="boxed-btn">Read More</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="news-item style-3">
-                        <div class="img-warpper ">
-                            <img src="{{ asset('assets/img/news-and-media/8.png') }}" alt="">
-                            <div class="overlay">
-                                <div class="icon-wrap">
-                                    <a href="{{ asset('assets/img/news-and-media/8.png') }}" class="image-popup"> <i
-                                            class="flaticon-full-screen"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content-wrap">
-                            <div class="date-with-writter">
-                                <p class="published-date"><strong>Published : </strong> 5 September 2019
-                                </p>
-                                <p><strong>By </strong> kalapian moi</p>
-                            </div>
-
-                            <ul class="post-meta">
-                                <li><a href="#"><i class="flaticon-black-bubble-speech"></i> Comment</a>
-                                </li>
-                                <li><a href="#"><i class="flaticon-eye"></i> 230 View</a></li>
-                            </ul>
-                            <h5 class="title">
-                                bluebird bio and Jozicular Oncology Announce Strategic .
-                            </h5>
-                            <p>Jozicular Oncology (Nasdaq: GRTS), a clinical-stage biotechnology company,
-                                is developing the next generation of cancer immunotherapies to fight
-                                multiple cancer types. Gritstone develops its products by leveraging two
-                                key pillars—first, a proprietary machine learning-based platform,....
-                            </p>
-                            <div class="btn-wrapper">
-                                <a href="#" class="boxed-btn">Read More</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="news-item style-3">
-                        <div class="img-warpper ">
-                            <img src="{{ asset('assets/img/news-and-media/9.png') }}" alt="">
-                            <div class="overlay">
-                                <div class="icon-wrap">
-                                    <a href="{{ asset('assets/img/news-and-media/9.png') }}" class="image-popup"> <i
-                                            class="flaticon-full-screen"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content-wrap">
-                            <div class="date-with-writter">
-                                <p class="published-date"><strong>Published : </strong> 5 September 2019
-                                </p>
-                                <p><strong>By </strong> kalapian moi</p>
-                            </div>
-
-                            <ul class="post-meta">
-                                <li><a href="#"><i class="flaticon-black-bubble-speech"></i> Comment</a>
-                                </li>
-                                <li><a href="#"><i class="flaticon-eye"></i> 230 View</a></li>
-                            </ul>
-                            <h5 class="title">
-                                Jozicular Biosciences Appoints Jeffrey F. Eisenberg as Chief Executive Officer
-                            </h5>
-                            <p>Jozicular Oncology (Nasdaq: GRTS), a clinical-stage biotechnology company,
-                                is developing the next generation of cancer immunotherapies to fight
-                                multiple cancer types. Gritstone develops its products by leveraging two
-                                key pillars—first, a proprietary machine learning-based platform,....
-                            </p>
-                            <div class="btn-wrapper">
-                                <a href="#" class="boxed-btn">Read More</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
+                    @endforeach
+                @endif
+                
             </div>
+            <?php /*
             <div class="animated-item style-2">
                 <div class="animate-img">
                     <img src="{{ asset('assets/img/news/animate.svg') }}" alt="">
@@ -400,6 +317,7 @@
                 </div>
 
             </div>
+            */ ?>
         </div>
 
     </section>
@@ -544,77 +462,80 @@
     <?php /* .meet-team-area - End */ ?>
 
     <?php /* .contact-area-2 - Start */ ?>
-    <section class="contact-area-2  padding-top-110 md-pd-top-50 padding-bottom-125 md-pd-bottom-80">
-        <div class="nav-container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title margin-bottom-50 md-mr-bottom-25">
-                        <h2 class="title">Contact Us</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <?php /*
-                <div class="col-lg-12">
-                    <div class="content-wrapper">
-                        <div class="text-wrapper col-12 col-md-8">
-                            <form class="contact-from mx-auto">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Fast Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control" rows="4" placeholder="Comment"></textarea>
-                                </div>
-                                <div class="btn-wrapper">
-                                    <button type="submit" class="submit-btn boxed-btn"><span>Send
-                                            Message</span></button>
-
-                                </div>
-
-                            </form>
-
-                        </div>
-
-                        <div class="col-12 col-md-4 address-wrap row">
-                            <div class="col-12 info-box white-effect">
-                                <div class="pulse-icon">
-                                    <i class="flaticon-pin"></i>
-                                </div>
-                                <p>Collins Street West 8007, <br> San Fransico, United States.</p>
-                            </div>
-                            <div class="col-12 info-box white-effect">
-                                <div class="pulse-icon">
-                                    <i class="flaticon-black-back-closed-envelope-shape"></i>
-                                </div>
-
-                                <p>Jozicular@gmail.com <br> Jozicular@gmail.com</p>
-                            </div>
-                            <div class="col-12 info-box white-effect">
-                                <div class="pulse-icon">
-                                    <i class="flaticon-telephone-handle-silhouette"></i>
-                                </div>
-                                <p>+098 769 023 <br> +098 769 024</p>
-                            </div>
-
+    @php $companyMap = $webSettings->where('key', 'COMPANY_MAP')->first(); @endphp
+    @if( $companyMap && $companyMap->value != null )
+        <section class="contact-area-2  padding-top-110 md-pd-top-50 padding-bottom-125 md-pd-bottom-80">
+            <div class="nav-container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title margin-bottom-50 md-mr-bottom-25">
+                            <h2 class="title">Contact Us</h2>
                         </div>
                     </div>
                 </div>
-                */ ?>
+                <div class="row">
+                    <?php /*
+                    <div class="col-lg-12">
+                        <div class="content-wrapper">
+                            <div class="text-wrapper col-12 col-md-8">
+                                <form class="contact-from mx-auto">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Fast Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" placeholder="Comment"></textarea>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                        <button type="submit" class="submit-btn boxed-btn"><span>Send
+                                                Message</span></button>
 
-                <div class="col-12 mt-3">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1941.5026860084836!2d100.94545428246835!3d13.287604743767245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102b5b23a0092bd%3A0xd0de3adb32127142!2zMjAg4LiE4Lix4LiZ4LiX4Lij4Li14Lib4Liy4Lij4LmM4LiEIDLguYDguJ_guKogMg!5e0!3m2!1sen!2sth!4v1749657430310!5m2!1sen!2sth" title="Google Map" tyle="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                            <div class="col-12 col-md-4 address-wrap row">
+                                <div class="col-12 info-box white-effect">
+                                    <div class="pulse-icon">
+                                        <i class="flaticon-pin"></i>
+                                    </div>
+                                    <p>Collins Street West 8007, <br> San Fransico, United States.</p>
+                                </div>
+                                <div class="col-12 info-box white-effect">
+                                    <div class="pulse-icon">
+                                        <i class="flaticon-black-back-closed-envelope-shape"></i>
+                                    </div>
+
+                                    <p>Jozicular@gmail.com <br> Jozicular@gmail.com</p>
+                                </div>
+                                <div class="col-12 info-box white-effect">
+                                    <div class="pulse-icon">
+                                        <i class="flaticon-telephone-handle-silhouette"></i>
+                                    </div>
+                                    <p>+098 769 023 <br> +098 769 024</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    */ ?>
+
+                    <div class="col-12 mt-3">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{ $companyMap->value }}" title="Google Map" tyle="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
     <?php /* .contact-area-2 - End */ ?>
 
 </div>

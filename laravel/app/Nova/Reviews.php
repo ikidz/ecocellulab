@@ -52,7 +52,7 @@ class Reviews extends Resource
             ID::make()->sortable(),
             Image::make('Avartar', 'avartar')
                 ->disk('public')
-                ->path('reviews/avartars')
+                ->path('reviews')
                 ->rules('nullable', 'image', 'max:2048'),
             Text::make('Name', 'name')
                 ->rules('required', 'max:255'),
