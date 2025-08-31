@@ -45,7 +45,7 @@ class Articles extends Model
 					$query->where("end",">=",now()->format("Y-m-d"))
 							->orWhere("end",null);
 				})
-									->orderBy('order','asc');
+									->orderBy('created_at','desc');
     }
 
     public function scopeHighlight( $query ){

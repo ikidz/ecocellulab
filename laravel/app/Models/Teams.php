@@ -41,4 +41,11 @@ class Teams extends Model implements Sortable
                     ->orderBy('order', 'asc')
                     ->where('is_publish', 1);
     }
+
+    public function getDisplayAvatarAttribute(){
+        if ($this->avatar) {
+            return \Storage::disk('public')->url($this->avatar);
+        }
+        return null;
+    }
 }

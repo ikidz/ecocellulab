@@ -36,41 +36,29 @@
 
         <?php /* Story - Start */ ?>
         <div class="row align-items-center">
-            <div class="col-lg-6 text-center">
-                <div class="img-wrap" style="background-image: url('{{ asset('assets/images/aboutus_inner.jpg') }}');">
-                    <img src="{{ asset('assets/img/about/shape.png') }}" alt="">
-                    <div class="video-part">
-                        <div class="pulse-icon">
-                            <a href="https://www.youtube.com/watch?v=D8BN2YSyYkg" class="video-popup mfp-iframe"
-                                tabindex="0">
-                                <i class="flaticon-play-arrow"></i></a>
+            @if( $about->display_story_img )
+                <div class="col-lg-6 text-center">
+                    <div class="img-wrap" style="background-image: url('{{ $about->display_story_img }}');">
+                        <img src="{{ $about->display_story_img  }}" alt="">
+                        <?php /*
+                        <div class="video-part">
+                            <div class="pulse-icon">
+                                <a href="https://www.youtube.com/watch?v=D8BN2YSyYkg" class="video-popup mfp-iframe"
+                                    tabindex="0">
+                                    <i class="flaticon-play-arrow"></i></a>
+                            </div>
                         </div>
+                        */ ?>
                     </div>
                 </div>
-            </div>
+            @endif
             <div class="col-lg-6 md-pd-top-45 text-center text-lg-left">
                 <div class="content-wrapper">
                     <div class="text-wrapper">
                         <div class="section-title text-center text-lg-left margin-bottom-55 md-mr-bottom-30">
                             <h2 class="title">Our Story</h2>
                         </div>
-                        <p>Jozicular Oncology is developing tumor-specific cancer immunotherapies to fight multiple
-                            cancer types. Jozicular approach seeks to generate a therapeutic immune response by
-                            leveraging insights into the immune system’s ability to recognize and destroy tumor
-                            cells by targeting tumor-specific neoantigens. We believe that activating and directing
-                            the immune system to these tumor targets could offer an important opportunity to extend
-                            the benefits of immunotherapy for patients with cancer. To learn more about Jozicular
-                            approach, please view the video below. <br> <br> There are many variations of passages
-                            of Lorem Ipsum available, but the majority have suffered alteration in some form, by
-                            injected humour, or randomised words which don't look even slightly believable. If you
-                            are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                            embarrassing hidden in the middle of text. <br> <br> All the Lorem Ipsum generators on
-                            the Internet tend to repeat predefined chunks as necessary, making this the first true
-                            generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a
-                            handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
-                            The generated Lorem Ipsum is therefore always free from repetition, injected humour, or
-                            non-characteristic words etc.
-                        </p>
+                        {!! $about->story_content !!}
                     </div>
                     <?php /*
                     <div class="btn-wrapper">
@@ -83,6 +71,7 @@
         <?php /* Story - End */ ?>
 
         <?php /* .counterup-area - Start */ ?>
+        <?php /*
         <section class="counterup-area padding-top-125 md-pd-top-80">
             <div class="nav-container">
                 <div class="row">
@@ -121,10 +110,11 @@
                 </div>
             </div>
         </section>
+        */ ?>
         <?php /* .counterup-area - End */ ?>
 
         <?php /* .meet-team-area - Start */ ?>
-        <section class="meet-team-area style-2 padding-top-75 md-pd-top-35">
+        <section class="meet-team-area style-2 padding-top-75 md-pd-top-35 md-pd-bottom-80 padding-bottom-110">
             <div class="nav-container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -133,132 +123,72 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="team-slider row">
-                            <div class="team-item col-12">
-                                <div class="img-warpper ">
-                                    <img src="{{ asset('assets/img/team/team1.png') }}" alt="" class="border-left-top">
-                                    <div class="overlay border-left-top">
-                                        <div class="icon-wrap">
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-facebook-logo"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-twitter"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-linked-in-logo-of-two-letters"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-instagram"></i></a>
+                @if( $teams->count() > 0 )
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="team-slider row">
+
+                                @foreach( $teams as $key => $team )
+                                    @php
+                                        $borderClass = '';
+                                        if( $key % 4 == 0 ){
+                                            $borderClass = 'border-left-top';
+                                        }elseif( $key % 4 == 1 ){
+                                            $borderClass = 'border-left-bottom';
+                                        }elseif( $key % 4 == 2 ){
+                                            $borderClass = 'border-right-top';
+                                        }elseif( $key % 4 == 3 ){
+                                            $borderClass = 'border-left-bottom';
+                                        }
+                                    @endphp
+                                    <div class="team-item col-12">
+                                        <div class="img-warpper ">
+                                            @if( $team->display_avatar )
+                                                <img src="{{ $team->display_avatar }}" alt="" class="{{ $borderClass }}">
+                                            @else
+                                                <img src="{{ asset('assets/images/logo_v.svg') }}" alt="" class="{{ $borderClass }}">
+                                            @endif
+                                            <div class="overlay border-left-top">
+                                                @if( $team->socials->count() > 0 )
+                                                    <div class="icon-wrap">
+                                                        @foreach( $team->socials as $item )
+                                                            @switch( strtolower($item->platform) )
+                                                                @case('facebook')
+                                                                    <a href="{{ $item->url }}" target="_blank"><i class="flaticon-facebook-logo"></i></a>
+                                                                    @break
+                                                                @case('twitter')
+                                                                    <a href="{{ $item->url }}" target="_blank"><i class="iconify streamline-logos--x-twitter-logo-solid"></i></a>
+                                                                    @break
+                                                                @case('linkedin')
+                                                                    <a href="{{ $item->url }}" target="_blank"><i class="flaticon-linked-in-logo-of-two-letters"></i></a>
+                                                                    @break
+                                                                @case('instagram')
+                                                                    <a href="{{ $item->url }}" target="_blank"><i class="flaticon-instagram"></i></a>
+                                                                    @break
+                                                                @default
+                                                                    <a href="{{ $item->url }}" target="_blank"><i class="flaticon-globe"></i></a>
+                                                            @endswitch
+                                                        @endforeach
+                                                    </div>
+                                                @endif
+                                            </div>
                                         </div>
+                                        <h5 class="title">{{ $team->name }}</h5>
+                                        <p>{{ $team->position }}</p>
                                     </div>
-                                </div>
-                                <h5 class="title">Karin Jooss, Ph.D.</h5>
-                                <p>Executive Vice President and Chief Business Officer</p>
-                            </div>
-                            <div class="team-item col-12">
-                                <div class="img-warpper ">
-                                    <img src="{{ asset('assets/img/team/team2.png') }}" alt="" class="border-left-bottom">
-                                    <div class="overlay border-left-bottom">
-                                        <div class="icon-wrap">
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-facebook-logo"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-twitter"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-linked-in-logo-of-two-letters"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h5 class="title">Lusian, Ph.D.</h5>
-                                <p>Executive Vice President and Chief Business Officer</p>
-                            </div>
-                            <div class="team-item col-12">
-                                <div class="img-warpper ">
-                                    <img src="{{ asset('assets/img/team/team3.png') }}" alt="" class="border-right-top">
-                                    <div class="overlay border-right-top">
-                                        <div class="icon-wrap">
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-facebook-logo"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-twitter"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-linked-in-logo-of-two-letters"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h5 class="title">Riban, Ph.D.</h5>
-                                <p>Executive Vice President and Chief Business Officer</p>
-                            </div>
-                            <div class="team-item col-12">
-                                <div class="img-warpper ">
-                                    <img src="{{ asset('assets/img/team/team4.png') }}" alt="" class="border-left-bottom">
-                                    <div class="overlay border-left-bottom">
-                                        <div class="icon-wrap">
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-facebook-logo"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-twitter"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-linked-in-logo-of-two-letters"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h5 class="title">Riban, Ph.D.</h5>
-                                <p>Executive Vice President and Chief Business Officer</p>
-                            </div>
-                            <div class="team-item col-12">
-                                <div class="img-warpper ">
-                                    <img src="{{ asset('assets/img/team/team5.png') }}" alt="" class="border-right-bottom">
-                                    <div class="overlay border-right-bottom">
-                                        <div class="icon-wrap">
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-facebook-logo"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-twitter"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-linked-in-logo-of-two-letters"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h5 class="title">jein Jery, Ph.D.</h5>
-                                <p>Executive Vice President and Chief Business Officer</p>
-                            </div>
-                            <div class="team-item col-12">
-                                <div class="img-warpper ">
-                                    <img src="{{ asset('assets/img/team/team6.png') }}" alt="" class="border-left-bottom">
-                                    <div class="overlay border-left-bottom">
-                                        <div class="icon-wrap">
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-facebook-logo"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-twitter"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-linked-in-logo-of-two-letters"></i></a>
-                                            <a href="#" target="_blank"><i
-                                                    class="flaticon-instagram"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h5 class="title">kury ayen, Ph.D.</h5>
-                                <p>Executive Vice President and Chief Business Officer</p>
+                                @endforeach
+                                
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
             </div>
 
         </section>
         <?php /* .meet-team-area - End */ ?>
 
         <?php /* .vision-area - Start */ ?>
+        <?php /*
         <section class="vision-area text-center text-lg-left padding-top-110 md-pd-top-75">
             <div class="nav-container">
                 <div class="row">
@@ -325,9 +255,11 @@
             </div>
 
         </section>
+        */ ?>
         <?php /* .vision-area - End */ ?>
 
         <?php /* .join-us-area - Start */ ?>
+        <?php /*
         <section class="join-us-area style-2 padding-top-115 md-pd-top-70 padding-bottom-125 md-pd-bottom-80">
             <div class="nav-container">
                 <div class="row">
@@ -355,6 +287,7 @@
             </div>
 
         </section>
+        */ ?>
         <?php /* .join-us-area - End */ ?>
 
     </div>

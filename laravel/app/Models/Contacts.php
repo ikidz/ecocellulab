@@ -16,7 +16,9 @@ class Contacts extends Model
         'email',
         'subject',
         'message',
-        'is_read'
+        'is_read',
+        'ip_address',
+        'user_agent'
     ];
     protected $casts = [
         'is_read' => 'boolean',

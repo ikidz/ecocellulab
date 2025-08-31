@@ -8,6 +8,8 @@ use App\Models\Banners;
 use App\Models\AboutusContents;
 use App\Models\Researches;
 use App\Models\CoreProductContents;
+use App\Models\ProductReviews;
+use App\Models\Articles;
 
 class HomeController extends Controller
 {
@@ -17,7 +19,8 @@ class HomeController extends Controller
         $aboutusContent = AboutusContents::Published()->first();
         $highlightResearch = Researches::Highlighted()->first();
         $coreProductContent = CoreProductContents::Published()->first();
-        // $productReview = ProductReviews::Highlighted()->get()->toArray();
+        $productReviews = ProductReviews::Highlighted()->get();
+        $articles = Articles::Published()->get();
         // $reviews = Reviews::Published()->get();
         // dd( $highlightResearch );
 
@@ -25,7 +28,9 @@ class HomeController extends Controller
             'banners',
             'aboutusContent',
             'highlightResearch',
-            'coreProductContent'
+            'coreProductContent',
+            'productReviews',
+            'articles'
         ];
 
         return view('home.index', compact( $dataCompact ));

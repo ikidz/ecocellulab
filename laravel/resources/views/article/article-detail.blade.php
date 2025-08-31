@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb-inner no-bg">
-                    <h2 class="page-title">Research &amp;<br /> Development</h2>
+                    <h2 class="page-title">Article</h2>
                 </div>
             </div>
         </div>
@@ -25,8 +25,8 @@
     <div class="col-12 nav-container">
         <ul class="page-list">
             <li><a href="{{ route('home.index') }}">Home</a></li>
-            <li>Research</li>
-            <li class="current">{{ $research->title }}</li>
+            <li class="current">Article</li>
+            <li class="current">{{ $article->title }}</li>
         </ul>
     </div>
 </div>
@@ -36,18 +36,18 @@
 <section class="research-diasease-area padding-top-125 md-pd-top-80 padding-bottom-100 md-pd-bottom-60">
     <div class="nav-container">
         <div class="row">
-            @php $firstItem = $research; @endphp
+            @php $firstItem = $article; @endphp
             @if( $firstItem )
                 <div class="col-lg-12">
                     <div class="research-diasease">
-                        @if( $firstItem->display_image )
+                        @if( $firstItem->display_img )
                             <div class="img-wrap">
-                                <img src="{{ $firstItem->display_image }}" alt="">
+                                <img src="{{ $firstItem->display_img }}" alt="">
                             </div>
                         @endif
                         <div class="content-wrap padding-top-50">
                             <h2 class="title">{{ $firstItem->title }}</h2>
-                            {!! $firstItem->content !!}
+                            {!! $firstItem->description !!}
 
                             <?php /*
                             <div class="animated-item style-2">
@@ -84,14 +84,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title margin-bottom-50 md-mr-bottom-45">
-                    <h2 class="title">Research areas</h2>
+                    <h2 class="title">Article areas</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             
-            @if( $researches->count() > 1 )
-                @foreach( $researches as $item )
+            @if( $articles->count() > 1 )
+                @foreach( $articles as $item )
                     <div class="col-lg-6">
                         <div class="research-item">
                             @if( $item->display_thumb )
@@ -102,9 +102,9 @@
                             <div class="content-part">
                                 <p><strong>Published :</strong> {{ $item->display_post_date }}</p>
                                 <h3 class="title">{{ $item->title }}</h3>
-                                <p>{!! \Str::limit($item->description, 200, '...') !!}</p>
+                                <p>{!! \Str::limit($item->caption, 200, '...') !!}</p>
                                 <div class="btn-wrapper">
-                                    <a href="{{ route('article.research', ['slug' => $item->slug]) }}" class="boxed-btn" type="button">Read More</a>
+                                    <a href="{{ route('article.detail', ['slug' => $item->slug]) }}" class="boxed-btn" type="button">Read More</a>
                                 </div>
                             </div>
 

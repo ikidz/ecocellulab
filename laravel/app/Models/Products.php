@@ -38,8 +38,17 @@ class Products extends Model implements HasMedia
         'is_publish' => 'boolean'
     ];
 
+    protected $appends = [
+        'review_rating',
+        'total_reviews'
+    ];
+
     public function registerMediaCollections(): void{
         $this->addMediaCollection('product_galleries')->useDisk('public_product_galleries');
+    }
+
+    public function getProductGalleryUrlsAttribute(): array{
+        return $this->getMedia('product_galleries')->map->getFullUrl()->all();
     }
 
     public function scopePublished($query){
@@ -53,6 +62,11 @@ class Products extends Model implements HasMedia
 
     public function reviews(){
         return $this->hasMany('App\Models\ProductReviews', 'product_id', 'id');
+    }
+
+    public function displayedReviews(){
+        return $this->hasMany(\App\Models\ProductReviews::class, 'product_id', 'id')
+                    ->displayed(); // uses scopeDisplayed()
     }
 
     public function getDisplayPriceAttribute(){
@@ -72,4 +86,28 @@ class Products extends Model implements HasMedia
         }
         return null;
     }
+
+    public function getReviewRatingAttribute(){
+        // Avoid extra queries if relation is already eager loaded
+        if ($this->relationLoaded('displayedReviews')) {
+            $avg = $this->displayedReviews->avg('rating');
+        } else {
+            $avg = $this->displayedReviews()->avg('rating'); // runs SELECT AVG(...)
+        }
+
+        return (int) round($avg ?? 0);
+    }
+
+    public function getTotalReviewsAttribute(){
+        // Avoid extra queries if relation is already eager loaded
+        if ($this->relationLoaded('displayedReviews')) {
+            $count = $this->displayedReviews->count();
+        } else {
+            $count = $this->displayedReviews()->count(); // runs SELECT COUNT(*)
+        }
+
+        return (int) $count;
+    }
+
+
 }

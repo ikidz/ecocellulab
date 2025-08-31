@@ -2,12 +2,42 @@
     i{
         color: #AEAEAE;
         cursor: pointer;
-        
-    }
-    &.checked{
-        i{
+        &.checked{
             color: var(--main-color-one);
         }
+    }
+    // &.checked{
+    //     i{
+    //         color: var(--main-color-one);
+    //     }
         
+    // }
+}
+
+#product-review-form{
+    .star-ratings{
+        input[type="radio"]{
+            display:none;
+        }
+        .star{
+            font-size:28px;
+            color:#ccc;
+            cursor: pointer;
+            outline: none;
+
+            i{
+                opacity: .35;
+                transition: opacity .12s ease, transform .06s ease;
+            }
+            &[aria-checked="true"] i,
+            &.filled i{
+                opacity: 1;
+                color: var(--main-color-one);
+            }
+
+            &:focus-visible i{
+                transform: scale(1.08);
+            }
+        }
     }
 }
