@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -107,8 +108,8 @@ class Banners extends Resource
     }
 
     public function fieldsForCreate( NovaRequest $request ){
-        $researches = \App\Models\Researches::published()->get()->pluck('title','id')->toArray();
-        $products = \App\Models\Products::published()->get()->pluck('name','id')->toArray();
+        $researches = \App\Models\Researches::Published()->get()->pluck('title','id')->toArray();
+        $products = \App\Models\Products::Published()->get()->pluck('title','id')->toArray();
         return [
             Select::make('Type', 'type')
                 ->options([
@@ -160,7 +161,7 @@ class Banners extends Resource
                     ->rules(function () {
                         return [
                             Rule::requiredIf(function () {
-                                return request()->input('link_to') === 'research';
+                                return request()->input('link_type') === 'research';
                             }),
                         ];
                     }),
@@ -174,7 +175,7 @@ class Banners extends Resource
                     ->rules(function () {
                         return [
                             Rule::requiredIf(function () {
-                                return request()->input('link_to') === 'product';
+                                return request()->input('link_type') === 'product';
                             }),
                         ];
                     }),
@@ -219,6 +220,8 @@ class Banners extends Resource
     }
 
     public function fieldsForUpdate( NovaRequest $request ){
+        $researches = \App\Models\Researches::Published()->get()->pluck('title','id')->toArray();
+        $products = \App\Models\Products::Published()->get()->pluck('title','id')->toArray();
         return [
             Select::make('Type', 'type')
                 ->options([
@@ -270,7 +273,7 @@ class Banners extends Resource
                     ->rules(function () {
                         return [
                             Rule::requiredIf(function () {
-                                return request()->input('link_to') === 'research';
+                                return request()->input('link_type') === 'research';
                             }),
                         ];
                     }),
@@ -284,7 +287,7 @@ class Banners extends Resource
                     ->rules(function () {
                         return [
                             Rule::requiredIf(function () {
-                                return request()->input('link_to') === 'product';
+                                return request()->input('link_type') === 'research';
                             }),
                         ];
                     }),
