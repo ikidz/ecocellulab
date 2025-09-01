@@ -21,6 +21,7 @@ return [
     */
 
     'license_key' => env('NOVA_LICENSE_KEY'),
+    'license' => env('NOVA_LICENSE_KEY'),
 
     /*
     |--------------------------------------------------------------------------
