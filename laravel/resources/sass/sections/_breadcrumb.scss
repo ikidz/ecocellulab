@@ -81,7 +81,7 @@
     background-image: url("/assets/img/breadcrumb/about/bg.png");
     background-position: right;
     position: relative;
-    background-size: auto;
+    background-size: cover;
     &::before {
       content: "";
       height: 100%;

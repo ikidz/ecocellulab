@@ -6,20 +6,36 @@
 @endsection
 
 @section('banners')
-<div class="breadcrumb-area about-area-breadcrumb" style="background-image: url('{{ asset('assets/images/product_banner.png') }}');">
-    <div class="nav-container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner no-bg">
-                    <h2 class="page-title">Product</h2>
+@php $productBanner = $webSettings->where('key', 'PRODUCT_DEFAULT_BANNER')->first(); @endphp
+@if( $productBanner && ( $productBanner->value != null || $productBanner->value != '' ) )
+    <div class="breadcrumb-area about-area-breadcrumb" style="background-image: url('{{ $productBanner->value }}');">
+        <div class="nav-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner no-bg">
+                        <h2 class="page-title">Product</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+@endif
 @endsection
 
 @section('content')
+
+<?php /* .breadcrumb - Start */ ?>
+<div class="breadcrumb row">
+    <div class="col-12 nav-container">
+        <ul class="page-list">
+            <li><a href="{{ route('home.index') }}">Home</a></li>
+            <li>Product</li>
+            <li class="current">{{ $product->title }}</li>
+        </ul>
+    </div>
+</div>
+<?php /* .breadcrumb - End */ ?>
+
 <?php /* .single-products - Start */ ?>
 <section class="single-products padding-top-125 md-pd-top-80">
     <div class="container">

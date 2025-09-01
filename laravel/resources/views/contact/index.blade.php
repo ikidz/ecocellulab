@@ -1,17 +1,22 @@
 @extends('layout.app')
 
 @section('banners')
-<div class="breadcrumb-area about-area-breadcrumb" style="background-image: url('{{ asset('assets/images/contact_banner.jpg') }}');">
-    <div class="nav-container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner no-bg">
-                    <h2 class="page-title">Contact Us</h2>
+<?php /* breadcrumb-area - Start */ ?>
+@php $contactBanner = $webSettings->where('key', 'CONTACT_DEFAULT_BANNER')->first(); @endphp
+@if( $contactBanner && ( $contactBanner->value != null || $contactBanner->value != '' ) )
+    <div class="breadcrumb-area about-area-breadcrumb" style="background-image: url('{{ $contactBanner->value }}');">
+        <div class="nav-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner no-bg">
+                        <h2 class="page-title">Contact Us</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+@endif
+<?php /* breadcrumb-area - End */ ?>
 @endsection
 
 @section('content')

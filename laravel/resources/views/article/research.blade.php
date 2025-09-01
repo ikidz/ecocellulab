@@ -3,17 +3,20 @@
 @section('banners')
 
 <?php /* breadcrumb-area - Start */ ?>
-<div class="breadcrumb-area research-area-breadcrumb" style="background-image: url('{{ asset('assets/images/research_banner.jpg') }}');">
-    <div class="nav-container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner no-bg">
-                    <h2 class="page-title">Research &amp;<br /> Development</h2>
+@php $researchBanner = $webSettings->where('key', 'RESEARCH_DEFAULT_BANNER')->first(); @endphp
+@if( $researchBanner && ( $researchBanner->value != null || $researchBanner->value != '' ) )
+    <div class="breadcrumb-area research-area-breadcrumb" style="background-image: url('{{ $researchBanner->value }}');">
+        <div class="nav-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inner no-bg">
+                        <h2 class="page-title">Research</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+@endif
 <?php /* breadcrumb-area - End */ ?>
 
 @endsection
