@@ -30,6 +30,8 @@ class Subscribers extends Resource
      */
     public static $search = [
         'email',
+        'article.title',
+        'research.title'
     ];
 
     /**
@@ -44,6 +46,9 @@ class Subscribers extends Resource
             ID::make()->sortable(),
             Text::make('Email')
                 ->readonly(),
+            Text::make('Source Page', function(){
+                return $this->display_source_page;
+            }),
             Text::make('Subscribed At', function(){
                 return $this->display_created_at;
             })
@@ -69,7 +74,11 @@ class Subscribers extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\SubscribeSourcePage,
+            new Filters\CreatedDateStart,
+            new Filters\CreatedDateEnd,
+        ];
     }
 
     /**

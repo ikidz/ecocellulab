@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SubscribeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,12 @@ Route::prefix('/contact')->name('contact.')->group(function(){
     Route::post('/submit', [ContactController::class, 'submit'])
         ->middleware('throttle:5,1')
         ->name('submit');
+});
+
+Route::prefix('/subscribe')->name('subscribe.')->group(function(){
+    Route::post('/store', [SubscribeController::class, 'store'])
+        ->middleware('throttle:5,1')
+        ->name('store');
 });
 
 // Route::get('/_mail-test', function () {
