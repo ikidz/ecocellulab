@@ -41,7 +41,7 @@
         <div class="row align-items-center">
             @if( $about->display_story_img )
                 <div class="col-lg-6 text-center">
-                    <div class="img-wrap" style="background-image: url('{{ $about->display_story_img }}');">
+                    <div class="img-wrap">
                         <img src="{{ $about->display_story_img  }}" alt="">
                         <?php /*
                         <div class="video-part">

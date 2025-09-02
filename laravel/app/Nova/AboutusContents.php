@@ -66,7 +66,7 @@ class AboutusContents extends Resource
                 ->default(1),
             new Panel('Home Section', $this->homeSectionFields()),
             new Panel('Our Story', $this->storyFields()),
-            new Panel('Vision', $this->visionFields()),
+            // new Panel('Vision', $this->visionFields()),
             new Panel('SEO', $this->seoFields()),
         ];
     }
@@ -125,10 +125,10 @@ class AboutusContents extends Resource
                 ])
                 ->rules(['required'])
                 ->hideFromIndex(),
-            Repeater::make('Benefits', 'benefits')
-                ->repeatables([
-                    OurStoryBenefits::make('Benefit')->confirmRemoval()
-                ])->asJson(),
+            // Repeater::make('Benefits', 'benefits')
+            //     ->repeatables([
+            //         OurStoryBenefits::make('Benefit')->confirmRemoval()
+            //     ])->asJson(),
             Text::make('Benefits', function(){
                 if( $this->benefits ){
                     $output = '';
