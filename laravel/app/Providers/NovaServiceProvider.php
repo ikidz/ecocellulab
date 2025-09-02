@@ -48,7 +48,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::make('Website Settings', [
                     MenuItem::resource(Banners::class),
                     MenuItem::resource(Teams::class),
-                    MenuItem::resource(Benefits::class),
+                    // MenuItem::resource(Benefits::class),
                     MenuItem::resource(AboutusContents::class),
                     MenuItem::resource(CoreProductContents::class),
                     MenuItem::resource(WebSettings::class),
