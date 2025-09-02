@@ -27,4 +27,10 @@ class Contacts extends Model
     {
         return trim("{$this->fname} {$this->lname}");
     }
+
+    public function getDisplaySubmittedAtAttribute(){
+        $submittedAgo = $this->created_at->diffForHumans();
+        return $this->created_at->format('F j, Y, H:i').' ('.$submittedAgo.')';
+
+    }
 }
