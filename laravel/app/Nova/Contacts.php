@@ -63,6 +63,9 @@ class Contacts extends Resource
             Text::make('Subject')
                 ->hideFromIndex(),
             Textarea::make('Message'),
+            Text::make('Submitted at', function () {
+                return $this->display_submitted_at;
+            })->onlyOnIndex(),
             Boolean::make('Is Read', 'is_read')
         ];
     }
@@ -86,7 +89,11 @@ class Contacts extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\ContactIsRead(),
+            new Filters\CreatedDateStart(),
+            new Filters\CreatedDateEnd(),
+        ];
     }
 
     /**
@@ -108,7 +115,9 @@ class Contacts extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            (new Actions\ContactMarkAsRead())->showInLine(),
+        ];
     }
 
     public static function authorizedToCreate(Request $request)
