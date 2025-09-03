@@ -2256,7 +2256,6 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 .slider-content-wrap p {
   color: #fff;
-  max-width: 70%;
 }
 .slider-content-wrap .btn-with-video {
   display: flex;
@@ -6173,14 +6172,24 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   text-align: center;
 }
 .showcase3-area {
-  background: url("/assets/img/home3-slider/bg.png");
+  background-color: #000;
   height: calc(100vh - 100px);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  min-height: 650px;
+  min-height: 560px;
   overflow: hidden;
   z-index: 0;
+}
+@media screen and (max-width: 1366px) {
+  .showcase3-area {
+    height: auto;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .showcase3-area {
+    min-height: 430px;
+  }
 }
 .showcase3-area .showcase3-overlay {
   position: absolute;
@@ -6190,10 +6199,9 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   z-index: 1;
 }
 .showcase3-area .showcase3-main {
-  position: relative;
+  position: absolute;
   height: 100%;
   width: 100%;
-  display: flex;
   align-items: center;
   z-index: 2;
 }
