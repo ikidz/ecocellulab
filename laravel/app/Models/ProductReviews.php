@@ -75,4 +75,8 @@ class ProductReviews extends Model
         }
         return $maskedLocal . $domainPart;
     }
+
+    public function getDisplayReviewedAtAttribute(){
+        return $this->created_at ? $this->created_at->format('F j, Y @ H:i') : null;
+    }
 }
