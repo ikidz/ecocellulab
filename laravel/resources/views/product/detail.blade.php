@@ -241,7 +241,7 @@
                                 <div class="form-group">
                                     <input type="file" name="img" id="upload" accept="image/*" />
 
-                                    <small class="form-text text-muted">Support image type *.jpg, *.jpeg, *.png. Image size must not exceed more than 2Mb.</small>
+                                    <small class="form-text text-muted">Support image type *.jpg, *.jpeg, *.png. Image size must not exceed more than 6Mb.</small>
                                 </div>
                                 @error('img')
                                     <div class="form-error">
