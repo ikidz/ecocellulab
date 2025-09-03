@@ -42,7 +42,7 @@ class ProductController extends Controller
 
         /* Validation - Start */
         $validated = $request->validate([
-            'img'    => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'img'    => 'nullable|image|mimes:jpeg,png,jpg|max:6144',
             'name'   => 'required|string|max:255',
             'email'  => 'required|email|max:255',
             'rating' => 'required|integer|min:1|max:5',
