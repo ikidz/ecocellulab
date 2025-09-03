@@ -5,10 +5,14 @@
             <div class="footer-widget-content-wrapper">
                 <div class="footer-widget-content">
                     <div class="footer-widget widget">
-                        <div class="about_us_widget padding-bottom-10">
-                            <a href="index.html" class="footer-logo"> <img src="{{ asset('assets/images/logo_v.svg') }}"
-                                    alt="footer logo"></a>
-                        </div>
+                        @php $footerLogo = $webSettings->where('key', 'FOOTER_LOGO')->first(); @endphp
+                        @if( $footerLogo && $footerLogo->value != null && $footerLogo->value != '' )
+                            <div class="about_us_widget padding-bottom-10">
+                                <a href="{{ route('home.index') }}" class="footer-logo">
+                                    <img src="{{ $footerLogo->value }}" alt="footer logo">
+                                </a>
+                            </div>
+                        @endif
                         <div class="footer-widget widget widget_nav_menu ">
                             <ul class="footer-link">
                                 <li><a href="{{ route('article.aboutus') }}">About</a></li>
