@@ -3274,7 +3274,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   background-image: url("/assets/img/breadcrumb/about/bg.png");
   background-position: right;
   position: relative;
-  background-size: auto;
+  background-size: cover;
 }
 .breadcrumb-area.about-area-breadcrumb::before, .breadcrumb-area.research-area-breadcrumb::before {
   content: "";
@@ -5133,8 +5133,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   background-size: contain;
 }
 .about-us-area.style-3 .img-wrap {
-  background-image: url("/assets/img/about/main4.png");
-  background-repeat: no-repeat;
+  background: none;
   display: inline-block;
 }
 .about-us-area.style-3 .img-wrap .video-part {
