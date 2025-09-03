@@ -1,12 +1,21 @@
 .showcase3-area {
-  background: url("/assets/img/home3-slider/bg.png");
+  // background: url("/assets/img/home3-slider/bg.png");
+  background-color:#000;
   height: calc( 100vh - 100px );
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  min-height: 650px;
+  min-height: 560px;
   overflow: hidden;
   z-index:0;
+
+  @media screen and (max-width: 1366px) {
+    height:auto;
+  }
+
+  @media screen and (min-width: 425px) and (max-width: 768px) {
+    min-height: 430px;
+  }
   
   .showcase3-overlay {
     position: absolute;
@@ -17,12 +26,13 @@
   }
 
   .showcase3-main {
-    position: relative;
+    position: absolute;
     height: 100%;
     width: 100%;
-    display: flex;
+    // display: flex;
     align-items: center;
     z-index:2;
+
     .content-part {
       .showcase3-slider {
         position:relative;

@@ -1,9 +1,9 @@
 @if( $banners->isNotEmpty() )
-<section class="showcase3-area" style="background-image: url('{{ asset('assets/images/herobanner.jpg') }}');">
+<section class="showcase3-area">
     <div class="showcase3-overlay"></div>
     <div class="showcase3-main">
-        <div class="nav-container">
-            <div class="row align-items-center">
+        <?php /* <div class="nav-container"> */ ?>
+            <div class="row align-items-center h-100">
                 <div class="col-12 col-lg-6 mx-0 mx-lg-3 px-0 text-center text-lg-left">
                     <div class="content-part">
                         <div class="showcase3-slider">
@@ -13,12 +13,12 @@
                                 <div class="showcase3-slider-item">
                                     <div class="slider-content-wrap px-3">
                                         @if( $banner->display_title_img != null && $banner->display_title_img != '' )
-                                            <div class="img-wrapper text-center text-md-left col-12 col-md-4 px-0">
+                                            <div class="img-wrapper col-12 col-md-3 col-lg-4 px-0 mx-auto mx-lg-0">
                                                 <img src="{{ $banner->display_title_img }}" alt="{{ $banner->title }}">
                                             </div>
                                         @endif
                                         <h2 class="title px-3">{{ $banner->title }}</h2>
-                                        <div class="px-3">{!! $banner->subtitle !!}</div>
+                                        <div class="px-3 text-center text-lg-left">{!! $banner->subtitle !!}</div>
                                         @if( $banner->link_type == 'researches' )
                                             <div class="btn-wrapper">
                                                 <a href="{{ route('researches.detail', ['id' => $banner->content_id]) }}" class="boxed-btn">Read More</a>
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="showcase3-nav px-0 text-center md-pd-top-100 cus-pd">
+                <div class="showcase3-nav px-0 text-center cus-pd">
 
                     @foreach( $banners as $banner )
                         <?php /* .showcase3-nav-item - Start */ ?>
@@ -109,7 +109,7 @@
                         
                 </div>
             </div>
-        </div>
+        <?php /* </div> */ ?>
 
     </div>
 
