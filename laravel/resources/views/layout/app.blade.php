@@ -30,7 +30,7 @@
     @if (app()->environment('local'))
         <script type="module" src="http://localhost:5173/resources/sass/style.scss"></script>
     @else
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css?v=1.2') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css?v=1.3') }}">
     @endif
     <!-- responsive Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css?v=1.1') }}">
