@@ -13,12 +13,12 @@
                                 <div class="showcase3-slider-item">
                                     <div class="slider-content-wrap px-3">
                                         @if( $banner->display_title_img != null && $banner->display_title_img != '' )
-                                            <div class="img-wrapper text-center text-md-left">
+                                            <div class="img-wrapper text-center text-md-left col-12 col-md-4 px-0">
                                                 <img src="{{ $banner->display_title_img }}" alt="{{ $banner->title }}">
                                             </div>
                                         @endif
-                                        <h2 class="title">{{ $banner->title }}</h2>
-                                        {!! $banner->subtitle !!}
+                                        <h2 class="title px-3">{{ $banner->title }}</h2>
+                                        <div class="px-3">{!! $banner->subtitle !!}</div>
                                         @if( $banner->link_type == 'researches' )
                                             <div class="btn-wrapper">
                                                 <a href="{{ route('researches.detail', ['id' => $banner->content_id]) }}" class="boxed-btn">Read More</a>
