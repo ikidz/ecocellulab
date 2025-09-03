@@ -6188,7 +6188,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 @media screen and (min-width: 425px) and (max-width: 768px) {
   .showcase3-area {
-    min-height: 430px;
+    min-height: 430px !important;
   }
 }
 .showcase3-area .showcase3-overlay {
