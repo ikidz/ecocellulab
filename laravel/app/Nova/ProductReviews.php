@@ -9,6 +9,8 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Stack;
+use Laravel\Nova\Fields\Line;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -71,11 +73,19 @@ class ProductReviews extends Resource
                 ->path('reviews')
                 ->rules('nullable', 'image', 'max:2048')
                 ->readonly($readOnlyWhenClient),
+            Stack::make('Reviewer', [
+                Line::make('Name', 'name')
+                    ->asHeading(),
+                fn () => optional( $this->resource )->email,
+                fn () => optional( $this->resource )->display_reviewed_at ? 'Reviewed at '.optional( $this->resource )->display_reviewed_at : null,
+            ]),
             Text::make('Name', 'name')
                 ->rules(['required', 'string', 'max:255'])
+                ->hideFromIndex()
                 ->readonly($readOnlyWhenClient),
             Text::make('Email', 'email')
                 ->rules(['required', 'email', 'max:255'])
+                ->hideFromIndex()
                 ->readonly($readOnlyWhenClient),
             Select::make('Rating', 'rating')
                 ->options([
@@ -117,7 +127,12 @@ class ProductReviews extends Resource
      */
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new Filters\ReviewIsApproved,
+            new Filters\ReviewIsHighlighted,
+            new Filters\CreatedDateStart,
+            new Filters\CreatedDateEnd,
+        ];
     }
 
     /**
@@ -139,6 +154,9 @@ class ProductReviews extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            (new Actions\ProductReviewApproval)->showInline(),
+            (new Actions\ProductReviewHighlight)->showInline(),
+        ];
     }
 }
