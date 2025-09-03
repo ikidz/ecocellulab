@@ -13,7 +13,7 @@
                                 <div class="showcase3-slider-item">
                                     <div class="slider-content-wrap px-3">
                                         @if( $banner->display_title_img != null && $banner->display_title_img != '' )
-                                            <div class="img-wrapper col-12 col-md-3 col-lg-4 px-0 mx-auto mx-lg-0">
+                                            <div class="img-wrapper col-6 col-md-3 col-lg-4 px-0 mx-auto mx-lg-0">
                                                 <img src="{{ $banner->display_title_img }}" alt="{{ $banner->title }}">
                                             </div>
                                         @endif

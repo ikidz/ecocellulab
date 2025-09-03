@@ -33,7 +33,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/style.css?v=1.4') }}">
     @endif
     <!-- responsive Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css?v=1.3') }}">
 
     @yield('css')
 

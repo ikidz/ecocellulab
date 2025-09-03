@@ -1666,7 +1666,7 @@
   }
   .showcase3-area {
     max-height: 100vh;
-    min-height: auto;
+    /* min-height: auto; */
   }
   .news-item.style-3 .content-wrap .date-with-writter {
     display: block;
